@@ -1,0 +1,15 @@
+C:\Users\Ольга\Desktop\trash\arch2\arch2\obj\Debug\net6.0\arch2.csproj.AssemblyReference.cache
+C:\Users\Ольга\Desktop\trash\arch2\arch2\obj\Debug\net6.0\arch2.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Ольга\Desktop\trash\arch2\arch2\obj\Debug\net6.0\arch2.AssemblyInfoInputs.cache
+C:\Users\Ольга\Desktop\trash\arch2\arch2\obj\Debug\net6.0\arch2.AssemblyInfo.cs
+C:\Users\Ольга\Desktop\trash\arch2\arch2\obj\Debug\net6.0\arch2.csproj.CoreCompileInputs.cache
+C:\Users\Ольга\Desktop\trash\arch2\arch2\bin\Debug\net6.0\arch2.exe
+C:\Users\Ольга\Desktop\trash\arch2\arch2\bin\Debug\net6.0\arch2.deps.json
+C:\Users\Ольга\Desktop\trash\arch2\arch2\bin\Debug\net6.0\arch2.runtimeconfig.json
+C:\Users\Ольга\Desktop\trash\arch2\arch2\bin\Debug\net6.0\arch2.dll
+C:\Users\Ольга\Desktop\trash\arch2\arch2\bin\Debug\net6.0\arch2.pdb
+C:\Users\Ольга\Desktop\trash\arch2\arch2\obj\Debug\net6.0\arch2.dll
+C:\Users\Ольга\Desktop\trash\arch2\arch2\obj\Debug\net6.0\refint\arch2.dll
+C:\Users\Ольга\Desktop\trash\arch2\arch2\obj\Debug\net6.0\arch2.pdb
+C:\Users\Ольга\Desktop\trash\arch2\arch2\obj\Debug\net6.0\arch2.genruntimeconfig.cache
+C:\Users\Ольга\Desktop\trash\arch2\arch2\obj\Debug\net6.0\ref\arch2.dll

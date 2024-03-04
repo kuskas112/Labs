@@ -1,0 +1,17 @@
+C:\Users\Ольга\Desktop\trash\arch2-ClientGUI\arch2-ClientGUI\bin\Debug\net6.0-windows\arch2-ClientGUI.exe
+C:\Users\Ольга\Desktop\trash\arch2-ClientGUI\arch2-ClientGUI\bin\Debug\net6.0-windows\arch2-ClientGUI.deps.json
+C:\Users\Ольга\Desktop\trash\arch2-ClientGUI\arch2-ClientGUI\bin\Debug\net6.0-windows\arch2-ClientGUI.runtimeconfig.json
+C:\Users\Ольга\Desktop\trash\arch2-ClientGUI\arch2-ClientGUI\bin\Debug\net6.0-windows\arch2-ClientGUI.dll
+C:\Users\Ольга\Desktop\trash\arch2-ClientGUI\arch2-ClientGUI\bin\Debug\net6.0-windows\arch2-ClientGUI.pdb
+C:\Users\Ольга\Desktop\trash\arch2-ClientGUI\arch2-ClientGUI\obj\Debug\net6.0-windows\arch2-ClientGUI.csproj.AssemblyReference.cache
+C:\Users\Ольга\Desktop\trash\arch2-ClientGUI\arch2-ClientGUI\obj\Debug\net6.0-windows\arch2_ClientGUI.Form1.resources
+C:\Users\Ольга\Desktop\trash\arch2-ClientGUI\arch2-ClientGUI\obj\Debug\net6.0-windows\arch2-ClientGUI.csproj.GenerateResource.cache
+C:\Users\Ольга\Desktop\trash\arch2-ClientGUI\arch2-ClientGUI\obj\Debug\net6.0-windows\arch2-ClientGUI.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Ольга\Desktop\trash\arch2-ClientGUI\arch2-ClientGUI\obj\Debug\net6.0-windows\arch2-ClientGUI.AssemblyInfoInputs.cache
+C:\Users\Ольга\Desktop\trash\arch2-ClientGUI\arch2-ClientGUI\obj\Debug\net6.0-windows\arch2-ClientGUI.AssemblyInfo.cs
+C:\Users\Ольга\Desktop\trash\arch2-ClientGUI\arch2-ClientGUI\obj\Debug\net6.0-windows\arch2-ClientGUI.csproj.CoreCompileInputs.cache
+C:\Users\Ольга\Desktop\trash\arch2-ClientGUI\arch2-ClientGUI\obj\Debug\net6.0-windows\arch2-ClientGUI.dll
+C:\Users\Ольга\Desktop\trash\arch2-ClientGUI\arch2-ClientGUI\obj\Debug\net6.0-windows\refint\arch2-ClientGUI.dll
+C:\Users\Ольга\Desktop\trash\arch2-ClientGUI\arch2-ClientGUI\obj\Debug\net6.0-windows\arch2-ClientGUI.pdb
+C:\Users\Ольга\Desktop\trash\arch2-ClientGUI\arch2-ClientGUI\obj\Debug\net6.0-windows\arch2-ClientGUI.genruntimeconfig.cache
+C:\Users\Ольга\Desktop\trash\arch2-ClientGUI\arch2-ClientGUI\obj\Debug\net6.0-windows\ref\arch2-ClientGUI.dll
