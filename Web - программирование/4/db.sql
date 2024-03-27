@@ -22,6 +22,22 @@ foreign key(car) references Cars(id),
 foreign key(image) references Images(id)
 );
 
+create table `Privileges`(
+id int not null auto_increment,
+`description` varchar(15),
+primary key(id)
+);
+
+create table `User`(
+id int not null auto_increment,
+`name` varchar(20),
+`password` varchar(20),
+`privileges` int not null, 
+primary key(id),
+foreign key(`privileges`) references `Privileges`(id)
+);
+
+
 insert into Images(`path`) values ('images/LadaEllada.jpg');
 insert into Images(`path`) values ('images/tesla.jpg');
 insert into Images(`path`) values ('images/cybertruck.jpg');
