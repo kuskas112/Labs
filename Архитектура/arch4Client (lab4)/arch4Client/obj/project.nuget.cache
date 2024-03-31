@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "5ZJb/S50QXbjJxHApqYCecYFzhxCVfMumr5L8/UKlChrn5lth+ZrNQs+EFM9O/DYGXZQ5mL1VHhu7SQ70TgaOg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Ольга\\Desktop\\trash\\arch4Client\\arch4Client\\arch4Client.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Ольга\\.nuget\\packages\\xmlrpccs\\2.1.1.2\\xmlrpccs.2.1.1.2.nupkg.sha512"
+  ],
+  "logs": []
+}

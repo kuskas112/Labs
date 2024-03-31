@@ -1,0 +1,104 @@
+{
+  "version": 3,
+  "targets": {
+    "net6.0": {
+      "XmlRpcCs/2.1.1.2": {
+        "type": "package",
+        "compile": {
+          "lib/netcoreapp2.0/XmlRpcCs.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp2.0/XmlRpcCs.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "XmlRpcCs/2.1.1.2": {
+      "sha512": "if6ujo33JAw2aft2pJj6cOKg6vrEavP8adln4Wif9fZtDPEFEE94LmkcLWO/CHOVcao21AVk5+832RT3v0TorA==",
+      "type": "package",
+      "path": "xmlrpccs/2.1.1.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net40/XmlRpcCs.dll",
+        "lib/net45/XmlRpcCs.dll",
+        "lib/net46/XmlRpcCs.dll",
+        "lib/net461/XmlRpcCs.dll",
+        "lib/netcoreapp2.0/XmlRpcCs.dll",
+        "lib/netstandard2.0/XmlRpcCs.dll",
+        "xmlrpccs.2.1.1.2.nupkg.sha512",
+        "xmlrpccs.nuspec"
+      ]
+    }
+  },
+  "projectFileDependencyGroups": {
+    "net6.0": [
+      "XmlRpcCS >= 2.1.1.2"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\Ольга\\.nuget\\packages\\": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "C:\\Users\\Ольга\\Desktop\\trash\\arch3Serv\\arch3Serv\\arch3Serv.csproj",
+      "projectName": "arch3Serv",
+      "projectPath": "C:\\Users\\Ольга\\Desktop\\trash\\arch3Serv\\arch3Serv\\arch3Serv.csproj",
+      "packagesPath": "C:\\Users\\Ольга\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Ольга\\Desktop\\trash\\arch3Serv\\arch3Serv\\obj\\",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "C:\\Users\\Ольга\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "net6.0"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "projectReferences": {}
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "net6.0": {
+        "targetAlias": "net6.0",
+        "dependencies": {
+          "XmlRpcCS": {
+            "target": "Package",
+            "version": "[2.1.1.2, )"
+          }
+        },
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48",
+          "net481"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}

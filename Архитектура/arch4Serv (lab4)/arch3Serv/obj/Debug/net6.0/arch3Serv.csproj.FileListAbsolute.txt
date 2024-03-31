@@ -1,0 +1,17 @@
+C:\Users\Ольга\Desktop\trash\arch3Serv\arch3Serv\bin\Debug\net6.0\arch3Serv.exe
+C:\Users\Ольга\Desktop\trash\arch3Serv\arch3Serv\bin\Debug\net6.0\arch3Serv.deps.json
+C:\Users\Ольга\Desktop\trash\arch3Serv\arch3Serv\bin\Debug\net6.0\arch3Serv.runtimeconfig.json
+C:\Users\Ольга\Desktop\trash\arch3Serv\arch3Serv\bin\Debug\net6.0\arch3Serv.dll
+C:\Users\Ольга\Desktop\trash\arch3Serv\arch3Serv\bin\Debug\net6.0\arch3Serv.pdb
+C:\Users\Ольга\Desktop\trash\arch3Serv\arch3Serv\obj\Debug\net6.0\arch3Serv.csproj.AssemblyReference.cache
+C:\Users\Ольга\Desktop\trash\arch3Serv\arch3Serv\obj\Debug\net6.0\arch3Serv.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Ольга\Desktop\trash\arch3Serv\arch3Serv\obj\Debug\net6.0\arch3Serv.AssemblyInfoInputs.cache
+C:\Users\Ольга\Desktop\trash\arch3Serv\arch3Serv\obj\Debug\net6.0\arch3Serv.AssemblyInfo.cs
+C:\Users\Ольга\Desktop\trash\arch3Serv\arch3Serv\obj\Debug\net6.0\arch3Serv.csproj.CoreCompileInputs.cache
+C:\Users\Ольга\Desktop\trash\arch3Serv\arch3Serv\obj\Debug\net6.0\arch3Serv.dll
+C:\Users\Ольга\Desktop\trash\arch3Serv\arch3Serv\obj\Debug\net6.0\refint\arch3Serv.dll
+C:\Users\Ольга\Desktop\trash\arch3Serv\arch3Serv\obj\Debug\net6.0\arch3Serv.pdb
+C:\Users\Ольга\Desktop\trash\arch3Serv\arch3Serv\obj\Debug\net6.0\arch3Serv.genruntimeconfig.cache
+C:\Users\Ольга\Desktop\trash\arch3Serv\arch3Serv\obj\Debug\net6.0\ref\arch3Serv.dll
+C:\Users\Ольга\Desktop\trash\arch3Serv\arch3Serv\obj\Debug\net6.0\arch3Serv.csproj.CopyComplete
+C:\Users\Ольга\Desktop\trash\arch3Serv\arch3Serv\bin\Debug\net6.0\XmlRpcCs.dll

@@ -1,0 +1,17 @@
+C:\Users\Ольга\Desktop\trash\arch4Client\arch4Client\obj\Debug\net6.0\arch4Client.csproj.AssemblyReference.cache
+C:\Users\Ольга\Desktop\trash\arch4Client\arch4Client\obj\Debug\net6.0\arch4Client.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Ольга\Desktop\trash\arch4Client\arch4Client\obj\Debug\net6.0\arch4Client.AssemblyInfoInputs.cache
+C:\Users\Ольга\Desktop\trash\arch4Client\arch4Client\obj\Debug\net6.0\arch4Client.AssemblyInfo.cs
+C:\Users\Ольга\Desktop\trash\arch4Client\arch4Client\obj\Debug\net6.0\arch4Client.csproj.CoreCompileInputs.cache
+C:\Users\Ольга\Desktop\trash\arch4Client\arch4Client\bin\Debug\net6.0\arch4Client.exe
+C:\Users\Ольга\Desktop\trash\arch4Client\arch4Client\bin\Debug\net6.0\arch4Client.deps.json
+C:\Users\Ольга\Desktop\trash\arch4Client\arch4Client\bin\Debug\net6.0\arch4Client.runtimeconfig.json
+C:\Users\Ольга\Desktop\trash\arch4Client\arch4Client\bin\Debug\net6.0\arch4Client.dll
+C:\Users\Ольга\Desktop\trash\arch4Client\arch4Client\bin\Debug\net6.0\arch4Client.pdb
+C:\Users\Ольга\Desktop\trash\arch4Client\arch4Client\bin\Debug\net6.0\XmlRpcCs.dll
+C:\Users\Ольга\Desktop\trash\arch4Client\arch4Client\obj\Debug\net6.0\arch4Client.csproj.CopyComplete
+C:\Users\Ольга\Desktop\trash\arch4Client\arch4Client\obj\Debug\net6.0\arch4Client.dll
+C:\Users\Ольга\Desktop\trash\arch4Client\arch4Client\obj\Debug\net6.0\refint\arch4Client.dll
+C:\Users\Ольга\Desktop\trash\arch4Client\arch4Client\obj\Debug\net6.0\arch4Client.pdb
+C:\Users\Ольга\Desktop\trash\arch4Client\arch4Client\obj\Debug\net6.0\arch4Client.genruntimeconfig.cache
+C:\Users\Ольга\Desktop\trash\arch4Client\arch4Client\obj\Debug\net6.0\ref\arch4Client.dll

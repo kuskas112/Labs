@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "0L9UNVI/t+30X9InDWtU3r05LgSMkNtMBoJiyUGyXIz9ghgAciYBLTcrAyhu4nxViyyxb3H/x3UwIxbKLNKJoQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Ольга\\Desktop\\trash\\arch3Serv\\arch3Serv\\arch3Serv.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Ольга\\.nuget\\packages\\xmlrpccs\\2.1.1.2\\xmlrpccs.2.1.1.2.nupkg.sha512"
+  ],
+  "logs": []
+}
