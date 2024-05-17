@@ -1,0 +1,174 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\\u041E\u043B\u044C\u0433\u0430\\Desktop\\trash\\arch6-client\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{5EA61D98-1DB2-4BBE-A939-F24E1983AE65}|arch6-client\\arch6-client.csproj|c:\\users\\\u043E\u043B\u044C\u0433\u0430\\desktop\\trash\\arch6-client\\arch6-client\\model.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5EA61D98-1DB2-4BBE-A939-F24E1983AE65}|arch6-client\\arch6-client.csproj|solutionrelative:arch6-client\\model.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5EA61D98-1DB2-4BBE-A939-F24E1983AE65}|arch6-client\\arch6-client.csproj|c:\\users\\\u043E\u043B\u044C\u0433\u0430\\desktop\\trash\\arch6-client\\arch6-client\\controller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5EA61D98-1DB2-4BBE-A939-F24E1983AE65}|arch6-client\\arch6-client.csproj|solutionrelative:arch6-client\\controller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5EA61D98-1DB2-4BBE-A939-F24E1983AE65}|arch6-client\\arch6-client.csproj|c:\\users\\\u043E\u043B\u044C\u0433\u0430\\desktop\\trash\\arch6-client\\arch6-client\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5EA61D98-1DB2-4BBE-A939-F24E1983AE65}|arch6-client\\arch6-client.csproj|solutionrelative:arch6-client\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5EA61D98-1DB2-4BBE-A939-F24E1983AE65}|arch6-client\\arch6-client.csproj|c:\\users\\\u043E\u043B\u044C\u0433\u0430\\desktop\\trash\\arch6-client\\arch6-client\\view.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5EA61D98-1DB2-4BBE-A939-F24E1983AE65}|arch6-client\\arch6-client.csproj|solutionrelative:arch6-client\\view.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5EA61D98-1DB2-4BBE-A939-F24E1983AE65}|arch6-client\\arch6-client.csproj|c:\\users\\\u043E\u043B\u044C\u0433\u0430\\desktop\\trash\\arch6-client\\arch6-client\\iview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5EA61D98-1DB2-4BBE-A939-F24E1983AE65}|arch6-client\\arch6-client.csproj|solutionrelative:arch6-client\\iview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5EA61D98-1DB2-4BBE-A939-F24E1983AE65}|arch6-client\\arch6-client.csproj|c:\\users\\\u043E\u043B\u044C\u0433\u0430\\desktop\\trash\\arch6-client\\arch6-client\\connected services\\servicereference1\\reference.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5EA61D98-1DB2-4BBE-A939-F24E1983AE65}|arch6-client\\arch6-client.csproj|solutionrelative:arch6-client\\connected services\\servicereference1\\reference.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5EA61D98-1DB2-4BBE-A939-F24E1983AE65}|arch6-client\\arch6-client.csproj|c:\\users\\\u043E\u043B\u044C\u0433\u0430\\desktop\\trash\\arch6-client\\arch6-client\\imodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5EA61D98-1DB2-4BBE-A939-F24E1983AE65}|arch6-client\\arch6-client.csproj|solutionrelative:arch6-client\\imodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5EA61D98-1DB2-4BBE-A939-F24E1983AE65}|arch6-client\\arch6-client.csproj|c:\\users\\\u043E\u043B\u044C\u0433\u0430\\desktop\\trash\\arch6-client\\arch6-client\\icontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5EA61D98-1DB2-4BBE-A939-F24E1983AE65}|arch6-client\\arch6-client.csproj|solutionrelative:arch6-client\\icontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 1,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedHeight": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Model.cs",
+              "DocumentMoniker": "C:\\Users\\\u041E\u043B\u044C\u0433\u0430\\Desktop\\trash\\arch6-client\\arch6-client\\Model.cs",
+              "RelativeDocumentMoniker": "arch6-client\\Model.cs",
+              "ToolTip": "C:\\Users\\\u041E\u043B\u044C\u0433\u0430\\Desktop\\trash\\arch6-client\\arch6-client\\Model.cs",
+              "RelativeToolTip": "arch6-client\\Model.cs",
+              "ViewState": "AQIAAAoAAAAAAAAAAAAzwBoAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-13T07:41:36.909Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "IModel.cs",
+              "DocumentMoniker": "C:\\Users\\\u041E\u043B\u044C\u0433\u0430\\Desktop\\trash\\arch6-client\\arch6-client\\IModel.cs",
+              "RelativeDocumentMoniker": "arch6-client\\IModel.cs",
+              "ToolTip": "C:\\Users\\\u041E\u043B\u044C\u0433\u0430\\Desktop\\trash\\arch6-client\\arch6-client\\IModel.cs",
+              "RelativeToolTip": "arch6-client\\IModel.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAA0AAAAoAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-13T07:40:20.145Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Controller.cs",
+              "DocumentMoniker": "C:\\Users\\\u041E\u043B\u044C\u0433\u0430\\Desktop\\trash\\arch6-client\\arch6-client\\Controller.cs",
+              "RelativeDocumentMoniker": "arch6-client\\Controller.cs",
+              "ToolTip": "C:\\Users\\\u041E\u043B\u044C\u0433\u0430\\Desktop\\trash\\arch6-client\\arch6-client\\Controller.cs",
+              "RelativeToolTip": "arch6-client\\Controller.cs",
+              "ViewState": "AQIAADkAAAAAAAAAAAAAABkAAAAPAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-13T07:37:45.727Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "IView.cs",
+              "DocumentMoniker": "C:\\Users\\\u041E\u043B\u044C\u0433\u0430\\Desktop\\trash\\arch6-client\\arch6-client\\IView.cs",
+              "RelativeDocumentMoniker": "arch6-client\\IView.cs",
+              "ToolTip": "C:\\Users\\\u041E\u043B\u044C\u0433\u0430\\Desktop\\trash\\arch6-client\\arch6-client\\IView.cs",
+              "RelativeToolTip": "arch6-client\\IView.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAAA0AAAA/AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-13T07:30:55.966Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Reference.cs",
+              "DocumentMoniker": "C:\\Users\\\u041E\u043B\u044C\u0433\u0430\\Desktop\\trash\\arch6-client\\arch6-client\\Connected Services\\ServiceReference1\\Reference.cs",
+              "RelativeDocumentMoniker": "arch6-client\\Connected Services\\ServiceReference1\\Reference.cs",
+              "ToolTip": "C:\\Users\\\u041E\u043B\u044C\u0433\u0430\\Desktop\\trash\\arch6-client\\arch6-client\\Connected Services\\ServiceReference1\\Reference.cs",
+              "RelativeToolTip": "arch6-client\\Connected Services\\ServiceReference1\\Reference.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAAAQAAAAgAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-01T16:50:04.855Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "View.cs",
+              "DocumentMoniker": "C:\\Users\\\u041E\u043B\u044C\u0433\u0430\\Desktop\\trash\\arch6-client\\arch6-client\\View.cs",
+              "RelativeDocumentMoniker": "arch6-client\\View.cs",
+              "ToolTip": "C:\\Users\\\u041E\u043B\u044C\u0433\u0430\\Desktop\\trash\\arch6-client\\arch6-client\\View.cs",
+              "RelativeToolTip": "arch6-client\\View.cs",
+              "ViewState": "AQIAABsAAAAAAAAAAAAYwBcAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-13T07:31:48.277Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\\u041E\u043B\u044C\u0433\u0430\\Desktop\\trash\\arch6-client\\arch6-client\\Program.cs",
+              "RelativeDocumentMoniker": "arch6-client\\Program.cs",
+              "ToolTip": "C:\\Users\\\u041E\u043B\u044C\u0433\u0430\\Desktop\\trash\\arch6-client\\arch6-client\\Program.cs",
+              "RelativeToolTip": "arch6-client\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAASAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-01T08:52:05.918Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "IController.cs",
+              "DocumentMoniker": "C:\\Users\\\u041E\u043B\u044C\u0433\u0430\\Desktop\\trash\\arch6-client\\arch6-client\\IController.cs",
+              "RelativeDocumentMoniker": "arch6-client\\IController.cs",
+              "ToolTip": "C:\\Users\\\u041E\u043B\u044C\u0433\u0430\\Desktop\\trash\\arch6-client\\arch6-client\\IController.cs",
+              "RelativeToolTip": "arch6-client\\IController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAPAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-13T07:38:43.367Z",
+              "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedHeight": 59,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

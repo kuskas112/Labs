@@ -4,7 +4,7 @@ create table Cars(
 id int not null auto_increment,
 `name` varchar(20),
 pageText text,
-primary key (id) 
+primary key (id)
 );
 
 create table Images(
@@ -18,8 +18,8 @@ id int not null auto_increment,
 car int not null,
 image int not null,
 primary key(id),
-foreign key(car) references Cars(id),
-foreign key(image) references Images(id)
+foreign key(car) references Cars(id) ON DELETE CASCADE,
+foreign key(image) references Images(id) ON DELETE CASCADE
 );
 
 create table `Privileges`(
@@ -30,8 +30,8 @@ primary key(id)
 
 create table `User`(
 id int not null auto_increment,
-`name` varchar(20),
-`password` varchar(20),
+`name` varchar(30),
+`password` varchar(255),
 `privileges` int not null, 
 primary key(id),
 foreign key(`privileges`) references `Privileges`(id)

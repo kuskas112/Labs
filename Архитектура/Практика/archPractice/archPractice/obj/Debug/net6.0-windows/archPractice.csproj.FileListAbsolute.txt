@@ -1,0 +1,16 @@
+C:\Users\Ольга\Desktop\trash\archPractice\archPractice\bin\Debug\net6.0-windows\archPractice.exe
+C:\Users\Ольга\Desktop\trash\archPractice\archPractice\bin\Debug\net6.0-windows\archPractice.deps.json
+C:\Users\Ольга\Desktop\trash\archPractice\archPractice\bin\Debug\net6.0-windows\archPractice.runtimeconfig.json
+C:\Users\Ольга\Desktop\trash\archPractice\archPractice\bin\Debug\net6.0-windows\archPractice.dll
+C:\Users\Ольга\Desktop\trash\archPractice\archPractice\bin\Debug\net6.0-windows\archPractice.pdb
+C:\Users\Ольга\Desktop\trash\archPractice\archPractice\obj\Debug\net6.0-windows\archPractice.Form1.resources
+C:\Users\Ольга\Desktop\trash\archPractice\archPractice\obj\Debug\net6.0-windows\archPractice.csproj.GenerateResource.cache
+C:\Users\Ольга\Desktop\trash\archPractice\archPractice\obj\Debug\net6.0-windows\archPractice.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Ольга\Desktop\trash\archPractice\archPractice\obj\Debug\net6.0-windows\archPractice.AssemblyInfoInputs.cache
+C:\Users\Ольга\Desktop\trash\archPractice\archPractice\obj\Debug\net6.0-windows\archPractice.AssemblyInfo.cs
+C:\Users\Ольга\Desktop\trash\archPractice\archPractice\obj\Debug\net6.0-windows\archPractice.csproj.CoreCompileInputs.cache
+C:\Users\Ольга\Desktop\trash\archPractice\archPractice\obj\Debug\net6.0-windows\archPractice.dll
+C:\Users\Ольга\Desktop\trash\archPractice\archPractice\obj\Debug\net6.0-windows\refint\archPractice.dll
+C:\Users\Ольга\Desktop\trash\archPractice\archPractice\obj\Debug\net6.0-windows\archPractice.pdb
+C:\Users\Ольга\Desktop\trash\archPractice\archPractice\obj\Debug\net6.0-windows\archPractice.genruntimeconfig.cache
+C:\Users\Ольга\Desktop\trash\archPractice\archPractice\obj\Debug\net6.0-windows\ref\archPractice.dll

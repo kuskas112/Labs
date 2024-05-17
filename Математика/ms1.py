@@ -8,7 +8,7 @@ import pylab as py
 from scipy.stats import chi2_contingency as chi
 from scipy.stats import chisquare
 
-data = pd.read_excel('C:\\Users\\ИВАН\\Desktop\\мат.xlsx')
+data = pd.read_excel('C:\\Users\\Ольга\\Desktop\\Лекции\\2 курс\\2 семак\\Labs\\Математика\\мат.xlsx')
 
 print("Основные характеристики:")
 print(data.d_30.describe())
@@ -44,20 +44,20 @@ print("\n")
 # Боксплот
 plt.figure(figsize=(2, 16))
 sns.boxplot(data.d_30)
-# plt.show()
+plt.show()
 
 # Гистограмма
 AxesSubplot: 'Frequency'
 plt.figure(figsize=(16, 6))
 data.d_30.plot(kind="hist", bins=11, fontsize=8)
-# plt.show()
+plt.show()
 
 # QQ-plot
 ss.stats.t.interval(0.95, len(data.d_30) - 1,
                     loc=np.mean(data.d_30),
                     scale=ss.stats.sem(data.d_30))
 ss.stats.probplot(data.d_30, dist="norm", plot=py)
-# py.show()
+py.show()
 
 
 n = len(data.d_30)

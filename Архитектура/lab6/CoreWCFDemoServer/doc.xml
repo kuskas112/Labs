@@ -1,0 +1,23 @@
+<Races>
+  <Race>
+    <From>Moscow</From>
+    <To xmlns="St. Petersburg">St. Petersburg</To>
+    <Date xmlns="01.10.2020 21:00:00">01.10.2020 21:00:00</Date>
+    <Company xmlns="S7 Airlines">S7 Airlines</Company>
+    <FreeSeats xmlns="14">14</FreeSeats>
+  </Race>
+  <Race>
+    <From>Ekaterinburg</From>
+    <To xmlns="Moscow">Moscow</To>
+    <Date xmlns="01.10.2020 21:30:00">01.10.2020 21:30:00</Date>
+    <Company xmlns="Aeroflot">Aeroflot</Company>
+    <FreeSeats xmlns="4">4</FreeSeats>
+  </Race>
+  <Race>
+    <From>Mirniy</From>
+    <To xmlns="Moscow">Moscow</To>
+    <Date xmlns="02.10.2020 10:45:00">02.10.2020 10:45:00</Date>
+    <Company xmlns="Alrosa Aero">Alrosa Aero</Company>
+    <FreeSeats xmlns="10">10</FreeSeats>
+  </Race>
+</Races>
