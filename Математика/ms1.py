@@ -59,6 +59,15 @@ ss.stats.t.interval(0.95, len(data.d_30) - 1,
 ss.stats.probplot(data.d_30, dist="norm", plot=py)
 py.show()
 
+#Полигон частот
+n, bins, _ = plt.hist(data.d_30, bins=10, alpha=0, edgecolor='none')
+tops = n
+plt.fill_between(bins[:-1], tops, alpha=0.4, color='skyblue', step='mid')
+plt.xlabel('Значения')
+plt.ylabel('Частота')
+plt.title('Полигон Частот')
+plt.show()
+
 
 n = len(data.d_30)
 sr = sum(data.d_30)/len(data.d_30)

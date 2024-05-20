@@ -6,42 +6,42 @@ using System.Threading.Tasks;
 
 namespace archPractice
 {
-    internal class Model
+    internal class Model : IModel
     {
         public int[,] distances;
-
-     
-        public int[] Solve()
+        public void setDistances(int[,] distances)
+        {
+            this.distances = distances;
+        }
+        public int[] Solve(out int bestDistance)
         {
             int n = distances.GetLength(0);
-            int[] cities = Enumerable.Range(0, n).ToArray(); // Создаем массив городов от 0 до n-1
+            int[] cities = Enumerable.Range(0, n).ToArray();
             int[] bestPath = null;
-            int bestDistance = int.MaxValue;
+            bestDistance = int.MaxValue;
 
             do
             {
-                int currentDistance = GetTotalDistance(cities); // Вычисляем общее расстояние текущего пути
-                if (currentDistance < bestDistance) // Если общее расстояние меньше лучшего найденного до этого
+                int currentDistance = GetTotalDistance(cities);
+                if (currentDistance < bestDistance)
                 {
-                    bestDistance = currentDistance; // Обновляем лучшее расстояние
-                    bestPath = cities.ToArray(); // Запоминаем текущий путь как лучший
+                    bestDistance = currentDistance;
+                    bestPath = cities.ToArray();
                 }
-            } while (NextPermutation(cities)); // Генерируем следующую перестановку городов
+            } while (NextPermutation(cities));
 
-            return bestPath; // Возвращаем лучший найденный путь
+            return bestPath;
         }
-
         private int GetTotalDistance(int[] path)
         {
             int totalDistance = 0;
             for (int i = 0; i < path.Length - 1; i++)
             {
-                totalDistance += distances[path[i], path[i + 1]]; // Суммируем расстояния между соседними городами
+                totalDistance += distances[path[i], path[i + 1]];
             }
-            totalDistance += distances[path[path.Length - 1], path[0]]; // Добавляем расстояние от последнего города к начальному
-            return totalDistance; // Возвращаем общее расстояние пути
+            totalDistance += distances[path[path.Length - 1], path[0]];
+            return totalDistance;
         }
-
         private bool NextPermutation(int[] sequence)
         {
             int i = sequence.Length - 1;
@@ -51,7 +51,7 @@ namespace archPractice
             }
             if (i <= 0)
             {
-                return false; // Нет следующей перестановки
+                return false;
             }
 
             int j = sequence.Length - 1;
@@ -74,7 +74,7 @@ namespace archPractice
                 j--;
             }
 
-            return true; // Есть следующая перестановка
+            return true;
         }
     }
 }

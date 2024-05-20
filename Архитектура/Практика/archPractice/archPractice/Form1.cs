@@ -5,18 +5,36 @@ namespace archPractice
     public partial class Form1 : Form, IForm
     {
         private Graphics g;
+        private int cityCount = 1;
         public Form1()
         {
             InitializeComponent();
+            errorLabel.Text = "";
+            solutionLabel.Text = "";
             g = CreateGraphics();
+        }
+        public void showError(string err)
+        {
+            errorLabel.Text = err;
+        }
+        public void showSolution(string sol)
+        {
+            errorLabel.Text = "";
+            solutionLabel.Text = sol;
         }
         public void drawCity(int x, int y)
         {
             g.FillEllipse(Brushes.Red, x - 5, y - 5, 10, 10);
+            g.DrawString(cityCount.ToString(), new Font("Arial", 10), Brushes.Black, new Point(x - 25, y - 20));
+            cityCount++;
         }
         public void drawCityConnection(Point city1, Point city2)
         {
             g.DrawLine(Pens.Black, city1, city2);
+        }
+        public void drawSolutionCityConnection(Point city1, Point city2)
+        {
+            g.DrawLine(Pens.Blue, city1, city2);
         }
         public void addMouseListener(MouseEventHandler handler)
         {
@@ -40,12 +58,18 @@ namespace archPractice
             dataMatrix.Rows[matrixSize].Cells[matrixSize].ReadOnly = true;
             dataMatrix.Columns[matrixSize].Width = 60;
         }
-        public int[,] getDataMatrix()
+        public int[,] getDataMatrix(out bool boolResult)
         {
-            int[,] matrix = new int[dataMatrix.Rows.Count, dataMatrix.Rows[0].Cells.Count];
-            for (int x = 0; x < dataMatrix.Columns.Count; x++)
+            int size = dataMatrix.Rows.Count;
+            if(size <= 0)
             {
-                for (int y = 0; y < dataMatrix.Rows.Count; y++)
+                boolResult = false;
+                return new int[,] {};
+            }
+            int[,] matrix = new int[size, size];
+            for (int x = 0; x < size; x++)
+            {
+                for (int y = 0; y < size; y++)
                 {
 
                     if (dataMatrix.Rows[y].Cells[x].Value != null)
@@ -58,6 +82,7 @@ namespace archPractice
                     }
                 }
             }
+            boolResult = true;
             return matrix;
         }
 
@@ -74,6 +99,10 @@ namespace archPractice
             g.Clear(Control.DefaultBackColor);
             dataMatrix.Rows.Clear();
             dataMatrix.Columns.Clear();
+            errorLabel.Text = "";
+            solutionLabel.Text = "";
+            cityCount = 1;
         }
+
     }
 }

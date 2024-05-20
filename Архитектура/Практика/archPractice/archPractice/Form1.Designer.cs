@@ -29,10 +29,12 @@
         private void InitializeComponent()
         {
             DataPanel = new Panel();
+            solutionLabel = new Label();
+            errorLabel = new Label();
+            solveButton = new Button();
             dataMatrix = new DataGridView();
             clearButton = new Button();
             greetingLabel = new Label();
-            solveButton = new Button();
             DataPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataMatrix).BeginInit();
             SuspendLayout();
@@ -40,6 +42,8 @@
             // DataPanel
             // 
             DataPanel.BackColor = SystemColors.ControlDark;
+            DataPanel.Controls.Add(solutionLabel);
+            DataPanel.Controls.Add(errorLabel);
             DataPanel.Controls.Add(solveButton);
             DataPanel.Controls.Add(dataMatrix);
             DataPanel.Controls.Add(clearButton);
@@ -49,6 +53,35 @@
             DataPanel.Name = "DataPanel";
             DataPanel.Size = new Size(416, 450);
             DataPanel.TabIndex = 0;
+            // 
+            // solutionLabel
+            // 
+            solutionLabel.AutoSize = true;
+            solutionLabel.Location = new Point(27, 322);
+            solutionLabel.Name = "solutionLabel";
+            solutionLabel.Size = new Size(76, 25);
+            solutionLabel.TabIndex = 5;
+            solutionLabel.Text = "solution";
+            // 
+            // errorLabel
+            // 
+            errorLabel.AutoSize = true;
+            errorLabel.ForeColor = Color.Red;
+            errorLabel.Location = new Point(13, 66);
+            errorLabel.Name = "errorLabel";
+            errorLabel.Size = new Size(50, 25);
+            errorLabel.TabIndex = 4;
+            errorLabel.Text = "Error";
+            // 
+            // solveButton
+            // 
+            solveButton.Dock = DockStyle.Bottom;
+            solveButton.Location = new Point(0, 382);
+            solveButton.Name = "solveButton";
+            solveButton.Size = new Size(416, 34);
+            solveButton.TabIndex = 3;
+            solveButton.Text = "Решить";
+            solveButton.UseVisualStyleBackColor = true;
             // 
             // dataMatrix
             // 
@@ -82,16 +115,6 @@
             greetingLabel.TabIndex = 0;
             greetingLabel.Text = "Best TSP solver ever";
             // 
-            // solveButton
-            // 
-            solveButton.Dock = DockStyle.Bottom;
-            solveButton.Location = new Point(0, 382);
-            solveButton.Name = "solveButton";
-            solveButton.Size = new Size(416, 34);
-            solveButton.TabIndex = 3;
-            solveButton.Text = "Решить";
-            solveButton.UseVisualStyleBackColor = true;
-            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
@@ -114,5 +137,7 @@
         private Button clearButton;
         public DataGridView dataMatrix;
         private Button solveButton;
+        private Label errorLabel;
+        private Label solutionLabel;
     }
 }

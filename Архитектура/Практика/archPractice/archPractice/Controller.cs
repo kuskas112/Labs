@@ -10,7 +10,7 @@ namespace archPractice
     internal class Controller
     {
         public IForm form1;
-        public Model model;
+        public IModel model;
         private LinkedList<Point> cities = new LinkedList<Point>();
         
         public Controller()
@@ -37,7 +37,6 @@ namespace archPractice
             cities.AddLast(city);
 
             form1.addMatrixColumn(cities.Count().ToString());
-
         }
 
         private void clearButton_Click(object sender, EventArgs e)
@@ -47,15 +46,53 @@ namespace archPractice
         }
         private void solveButton_Click(object sender, EventArgs e)
         {
-            model.distances = new int[,] {
-            {0,6,4,8,7,14},
-            {6,0,7,11,7,10},
-            {4,7,0,4,3,10},
-            {8,11,4,0,5,11},
-            {7,7,3,5,0,7},
-            {14,10,10,11,7,0}
-            };
-            int[] res = model.Solve();
+            int[,] distances = form1.getDataMatrix(out bool boolReuslt);
+            if (boolReuslt == false)
+            {
+                form1.showError("Не введено ни одного значения");
+                return;
+            }
+            
+            if(validateDataMatrix(distances, out string message) == false)
+            {
+                form1.showError(message);
+                return;
+            }
+            model.setDistances(distances);
+            int[] resultArray = model.Solve(out int distance);
+            string responce = "Найденный путь: ";
+            foreach (var cityIndex in resultArray)
+            {
+                responce += (cityIndex + 1).ToString() + " ";
+            }
+            responce += "\nСумма: " + distance.ToString();
+            form1.showSolution(responce);
+            showSolutionPath(resultArray);
+        }
+        private void showSolutionPath(int[] solution)
+        {
+            for (int i = 0; i < solution.Length - 1; i++)
+            {
+                form1.drawSolutionCityConnection(cities.ElementAt(i), cities.ElementAt(i + 1));
+            }
+            form1.drawSolutionCityConnection(cities.ElementAt(0), cities.Last());
+        }
+        private bool validateDataMatrix(int[,] dataMatrix, out string message)
+        {
+            int size = dataMatrix.GetLength(0);
+            for (int i = 0; i < size; i++)
+            {
+                for(int j = 0; j < size; j++)
+                {
+                    if(i != j && dataMatrix[i,j] <= 0)
+                    {
+                        message = "Расстояния должны быть строго больше нуля";
+                        return false;
+                    }
+                }
+            }
+            message = "";
+            return true;
         }
     }
 }
