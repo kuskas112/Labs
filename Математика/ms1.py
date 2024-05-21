@@ -8,7 +8,7 @@ import pylab as py
 from scipy.stats import chi2_contingency as chi
 from scipy.stats import chisquare
 
-data = pd.read_excel('C:\\Users\\Ольга\\Desktop\\Лекции\\2 курс\\2 семак\\Labs\\Математика\\мат.xlsx')
+data = pd.read_excel('мат.xlsx')
 
 print("Основные характеристики:")
 print(data.d_30.describe())
@@ -56,17 +56,10 @@ plt.show()
 ss.stats.t.interval(0.95, len(data.d_30) - 1,
                     loc=np.mean(data.d_30),
                     scale=ss.stats.sem(data.d_30))
+
+
 ss.stats.probplot(data.d_30, dist="norm", plot=py)
 py.show()
-
-#Полигон частот
-n, bins, _ = plt.hist(data.d_30, bins=10, alpha=0, edgecolor='none')
-tops = n
-plt.fill_between(bins[:-1], tops, alpha=0.4, color='skyblue', step='mid')
-plt.xlabel('Значения')
-plt.ylabel('Частота')
-plt.title('Полигон Частот')
-plt.show()
 
 
 n = len(data.d_30)
@@ -107,7 +100,7 @@ print("Группированный статический ряд")
 [print(x) for x in intervals]
 print("\n")
 
-while intervals[-1].freq < 5:
+for _ in range(4):
     intervals[-2].right = intervals[-1].right
     intervals[-2].freq += intervals[-1].freq
     intervals[-2].P += intervals[-1].P
