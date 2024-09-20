@@ -1,0 +1,24 @@
+[
+    {
+        "ISBN": "ISBN",
+        "title": "1",
+        "autors": [
+            "Autors"
+        ],
+        "publisher": "Publisher",
+        "year": "Year",
+        "pageCount": "PageCount",
+        "price": "Price"
+    },
+    {
+        "ISBN": "ISBN",
+        "title": "2",
+        "autors": [
+            "Autors"
+        ],
+        "publisher": "Publisher",
+        "year": "Year",
+        "pageCount": "PageCount",
+        "price": "Price"
+    }
+]
