@@ -1,4 +1,4 @@
-#include <iostream>
+п»ї#include <iostream>
 #include "List.h"
 
 using namespace std;
@@ -26,32 +26,32 @@ enum Descriptor{
 };
 
 void showMenu() {
-	cout << "1. Ввод записи об абитуриенте\n";
-	cout << "2. Вывод подсписка\n";
-	cout << "3. Вывод полного списка\n";
-	cout << "4. Удаление записи об абитуриенте\n";
-	cout << "5. Удаление всех записей\n";
-	cout << "0. Выход\n";
+	cout << "1. Р’РІРѕРґ Р·Р°РїРёСЃРё РѕР± Р°Р±РёС‚СѓСЂРёРµРЅС‚Рµ\n";
+	cout << "2. Р’С‹РІРѕРґ РїРѕРґСЃРїРёСЃРєР°\n";
+	cout << "3. Р’С‹РІРѕРґ РїРѕР»РЅРѕРіРѕ СЃРїРёСЃРєР°\n";
+	cout << "4. РЈРґР°Р»РµРЅРёРµ Р·Р°РїРёСЃРё РѕР± Р°Р±РёС‚СѓСЂРёРµРЅС‚Рµ\n";
+	cout << "5. РЈРґР°Р»РµРЅРёРµ РІСЃРµС… Р·Р°РїРёСЃРµР№\n";
+	cout << "0. Р’С‹С…РѕРґ\n";
 }
 
 void inputStudent(List<Student>& list) {
-	// Ввод и заполнение Student, обработка ошибок всего такого
-	// Для теста использую дефолтного
+	// Р’РІРѕРґ Рё Р·Р°РїРѕР»РЅРµРЅРёРµ Student, РѕР±СЂР°Р±РѕС‚РєР° РѕС€РёР±РѕРє РІСЃРµРіРѕ С‚Р°РєРѕРіРѕ
+	// Р”Р»СЏ С‚РµСЃС‚Р° РёСЃРїРѕР»СЊР·СѓСЋ РґРµС„РѕР»С‚РЅРѕРіРѕ
 	Student st;
-	// Сохраняю указатель на ноду для подсписков
-	Node<Student>* node = list.insert(st); //Вставка в главный список
+	// РЎРѕС…СЂР°РЅСЏСЋ СѓРєР°Р·Р°С‚РµР»СЊ РЅР° РЅРѕРґСѓ РґР»СЏ РїРѕРґСЃРїРёСЃРєРѕРІ
+	Node<Student>* node = list.insert(st); //Р’СЃС‚Р°РІРєР° РІ РіР»Р°РІРЅС‹Р№ СЃРїРёСЃРѕРє
 
-	// Вставка в подсписки
-	if (st.ex1 == 5 && st.ex2 == 5 && st.ex3 == 5) { // Отличник
+	// Р’СЃС‚Р°РІРєР° РІ РїРѕРґСЃРїРёСЃРєРё
+	if (st.ex1 == 5 && st.ex2 == 5 && st.ex3 == 5) { // РћС‚Р»РёС‡РЅРёРє
 		list.insertByDescriptor(node, Descriptor::exams);
 	}
-	if (st.hasHonorCertificate) { // Аттестат с отличием
+	if (st.hasHonorCertificate) { // РђС‚С‚РµСЃС‚Р°С‚ СЃ РѕС‚Р»РёС‡РёРµРј
 		list.insertByDescriptor(node, Descriptor::certificate);
 	}
-	if (st.homeCity != "Orel" && st.homeCity != "Орёл") { // Иногородний
+	if (st.homeCity != "Orel" && st.homeCity != "РћСЂС‘Р»") { // РРЅРѕРіРѕСЂРѕРґРЅРёР№
 		list.insertByDescriptor(node, Descriptor::city);
 	}
-	if (st.needDormitory) { // Нуждается в общаге
+	if (st.needDormitory) { // РќСѓР¶РґР°РµС‚СЃСЏ РІ РѕР±С‰Р°РіРµ
 		list.insertByDescriptor(node, Descriptor::dorimotory);
 	}
 
@@ -61,10 +61,10 @@ void showSubList(List<Student>& list) {
 	char cmd;
 	vector<Student> students;
 
-	cout << "1. Вывести отличников" << endl;
-	cout << "2. Вывести владельцев красного аттестата" << endl;
-	cout << "3. Вывести иногородних" << endl;
-	cout << "4. Вывести нуждающихся в общежитии" << endl;
+	cout << "1. Р’С‹РІРµСЃС‚Рё РѕС‚Р»РёС‡РЅРёРєРѕРІ" << endl;
+	cout << "2. Р’С‹РІРµСЃС‚Рё РІР»Р°РґРµР»СЊС†РµРІ РєСЂР°СЃРЅРѕРіРѕ Р°С‚С‚РµСЃС‚Р°С‚Р°" << endl;
+	cout << "3. Р’С‹РІРµСЃС‚Рё РёРЅРѕРіРѕСЂРѕРґРЅРёС…" << endl;
+	cout << "4. Р’С‹РІРµСЃС‚Рё РЅСѓР¶РґР°СЋС‰РёС…СЃСЏ РІ РѕР±С‰РµР¶РёС‚РёРё" << endl;
 
 	cin >> cmd;
 		
@@ -82,7 +82,7 @@ void showSubList(List<Student>& list) {
 		students = list.getAll(Descriptor::dorimotory);
 		break;
 	default:
-		cout << "Неверный номер подсписка" << endl;
+		cout << "РќРµРІРµСЂРЅС‹Р№ РЅРѕРјРµСЂ РїРѕРґСЃРїРёСЃРєР°" << endl;
 	}
 
 
@@ -97,7 +97,7 @@ void main() {
 
 	List<Student> list;
 
-	// Вставка дескрипторов подсписков
+	// Р’СЃС‚Р°РІРєР° РґРµСЃРєСЂРёРїС‚РѕСЂРѕРІ РїРѕРґСЃРїРёСЃРєРѕРІ
 	list.insertDescriptor(); // exams
 	list.insertDescriptor(); // certificate
 	list.insertDescriptor(); // city
@@ -117,13 +117,13 @@ void main() {
 			showSubList(list);
 			break;
 		case '3':
-			 //для полного списка getAll() либо getAll(Descriptors::all)
+			 //РґР»СЏ РїРѕР»РЅРѕРіРѕ СЃРїРёСЃРєР° getAll() Р»РёР±Рѕ getAll(Descriptors::all)
 			break;
 		case '0':
-			cout << "Выход из программы.\n";
+			cout << "Р’С‹С…РѕРґ РёР· РїСЂРѕРіСЂР°РјРјС‹.\n";
 			break;
 		default:
-			cout << "Неверный выбор. Попробуйте еще раз.\n";
+			cout << "РќРµРІРµСЂРЅС‹Р№ РІС‹Р±РѕСЂ. РџРѕРїСЂРѕР±СѓР№С‚Рµ РµС‰Рµ СЂР°Р·.\n";
 			break;
 		}
 	} while (cmd != '0');

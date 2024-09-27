@@ -1,4 +1,4 @@
-#pragma once
+п»ї#pragma once
 #include <vector>
 using namespace std;
 
@@ -33,7 +33,7 @@ public:
         descriptors.push_back(ls);
     }
 
-    // Вставка значения в список
+    // Р’СЃС‚Р°РІРєР° Р·РЅР°С‡РµРЅРёСЏ РІ СЃРїРёСЃРѕРє
     Node<T>* insert(T val) {
         Node<T>* newNode = new Node<T>(val);
         if (isEmpty()) {
@@ -54,7 +54,7 @@ public:
         descriptors.push_back(desc);
     }
 
-    // Вставка узла в конкретный подсписок
+    // Р’СЃС‚Р°РІРєР° СѓР·Р»Р° РІ РєРѕРЅРєСЂРµС‚РЅС‹Р№ РїРѕРґСЃРїРёСЃРѕРє
     bool insertByDescriptor(Node<T>* newNode, int descriptorIndex) {
         if (descriptorIndex >= descriptors.size()) {
             return false;
@@ -73,12 +73,12 @@ public:
         descriptors[descriptorIndex].last = newNode;
     }
 
-    // Нужны комментарии?
+    // РќСѓР¶РЅС‹ РєРѕРјРјРµРЅС‚Р°СЂРёРё?
     bool isEmpty() {
         return head == nullptr;
     }
 
-    // Найти узел по значению key. Опционально - указатель на предыдущий узел и дескрпитор подсписка
+    // РќР°Р№С‚Рё СѓР·РµР» РїРѕ Р·РЅР°С‡РµРЅРёСЋ key. РћРїС†РёРѕРЅР°Р»СЊРЅРѕ - СѓРєР°Р·Р°С‚РµР»СЊ РЅР° РїСЂРµРґС‹РґСѓС‰РёР№ СѓР·РµР» Рё РґРµСЃРєСЂРїРёС‚РѕСЂ РїРѕРґСЃРїРёСЃРєР°
     Node<T>* findNode(string key, Node<T>** prevNode = nullptr, int descriptorIndex = 0) {
         if (isEmpty()) { return nullptr; }
         Node<T>* tmp = descriptors[descriptorIndex].first;
@@ -99,7 +99,7 @@ public:
         return nullptr;
     }
 
-    // Удалить по значению key из всех подсписков
+    // РЈРґР°Р»РёС‚СЊ РїРѕ Р·РЅР°С‡РµРЅРёСЋ key РёР· РІСЃРµС… РїРѕРґСЃРїРёСЃРєРѕРІ
     bool deleteNode(string key, int &cntr = 0) {
         bool success = false;
         for (int i = descriptors.size()-1; i >= 0 ; i--)
@@ -112,7 +112,7 @@ public:
         return success;
     }
 
-    // Удалить по значению key из подсписка
+    // РЈРґР°Р»РёС‚СЊ РїРѕ Р·РЅР°С‡РµРЅРёСЋ key РёР· РїРѕРґСЃРїРёСЃРєР°
     bool deleteNodeByDescriptor(string key, int descriptorIndex = 0) {
         Node<T>* prevNode = nullptr;
         Node<T>* node = findNode(key, &prevNode, descriptorIndex);
@@ -149,7 +149,7 @@ public:
         
     }
 
-    // Получить вектор элементов подсписка
+    // РџРѕР»СѓС‡РёС‚СЊ РІРµРєС‚РѕСЂ СЌР»РµРјРµРЅС‚РѕРІ РїРѕРґСЃРїРёСЃРєР°
     vector<T> getAll(int descriptorIndex = 0) {
         vector<T> resp;
         Node<T>* tmp = descriptors[descriptorIndex].first;
@@ -166,7 +166,7 @@ public:
         return resp;
     }
 
-    // Очистка
+    // РћС‡РёСЃС‚РєР°
     void clear() {
         if (isEmpty()) { return; }
         while (head->links.size() > 0) {
