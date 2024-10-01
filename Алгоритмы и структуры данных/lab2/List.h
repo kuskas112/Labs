@@ -30,6 +30,7 @@ private:
 public:
     List() {
         ListDescriptor<T> ls;
+        descriptors = vector<ListDescriptor<T>>();
         descriptors.push_back(ls);
     }
 
@@ -51,6 +52,8 @@ public:
     // enter desc
     void insertDescriptor() {
         ListDescriptor<T> desc;
+        desc.first = nullptr;
+        desc.last = nullptr;
         descriptors.push_back(desc);
     }
 
@@ -73,7 +76,6 @@ public:
         descriptors[descriptorIndex].last = newNode;
     }
 
-    // Нужны комментарии?
     bool isEmpty() {
         return head == nullptr;
     }
@@ -100,7 +102,7 @@ public:
     }
 
     // Удалить по значению key из всех подсписков
-    bool deleteNode(string key, int &cntr = 0) {
+    bool deleteNode(string key, int cntr = 0) {
         bool success = false;
         for (int i = descriptors.size()-1; i >= 0 ; i--)
         {
@@ -139,8 +141,14 @@ public:
             return true;
         }
         else { // node is first
-            Node<T>* next = node->links[descriptorIndex];
-            descriptors[descriptorIndex].first = next;
+            if (descriptors[descriptorIndex].last != node) { //not last
+                Node<T>* next = node->links[descriptorIndex];
+                descriptors[descriptorIndex].first = next;
+            }
+            else {// first and last
+                descriptors[descriptorIndex].last = nullptr;
+                descriptors[descriptorIndex].first = nullptr;
+            }
             if (descriptorIndex == 0) {
                 delete node;
             }

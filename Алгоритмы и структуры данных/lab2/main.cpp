@@ -39,9 +39,31 @@ void inputStudent(List<Student>& list) {
 	// Для теста использую дефолтного
 	Student st;
 	// Сохраняю указатель на ноду для подсписков
-	Node<Student>* node = list.insert(st); //Вставка в главный список
 
 	// Вставка в подсписки
+
+	cout << "Введите фамилию студента" << endl;
+	cin >> st.family;
+	cout << "Введите оценки за три экзамена" << endl;
+	cin >> st.ex1;
+	cin >> st.ex2;
+	cin >> st.ex3;
+	cout << "Есть ли у студента аттестат с отличием (Д/Н)" << endl;
+	char cert;
+	cin >> cert;
+	cout << "Введите название населенного пункта, в котором проживает студент" << endl;
+	cin >> st.homeCity;
+
+	if (cert == 'д' || cert == 'Д' || cert == 'Y' || cert == 'y') {
+		st.hasHonorCertificate = true;
+	}
+	else {
+		st.hasHonorCertificate = false;
+	}
+
+	Node<Student>* node = list.insert(st); //Вставка в главный список
+
+
 	if (st.ex1 == 5 && st.ex2 == 5 && st.ex3 == 5) { // Отличник
 		list.insertByDescriptor(node, Descriptor::exams);
 	}
@@ -92,8 +114,25 @@ void showSubList(List<Student>& list) {
 	}
 }
 
-void main() {
-	setlocale(LC_ALL, "rus");
+void showList(List<Student> list) {
+	for (auto i : list.getAll()) {
+		cout << i.family << endl;
+	}
+}
+
+void deleteNode(List<Student> list) {
+	string st;
+	cout << "Введите ключ записи, которую надо удалить" << endl;
+	cin >> st;
+	list.deleteNode(st);
+}
+
+void deleteAll(List<Student> list) {
+	list.clear();
+}
+
+int main() {
+	setlocale(LC_ALL, "Russian");
 
 	List<Student> list;
 
@@ -106,18 +145,30 @@ void main() {
 	char cmd;
 
 	do {
+		system("cls");
 		showMenu();
 		cin >> cmd;
 
 		switch (cmd) {
 		case '1':
+			// Добавить информацию о студенте
 			inputStudent(list);
 			break;
 		case '2':
+			// Вывод подсписков
 			showSubList(list);
 			break;
 		case '3':
-			 //для полного списка getAll() либо getAll(Descriptors::all)
+			// Вывод полного списка
+			showList(list);
+			break;
+		case '4':
+			// Удаление записи
+			deleteNode(list);
+			break;
+		case '5':
+			// Удаление всех записей
+			deleteAll(list);
 			break;
 		case '0':
 			cout << "Выход из программы.\n";
@@ -126,6 +177,7 @@ void main() {
 			cout << "Неверный выбор. Попробуйте еще раз.\n";
 			break;
 		}
+		system("pause");
 	} while (cmd != '0');
 
 }
