@@ -25,12 +25,10 @@ public:
 template <typename T>
 class List {
 private:
-    Node<T>* head = nullptr;
     std::vector<ListDescriptor<T>> descriptors;
 public:
     List() {
         ListDescriptor<T> ls;
-        descriptors = vector<ListDescriptor<T>>();
         descriptors.push_back(ls);
     }
 
@@ -38,7 +36,6 @@ public:
     Node<T>* insert(T val) {
         Node<T>* newNode = new Node<T>(val);
         if (isEmpty()) {
-            head = newNode;
             descriptors[0].first = newNode;
             descriptors[0].last = newNode;
             return newNode;
@@ -52,8 +49,6 @@ public:
     // enter desc
     void insertDescriptor() {
         ListDescriptor<T> desc;
-        desc.first = nullptr;
-        desc.last = nullptr;
         descriptors.push_back(desc);
     }
 
@@ -76,8 +71,9 @@ public:
         descriptors[descriptorIndex].last = newNode;
     }
 
+    // Нужны комментарии?
     bool isEmpty() {
-        return head == nullptr;
+        return descriptors[0].first == nullptr;
     }
 
     // Найти узел по значению key. Опционально - указатель на предыдущий узел и дескрпитор подсписка
@@ -102,13 +98,12 @@ public:
     }
 
     // Удалить по значению key из всех подсписков
-    bool deleteNode(string key, int cntr = 0) {
+    bool deleteNode(string key) {
         bool success = false;
         for (int i = descriptors.size()-1; i >= 0 ; i--)
         {
             if (deleteNodeByDescriptor(key, i)) {
                 success = true; // if any deleted
-                cntr++;
             }
         }
         return success;
@@ -118,17 +113,22 @@ public:
     bool deleteNodeByDescriptor(string key, int descriptorIndex = 0) {
         Node<T>* prevNode = nullptr;
         Node<T>* node = findNode(key, &prevNode, descriptorIndex);
+        
         if (!node) { return false; }
 
         if (prevNode) { // node is not first
             if (node->links.size() >= descriptorIndex + 1) { // node has links forward
                 prevNode->links[descriptorIndex] = node->links[descriptorIndex];
+                node->links[descriptorIndex] = nullptr;
             }
-            if (prevNode->links[descriptorIndex] == nullptr) { // prevNode now last
+            else {
+                prevNode->links[descriptorIndex] = nullptr;
+            }
+
+            if (descriptors[descriptorIndex].last = node) { // prevNode now must be last
                 descriptors[descriptorIndex].last = prevNode;
             }
             
-            node->links[descriptorIndex] = nullptr;
             while (node->links.size() > 0) // while last link is null -> delete it
             {
                 if (node->links[node->links.size() - 1] != nullptr) { break; }
@@ -141,20 +141,21 @@ public:
             return true;
         }
         else { // node is first
-            if (descriptors[descriptorIndex].last != node) { //not last
-                Node<T>* next = node->links[descriptorIndex];
-                descriptors[descriptorIndex].first = next;
+            Node<T>* next = nullptr;
+            if (node->links.size() >= descriptorIndex + 1) { //if has links forward
+                next = node->links[descriptorIndex];
             }
-            else {// first and last
+
+            descriptors[descriptorIndex].first = next;
+            if (descriptors[descriptorIndex].first == nullptr) { // if first null -> then last also must be null
                 descriptors[descriptorIndex].last = nullptr;
-                descriptors[descriptorIndex].first = nullptr;
             }
+
             if (descriptorIndex == 0) {
                 delete node;
             }
             return true;
         }
-        
     }
 
     // Получить вектор элементов подсписка
@@ -166,7 +167,7 @@ public:
         {
             resp.push_back(tmp->data);
             if (tmp->links[descriptorIndex] == nullptr) {
-                break;
+                return resp;
             }
             tmp = tmp->links[descriptorIndex];
         }
@@ -177,17 +178,16 @@ public:
     // Очистка
     void clear() {
         if (isEmpty()) { return; }
+        Node<T>* head = descriptors[0].first;
         while (head->links.size() > 0) {
             Node<T>* tmp = head->links[0];
             delete head;
             head = tmp;
         }
         delete head;
-        head = nullptr;
-        for (int i = 1; i < descriptors.size(); i++)
+        for (int i = 0; i < descriptors.size(); i++)
         {
-            descriptors.pop_back();
+            descriptors[i].clear();
         }
-        descriptors[0].clear();
     }
 };

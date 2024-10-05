@@ -17,7 +17,7 @@ public:
 	}
 };
 
-enum Descriptor{
+enum Descriptor {
 	all = 0,
 	exams = 1,
 	certificate = 2,
@@ -33,6 +33,7 @@ void showMenu() {
 	cout << "5. Удаление всех записей\n";
 	cout << "0. Выход\n";
 }
+
 
 void inputStudent(List<Student>& list) {
 	// Ввод и заполнение Student, обработка ошибок всего такого
@@ -76,7 +77,23 @@ void inputStudent(List<Student>& list) {
 	if (st.needDormitory) { // Нуждается в общаге
 		list.insertByDescriptor(node, Descriptor::dorimotory);
 	}
+}
 
+void insertStudent(List<Student>& list, Student st) { //для отладки нужна была
+	Node<Student>* node = list.insert(st); //Вставка в главный список
+
+	if (st.ex1 == 5 && st.ex2 == 5 && st.ex3 == 5) { // Отличник
+		list.insertByDescriptor(node, Descriptor::exams);
+	}
+	if (st.hasHonorCertificate) { // Аттестат с отличием
+		list.insertByDescriptor(node, Descriptor::certificate);
+	}
+	if (st.homeCity != "Orel" && st.homeCity != "Орёл") { // Иногородний
+		list.insertByDescriptor(node, Descriptor::city);
+	}
+	if (st.needDormitory) { // Нуждается в общаге
+		list.insertByDescriptor(node, Descriptor::dorimotory);
+	}
 }
 
 void showSubList(List<Student>& list) {
@@ -89,7 +106,7 @@ void showSubList(List<Student>& list) {
 	cout << "4. Вывести нуждающихся в общежитии" << endl;
 
 	cin >> cmd;
-		
+
 	switch (cmd) {
 	case '1':
 		students = list.getAll(Descriptor::exams);
@@ -114,20 +131,20 @@ void showSubList(List<Student>& list) {
 	}
 }
 
-void showList(List<Student> list) {
+void showList(List<Student>& list) {
 	for (auto i : list.getAll()) {
 		cout << i.family << endl;
 	}
 }
 
-void deleteNode(List<Student> list) {
+void deleteNode(List<Student>& list) {
 	string st;
 	cout << "Введите ключ записи, которую надо удалить" << endl;
 	cin >> st;
 	list.deleteNode(st);
 }
 
-void deleteAll(List<Student> list) {
+void deleteAll(List<Student>& list) {
 	list.clear();
 }
 
