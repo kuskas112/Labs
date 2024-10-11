@@ -20,5 +20,16 @@
         "year": "Year",
         "pageCount": "PageCount",
         "price": "Price"
+    },
+    {
+        "ISBN": "333",
+        "title": "Title",
+        "autors": [
+            "Autors"
+        ],
+        "publisher": "333",
+        "year": "Year",
+        "pageCount": "33333",
+        "price": "Price"
     }
 ]

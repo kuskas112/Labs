@@ -1,0 +1,57 @@
+
+body{
+    color: white;
+    font-family: 'Comic Sans Ms';
+    --light: hsl(0, 0%, 100%);
+    --background: linear-gradient(to right bottom, hsl(236, 50%, 70%), hsl(180, 59%, 70%));
+}
+
+.css-selector {
+    background: linear-gradient(270deg, #85d2c7, #7fafdc, #a6a0e1, #c699e1);
+    background-size: 800% 800%;
+
+    -webkit-animation: AnimationName 30s ease infinite;
+    -moz-animation: AnimationName 30s ease infinite;
+    animation: AnimationName 30s ease infinite;
+}
+
+@keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+
+.input {
+  background-color: #fff;
+  width: 250px;
+  height: 40px;
+  padding: 10px;
+  text-align: center;
+  border: 2px solid white;
+  border-radius: 5px;
+  position: relative;
+  top: 15vh;
+  margin: 10px;
+}
+
+.input:focus {
+  color: #000;
+  background-color: #fff;
+  outline-color: rgb(255, 0, 255);
+  box-shadow: -1px -1px 15px rgb(255, 0, 255);
+  transition: .1s;
+  transition-property: box-shadow;
+}
+
+table td {
+    padding: 20px;
+    border: 2px solid grey;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+.button-container{
+
+}

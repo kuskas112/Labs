@@ -13,3 +13,5 @@ except TypeError:
     print('Нарушение области определенея')
 except OverflowError:
     print('Слишком тяжело(((')
+except ZeroDivisionError:
+    print('Делелние на 0')

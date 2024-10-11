@@ -7,6 +7,10 @@ class Book:
     pageCount = None
     price = None
 
+    def __init__(self, **kwargs):
+        for key, value in kwargs.items():
+            setattr(self, key, value)
+
     def __init__(self, ISBN, title, autors, publisher, year, pageCount, price):
         self.ISBN = ISBN
         self.title = title

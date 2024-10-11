@@ -8,7 +8,7 @@ TGeron = lambda a, b, c: (((a + b + c) / 2) * (((a + b + c) / 2) - a) * (((a + b
 Ellipse = lambda a, b: a * b * math.pi
 
 lst = [
-    ["R","п","E","R"],
+    ["R","T","E","R"],
     [2,3],
     [3,4,6],
     [4,5],
@@ -26,7 +26,7 @@ solve = lambda i: (i >= mx and True) or (cmd[i] == 'R' and print(R(lst[1+i][0], 
 
 def main(solve, i):
     solve(i)
-    return (i<mx and main(solve, i+1)) or True
+    return (i<mx and main(solve, i+1))
 
 try:
     main(solve, 0)

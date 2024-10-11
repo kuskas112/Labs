@@ -4,7 +4,7 @@ from lab3.task1 import Book
 
 
 def make_window():
-    menu_def = [['File', ['Open', 'Save', '---', 'Exit']], ['Help', ['About...']]]
+    menu_def = [['File', ['Create', 'Open', 'Save', 'Save As', '---', 'Exit']], ['Help', ['About...']]]
 
     layout = [sg.Menu(menu_def, k='-MENU-')],[[sg.Multiline(size=(45, 10), disabled=True, reroute_cprint=True, k='-MULTILINE-')],
               [sg.Button('Ввести'), sg.Button('Удалить'), sg.Listbox([], size=(10, 2), key='-LISTBOX-', select_mode=sg.LISTBOX_SELECT_MODE_MULTIPLE),
@@ -58,21 +58,60 @@ def make_input_window():
     print(returnValue)
     return returnValue
 
-books = []
 
 def printBooks():
     for book in books:
         sg.cprint(book)
-    #with open('data.json', 'w') as json_file:
-    #    json.dump([book.__dict__ for book in books], json_file, indent=4)
 
+def load_json_file(filepath):
+    with open(filepath, 'r', encoding='utf-8') as f:
+        return json.load(f)
+
+def save_json_file(filepath):
+    with open(filepath, 'w') as json_file:
+        json.dump([book.__dict__ for book in books], json_file, indent=4)
+        sg.popup("Success", f"Данные успешно сохранены в {filepath}! 🎉")
+
+
+
+def save_as():
+    # Открываем диалог для выбора имени файла и пути
+    file_path = sg.popup_get_file('Save As', save_as=True, no_window=True, default_extension=".json",
+                                  file_types=(("JSON files", "*.json"), ("All files", "*.*")))
+    global books
+    with open(file_path, 'w') as json_file:
+        json.dump([book.__dict__ for book in books], json_file, indent=4)
+
+    sg.popup("Success", f"Данные успешно сохранены в {file_path}! 🎉")
+
+
+books = []
+currFile = ''
 
 def main():
     window = make_window()
     global books
+    global currFile
     while True:
         event, values = window.read()
         print(event, values)
+        if event == 'Create':
+            books = []
+            currFile = ''
+        if event == 'Open':
+            filepath = sg.popup_get_file('Выберите JSON файл', file_types=(("JSON Files", "*.json"),))
+            if filepath:  # Если файл выбран
+                try:
+                    currFile = filepath
+                    data = load_json_file(filepath)
+                    books = [Book(**x) for x in data]
+                except Exception as e:
+                    print(f"Ошибка: {e}")
+        if event == 'Save':
+            if(currFile == ''): event = 'Save As'
+            else: save_json_file(currFile)
+        if event == 'Save As':
+            save_as()
         if event == '-CHECKBOX-':
             if values['-CHECKBOX-'] == True:
                 window['-LISTBOX-'].update(select_mode=sg.LISTBOX_SELECT_MODE_MULTIPLE)
