@@ -1,0 +1,17 @@
+struct Node {
+    int data;
+    Node* left;
+    Node* right;
+};
+
+class Tree{
+    Node* root;
+
+operators:
+    void insert(int value);
+    void findUnbalancedNodes();
+    void findKthLeaf(int k);
+    void print();
+    void deleteNode(int key);
+    int findHeight();
+};
