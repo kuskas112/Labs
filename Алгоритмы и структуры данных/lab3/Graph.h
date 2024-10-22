@@ -12,13 +12,7 @@ struct vertex {
 
 	~vertex() {
 		next = nullptr;
-
-		for (vertex* v : links) {
-			delete v;
-		}
-
 		links.clear();
-
 	}
 };
 
@@ -47,24 +41,21 @@ public:
 			if (vertPrev) {
 				*vertPrev = curVert;
 			}
-			
+
 			curVert = curVert->next;
 		}
 
 		return nullptr;
 	}
 
-	vertex* findLink(vertex* vert, vertex* vertTarget, vertex** vertPrev = nullptr) {
+	bool findLink(vertex* vert, vertex* vertTarget) {
 		auto links = vert->links;
 
 		for (auto l : links) {
-			if (l->name == vertTarget->name) return l;
-			
-			if (vertPrev) {
-				*vertPrev = l;
-			}
+			if (l == vertTarget) return true;
 		}
-		return nullptr;
+
+		return false;
 	}
 
 	bool findLink(char vert, char vertTarget) {
@@ -110,6 +101,16 @@ public:
 			vertPrev->next = vert->next;
 		}
 
+		vertex* curVert = head;
+		while (curVert != nullptr) {
+			for (int i = 0; i < curVert->links.size(); i++) {
+				if (curVert->links[i] == vert) {
+					curVert->links.erase(curVert->links.begin() + i); //erase link on deleted vertex
+				}
+			}
+			curVert = curVert->next;
+		}
+
 		delete vert;
 		size--;
 
@@ -121,7 +122,7 @@ public:
 		vertex* vert1 = findVertex(name1); 
 		vertex* vert2 = findVertex(name2);
 		if (vert1 == nullptr || vert2 == nullptr) return -1; // if no vertex
-		if (findLink(vert1, vert2) != nullptr) return -2; // if link alredy exists
+		if (findLink(vert1, vert2)) return -2; // if link alredy exists
 
 		vert1->links.push_back(vert2);
 
