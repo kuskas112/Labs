@@ -1,0 +1,9 @@
+
+flex: flex.o
+	gcc -o $@ $^
+
+%.o: %.c
+	gcc -o $@ -c $<
+
+%.c: %.l
+	flex -o $@ -i $<
