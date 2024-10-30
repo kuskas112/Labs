@@ -1,9 +1,6 @@
 
-flex: flex.o
-	gcc -o $@ $^
+all: main.c lex.yy.c tokens.h
+	gcc main.c lex.yy.c tokens.h -o main -lfl
 
-%.o: %.c
-	gcc -o $@ -c $<
-
-%.c: %.l
-	flex -o $@ -i $<
+lex.yy.c: flex.l
+	flex flex.l

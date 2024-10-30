@@ -3,33 +3,36 @@
 
 #include <malloc.h>
 
-token::Token tok;
-
-namespace token {
-    enum tokens_t {
+    typedef enum tokens_type {
+        BEGIN_P = 1, END,
+        VAR, VARIABLE_TYPE,
         IF, THEN, ELSE,
-        BEGIN, END,
         INTEGER, DECIMAL,
         IDENTIFIER,
-        EQ, NQ, GT, LT, GE, TE,
+        EQ, NQ, GT, LT, GE, TE, COMPARISON,
+        AND, OR,
         ASSIGN,
-        OPERATOR
-    };
+        OPERATOR,
+        LBRACKET, RBRACKET,
+        DELIMITER, COLON,
+        ROUND
+    } tokens_t;
 
-    struct Token {
+    /*
+
+    typedef struct Token_struct {
         tokens_t token;
         char* value;
-    };
+    } Token;
+    
 
-    void createToken(tokens_t token, char* value) {
+    Token tok;
+
+    void create_token(tokens_t token, char* value) {
         tok.token = token;
         tok.value = value;
         return;
     }
-
-    Token* allocToken(tokens_t token, char* value) { // If you want save many tokens in list
-        return nullptr;
-    }
-}
+    */
 
 #endif
