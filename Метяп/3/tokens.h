@@ -12,10 +12,10 @@
         EQ, NQ, GT, LT, GE, TE, COMPARISON,
         AND, OR,
         ASSIGN,
-        OPERATOR,
+        OPERATOR, SUB, DIV, MUL, ADD,
         LBRACKET, RBRACKET,
         DELIMITER, COLON,
-        ROUND
+        ROUND, READ, WRITE
     } tokens_t;
 
     /*
