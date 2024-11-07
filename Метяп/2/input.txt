@@ -1,1 +1,13 @@
-ZZZZZZZZZZZZZZZVVVVVVVVVVVOOOOOOOOOOOO licvidirovan 1488 ZXC; then 10 xand a := 100; 10 >= kek if        x1010 100 
+var 
+    i j;
+begin
+  n := Length(arr);
+  for i := 0 to n - 2 do
+    for j := 0 to n - 2 - i do
+      begin
+        temp := arr(j);
+        round(20.34);
+        arr(j) := arr(j + 1);
+        arr(j + 1) := temp;
+      end;
+end;
