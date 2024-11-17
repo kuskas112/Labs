@@ -1,0 +1,2 @@
+make
+./main < ex.sql
