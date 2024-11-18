@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Чат службы поддержки</title>
+    <style>
+        #messages { height: 300px; overflow-y: scroll; border: 1px solid #ccc; padding: 10px; margin-bottom: 20px; }
+        input { width: 100%; padding: 10px; box-sizing: border-box; }
+    </style>
+</head>
+<body>
+    <h1>Чат службы поддержки</h1>
+    <div id="messages"></div>
+    <input type="text" id="messageInput" placeholder="Ваше сообщение...">
+    <button onclick="sendMessage()">Отправить</button>
+
+    <script>
+        var socket = new WebSocket("ws://localhost:8080");
+
+        socket.onopen = function(event) {
+            console.log("Подключение установлено.");
+        };
+
+        socket.onmessage = function(event) {
+            var messagesDiv = document.getElementById("messages");
+            messagesDiv.innerHTML += "<p>" + event.data + "</p>";
+            messagesDiv.scrollTop = messagesDiv.scrollHeight;
+        };
+
+        socket.onerror = function(error) {
+            console.error("Ошибка:", error);
+        };
+
+        socket.onclose = function(event) {
+            console.log("Соединение закрыто.", event);
+        };
+
+        function sendMessage() {
+            var messageInput = document.getElementById("messageInput");
+            var message = messageInput.value;
+            socket.send(message);
+            messageInput.value = "";
+        }
+    </script>
+</body>
+</html>

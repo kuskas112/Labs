@@ -1,0 +1,192 @@
+body{
+	background-color: #f0fff9;
+  	font-family: Century Gothic, sans-serif;
+}
+img {
+	display: block;
+}
+header {
+  background-color: #11cfab;
+  color: white;
+  padding: 20px;
+  font-size: 40px;
+  text-align: center;
+}
+
+.authRefs{
+	font-size: 40px;
+	text-align: right;
+	display: flex;
+}
+
+nav ul {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+}
+nav ul li {
+	list-style: none;
+	margin: 10px;
+	font-size: 30px;
+}
+
+
+
+a {
+	color: #11cfab;
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:active {
+	text-decoration: underline;
+	color: #e1e1e1;
+}
+
+hr{
+	position: relative;
+    border: none;
+    height: 12px;
+    background: #11cfab;
+    margin-bottom: 20px;
+}
+
+footer{
+	background-color: #11cfab;
+	color: white;
+	padding: 20px;
+	text-align: center;
+	margin-top: 20px;
+}
+
+.mainPageContent {
+	font-size: 20px;
+	padding-left: 30px;
+	padding-right: 30px;
+	text-align: center;
+}
+
+.aboutContent{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	font-size: 35px;
+	padding-left: 30px;
+	padding-right: 30px;
+}
+
+.catalogContentBlocks{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.catalogContent{
+	display: flex;
+	flex-direction: column;
+	font-size: 20px;
+	padding-left: 30px;
+	padding-right: 30px;
+	text-align: left;
+}
+
+.aboutText{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.imageRow{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+	
+}
+
+.imageRow img{
+	margin-top: 20px;
+	border-radius: 7%;
+	position: relative;
+	animation: movePictures 1s ease-in-out;
+}
+
+@keyframes movePictures{
+	0%{
+		top: 20px;
+		opacity: 0;
+	}
+	100%{
+		top: 0px;
+		opacity: 1;
+	}
+}
+
+.myimage {
+	margin-top: 0px;
+	margin-bottom: 20px;
+	border-radius: 50%;
+	box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
+	aspect-ratio: 1 / 1;
+
+}
+
+.contentImage{
+	width: 45%;
+	height: auto;
+	border-radius: 7%;
+	margin-right: 20px;
+	float: left;
+	animation: movePictures 1s ease-in-out;
+	position: relative;
+}
+
+.paginatorContainer{
+	display: flex;
+	justify-content: space-around;
+
+}
+
+.paginator {
+	display: flex;
+	flex-direction: row;
+}
+
+.paginator a {
+    color: black; 
+    padding: 12px; 
+    text-decoration: none;
+}
+
+.paginator a:hover {
+    background-color: #ccc; 
+}
+
+.paginator a.active {
+    background-color: #11cfab;
+    color: white;
+}
+
+.refactorButton{
+	background-color: #11cfab;
+	padding: 10px;
+	border: none;
+	font-family: Century Gothic, sans-serif;
+	color: white;
+}
+.refactorButton:hover{
+	background-color: #1dab91;
+}
+
+textarea{
+	display: block;
+	margin: 20px;
+}
+input{
+	margin: 20px;
+}
+label{
+	margin-left: 20px;
+}
