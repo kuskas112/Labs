@@ -7,14 +7,12 @@ names_list' -> э
 
 comma -> ','
 
-
 attr_init -> attr + attr_init
 attr_init -> э
 
 attr -> name + type + if_null + comma
 if_null -> ('not' | э) + 'null'
 type -> ('int' | 'char' + '(' + NUM + ')' )
-
 
 pkey -> 'PRIMARY' + 'KEY' + '(' + names_list + ')'
 fkey -> comma + 'FOREIGN' + 'KEY' + '(' + names_list + ')' + 'REFERENCES' + name + '(' + names_list + ')' + fkey
