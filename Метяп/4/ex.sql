@@ -1,6 +1,8 @@
 CREATE TABLE new (
-    id int not null,
-    name char(50) null,
+    id int NOT NULL,
+    name char(50) NULL,
+    age int NULL,
 
-    PRIMARY KEY (id)
+    PRIMARY KEY (id, name),
+    FOREIGN KEY (name) REFERENCES name (name)
 )

@@ -33,7 +33,7 @@ id {letter}+"[A-Za-z0-9]"*
 "PRIMARY"                           { return PRIMARY; }
 "FOREIGN"                           { return FOREIGN; }
 "KEY"                               { return KEY; }
-"REFERENSES"                        { return REFERENCES;}
+"REFERENCES"                        { return REFERENCES;}
 
 [a-zA-Z]*                           { return _STRING; }
 

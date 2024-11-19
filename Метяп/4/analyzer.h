@@ -13,7 +13,7 @@ extern char* yytext;
 
 stack* parse_stack;
 
-#define DEBUG_MODE true
+#define DEBUG_MODE false
 
 void debug_info(char* text) {
     if (DEBUG_MODE) {
@@ -48,11 +48,10 @@ void drop_parse_error(int token) {
 
 void parse_stack_substitute(int value) {
     for (int i = 0; i < TODO_TABLE_COLS; i++) {
-        if (todo_table[value][i] >= 0)
-            printf("val: %d, ", todo_table[value][i]);
+        if (todo_table[value][i] >= 0) {
             stack_push(parse_stack, todo_table[value][i]);
+        }
     }
-    printf("\n");
 }
 
 
@@ -61,11 +60,13 @@ void parse_start() {
     tables_init();
 
 
+
     int curr_token = yylex();
     stack_push(parse_stack, GOAL);
 
     while (parse_stack->head_num >= 0)
     {
+        if (DEBUG_MODE) printf("head_num: %d\n", parse_stack->head_num);
         show_stack(parse_stack);
         if (stack_top(parse_stack) >= GOAL) {
             debug_info("nonterm detected");
@@ -75,7 +76,6 @@ void parse_start() {
 
             int action = parse_table[index][curr_token];
 
-            printf("Action: %d\n | Row: %d, Col: %d\n", action, index, curr_token);
 
             if (action < 0) {
                 drop_parse_error(curr_token);     
@@ -97,8 +97,8 @@ void parse_start() {
     }
     
 
-
-    printf("Выражение принадлежит языку\n");
+    free(parse_stack);
+    printf("\033[32mВыражение принадлежит языку!!!!!!!!!!!\033[0m\n");
 }
 
 #endif
