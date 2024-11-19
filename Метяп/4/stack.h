@@ -6,6 +6,8 @@
 #define STACK_SIZE 15
 #define STACK_INIT_VALUE -1
 
+#define ERROR -1
+
 typedef struct
 {
     int values[STACK_SIZE];
@@ -25,7 +27,17 @@ void stack_push(stack *s, int val) {
 }
 
 int stack_pop(stack *s) {
-    return s->values[s->head_num--];
+    //return s->values[s->head_num--]; //first realization
+
+    if (s->head_num < 0) return ERROR;
+
+    int ans = s->values[s->head_num];
+
+    s->values[s->head_num] = ERROR;
+    s->head_num--;
+
+    return ans;
+
 }
 
 int stack_top(stack *s) {

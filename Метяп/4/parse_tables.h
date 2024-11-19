@@ -16,10 +16,16 @@ int parse_table[PARSE_TABLE_ROWS][PARSE_TABLE_COLS];
 int todo_table[TODO_TABLE_ROWS][TODO_TABLE_COLS];
 
 void init_parse_table(void); void init_todo_table(void);
+void print_parse_table(void); void print_todo_table(void);
 
 void tables_init(void) {
     init_parse_table();
     init_todo_table();
+
+    /*
+    print_parse_table();
+    print_todo_table();
+    */
 }
 
 void init_parse_table(void) {
@@ -67,14 +73,17 @@ void init_parse_table(void) {
             case ATTR_INIT:
                 switch (j)
                 {
-                case RBRACKET:
-                    parse_table[i][j] = 11;
-                    break;
                 case _STRING:
                     parse_table[i][j] = 3;
                     break;
+                case RBRACKET:
+                    parse_table[i][j] = 11;
+                    break;
+                case PRIMARY:
+                    parse_table[i][j] = 11;
+                    break;
                 default:
-                parse_table[i][j] = ERROR;
+                    parse_table[i][j] = ERROR;
                     break;
                 }
                 break;
@@ -131,9 +140,11 @@ void init_parse_table(void) {
             case FKEY:
                 switch (j)
                 {
+                
                 case RBRACKET:
                     parse_table[i][j] = 11;
                     break;
+                
                 case COMMA:
                     parse_table[i][j] = 10;
                     break;
@@ -181,13 +192,14 @@ void init_todo_table(void) {
                     break;
                 case 7:
                     todo_table[i][j] = RBRACKET;
+                    break;
                 default:
                     todo_table[i][j] = EMPTY;
                     break;
                 }
                 break;
             case 1:
-                switch (j)
+                switch (inv_col)
                 {
                 case 0:
                     todo_table[i][j] = _STRING;
@@ -201,7 +213,7 @@ void init_todo_table(void) {
                 }
                 break;
             case 2:
-                switch (j)
+                switch (inv_col)
                 {
                 case 0:
                     todo_table[i][j] = COMMA;
@@ -218,7 +230,7 @@ void init_todo_table(void) {
                 }
                 break;
             case 3:
-                switch (j)
+                switch (inv_col)
                 {
                 case 0:
                     todo_table[i][j] = ATTR;
@@ -232,7 +244,7 @@ void init_todo_table(void) {
                 }
                 break;
             case 4:
-                switch (j)
+                switch (inv_col)
                 {
                 case 0:
                     todo_table[i][j] = _STRING;
@@ -245,24 +257,25 @@ void init_todo_table(void) {
                     break;
                 case 3:
                     todo_table[i][j] = COMMA;
+                    break;
                 default:
                     todo_table[i][j] = EMPTY;
                     break;
                 }
                 break;
             case 5:
-                switch (j)
+                switch (inv_col)
                 {
                 case 0:
                     todo_table[i][j] = INT;
                     break;
                 default:
-                todo_table[i][j] = EMPTY;
+                    todo_table[i][j] = EMPTY;
                     break;
                 }
                 break;
             case 6:
-                switch (j)
+                switch (inv_col)
                 {
                 case 0:
                     todo_table[i][j] = CHAR;
@@ -282,20 +295,21 @@ void init_todo_table(void) {
                 }
                 break;
             case 7:
-                switch (j)
+                switch (inv_col)
                 {
                 case 0:
                     todo_table[i][j] = NOT;
                     break;
                 case 1:
                     todo_table[i][j] = _NULL;
+                    break;
                 default:
                     todo_table[i][j] = EMPTY;
                     break;
                 }
                 break;
             case 8:
-                switch (j)
+                switch (inv_col)
                 {
                 case 0:
                     todo_table[i][j] = _NULL;
@@ -306,7 +320,7 @@ void init_todo_table(void) {
                 }
                 break;
             case 9:
-                switch (j)
+                switch (inv_col)
                 {
                 case 0:
                     todo_table[i][j] = PRIMARY;
@@ -322,13 +336,14 @@ void init_todo_table(void) {
                     break;
                 case 4:
                     todo_table[i][j] = RBRACKET;
+                    break;
                 default:
                     todo_table[i][j] = EMPTY;
                     break;
                 }
                 break;
             case 10:
-                switch (j)
+                switch (inv_col)
                 {
                 case 0:
                     todo_table[i][j] = COMMA;
@@ -378,6 +393,26 @@ void init_todo_table(void) {
                 break;
             }
         }
+    }
+}
+
+void print_parse_table() {
+    printf("PARSE TABLE:\n");
+    for (int i = 0; i < PARSE_TABLE_ROWS; i++) {
+        for (int j = 0; j < PARSE_TABLE_COLS; j++) {
+            printf("%d, ", parse_table[i][j]);
+        }
+        printf("\n");
+    }
+}
+
+void print_todo_table() {
+    printf("TODODO TABLE:\n");
+    for (int i = 0; i < TODO_TABLE_ROWS; i++) {
+        for (int j = 0; j < TODO_TABLE_COLS; j++) {
+            printf("%d, ", todo_table[i][j]);
+        }
+        printf("\n");
     }
 }
 
