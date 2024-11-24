@@ -1,0 +1,66 @@
+
+I1: {
+    [goal -> 'SELECT' . attr_list 'FROM' string where_case],
+    [attr_list -> . string],
+    [attr_list -> . string comma attr_list]
+}
+I2: {
+    [attr_list -> string .],
+    [attr_list -> string . comma attr_list]
+}
+I3: {
+    [attr_list -> string comma . attr_list],
+    [attr_list -> . string],
+    [attr_list -> . string comma attr_list]
+}
+I4: {
+    [goal -> 'SELECT' attr_list 'FROM' . string where_case]
+}
+I5: {
+    [goal -> 'SELECT' attr_list 'FROM' string . where_case],
+    [where_case -> . 'WHERE' condition_list]
+    [where_case -> . Э]
+}
+I6: {
+    [where_case -> 'WHERE' . condition_list],
+    [condition_list -> . condition],
+    [condition_list -> . condition 'AND' condition_list],
+    [condition_list -> . condition 'OR' condition_list],
+    [condition -> . oper comparison oper],
+    [oper -> . num],
+    [oper -> . string]
+}
+I7: {
+    [condition_list -> condition .],
+    [condition_list -> condition 'AND' condition_list],
+    [condition_list -> condition 'OR' condition_list]
+}
+I8: {
+    [condition_list -> condition 'AND' . condition_list],
+    [condition_list -> . condition],
+    [condition_list -> . condition 'AND' condition_list],
+    [condition_list -> . condition 'OR' condition_list],
+    [condition -> .oper comparison oper]
+    [oper -> . num],
+    [oper -> . string] 
+}
+I9: {
+    [condition_list -> condition 'OR' . condition_list],
+    [condition_list -> . condition],
+    [condition_list -> . condition 'AND' condition_list],
+    [condition_list -> . condition 'OR' condition_list],
+    [condition -> . oper comparison oper],
+    [oper -> . num],
+    [oper -> . string]
+}
+I10: {
+    [condition -> oper . comparison oper]
+}
+I11: {
+    [condition -> oper comparison . oper],
+    [oper -> . num],
+    [oper -> . string]
+}
+I12: {
+    [condition -> oper comparison oper .]
+}
