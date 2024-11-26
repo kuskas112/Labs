@@ -1,0 +1,22 @@
+#ifndef PARSE_TABLES_H
+#define PARSE_TABLSE_H
+
+#include "tokens.h"
+
+#define REDUCTION_TABLE_RAWS 11
+#define REDUCTION_TABLE_COLS 4
+
+#define EMPTY -1
+
+int reduction_table[REDUCTION_TABLE_RAWS][REDUCTION_TABLE_COLS] = {
+    {SELECT, ATTR_LIST, FROM, WHERE_CASE},
+    {NUM, EMPTY, EMPTY, EMPTY},
+    {_STRING, EMPTY, EMPTY, EMPTY},
+    {_STRING, EMPTY, EMPTY, EMPTY},
+    {_STRING, COMMA, ATTR_LIST, EMPTY},
+    {WHERE, CONDITION_LIST, EMPTY, EMPTY},
+    {} 
+}
+
+
+#endif
