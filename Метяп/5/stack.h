@@ -86,12 +86,12 @@ parse_pair pair_stack_pop_pair(pair_stack *s) {
     return s->pair[s->head_num--];
 }
 
-void pair_stack_push_pair(pair_stack *s, int st, int tok) {
-    s->pair[++s->head_num].state = st;
-    s->pair[s->head_num].token = tok;
+void pair_stack_push_pair(pair_stack *s, int state, int token) {
+    s->pair[++s->head_num].state = state;
+    s->pair[s->head_num].token = token;
 }
 
-pair_stack* alloc_pair_stack() {
+pair_stack* pair_stack_alloc() {
     pair_stack *ps = (pair_stack*)malloc(sizeof(pair_stack));
     pair_stack_init(ps);
     return ps;

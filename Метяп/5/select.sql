@@ -1,0 +1,1 @@
+SELECT id, name FROM table WHERE id = 1 OR name = 2 AND price = 3
