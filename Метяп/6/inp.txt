@@ -1,0 +1,18 @@
+var
+  arr : integer;
+
+begin
+  write(arr);
+  read(arr);
+
+  arr := 30 + arr;
+  
+  if (arr > 10) then
+  begin
+    temp := 4;
+    arr := arr + 3;
+    arr := temp;
+  end
+  
+  write(arr);
+end.

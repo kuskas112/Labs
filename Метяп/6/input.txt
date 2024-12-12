@@ -1,0 +1,6 @@
+var 
+    i:integer;
+begin
+        temp := 1+1;
+        write(id);
+end
