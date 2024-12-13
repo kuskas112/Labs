@@ -8,7 +8,11 @@
 
 int main(void) {
 
+    set_debug_mode(2);
+    generator_init();
     parse_start();
-
+    run_comands();
+    print_st();
+    print_vt();
     return 1;
 }

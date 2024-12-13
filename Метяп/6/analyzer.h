@@ -6,7 +6,7 @@
 #include <stdbool.h>
 
 #include "tokens.h"
-#include "variable_table.h"
+#include "code_generator.h"
 
 #define NUM_TYPE int
 
@@ -26,7 +26,6 @@ int term(); int term1();
 
 bool number();
 
-
 bool comand_list();
 bool comand();
 bool assigment();
@@ -38,7 +37,6 @@ bool condition(); bool condition_member(); bool condition_sign();
 bool var_decl(); bool var_decl_list();
 
 
-var_table* vt;
 
 
 void set_debug_mode(int deb) {
@@ -69,7 +67,6 @@ bool eat(int ttype) {
 }
 
 void parse_start() {
-    var_table = variable_table_alloc();
     curr_token = yylex();
     //printf("%d\n", curr_token);
     goat();
@@ -109,14 +106,10 @@ bool var_decl_list() {
 }
 
 bool var_decl() {
-    char* id_name = yytext;
+    add_var(yytext);
     eat(IDENTIFIER);
     eat(COLON);
-    char* id_type = yytext;
     eat(VARIABLE_TYPE);
-
-    add_value_i(vt, id_name);
-
     return true;
 }
 
@@ -147,11 +140,16 @@ bool comand() {
 
 bool assigment() {
     if (curr_token == IDENTIFIER) {
-        char* id = yytext;
+        char* varname = (char*)malloc(strlen(yytext));
+        strcpy(varname, yytext);
+
         eat(IDENTIFIER);
         eat(ASSIGN);
-        int val = expr();
-        update_value_i(vt, id, val);
+        expr();
+
+        add_comand_to_table(ASSIGN, varname, "");
+
+        free(varname);
         eat(DELIMITER);
     }
     else {
@@ -164,6 +162,8 @@ bool read() {
     if (curr_token == READ) {
         eat(READ);
         eat(LBRACKET);
+        // id в таблицу команд
+        add_comand_to_table(READ, yytext, "");
         eat(IDENTIFIER);
         eat(RBRACKET);
         eat(DELIMITER);
@@ -204,6 +204,7 @@ bool round_p() {
 
 bool out_info() {
     if (curr_token == IDENTIFIER) {
+        add_comand_to_table(WRITE, yytext, "");
         eat(IDENTIFIER);
     }
     else {
@@ -217,12 +218,25 @@ bool if_statement() {
         eat(IF);
         eat(LBRACKET);
         condition();
+
+        char* toelse = (char*)malloc(20);
+        add_comand_goto(toelse);
+
         eat(RBRACKET);
         eat(THEN);
         eat(BEGIN_P);
         comand_list();
+        
+        char* afterelse = (char*)malloc(20);
+        add_comand_goto(afterelse);
+
         eat(END);
+        //go to else if false
+        sprintf(toelse, "%d", get_current_table_size());
+
         else_statement();
+        //jump over else if true
+        sprintf(afterelse, "%d", get_current_table_size());
     }
     else {
         return false;
@@ -244,17 +258,23 @@ bool else_statement() {
 }
 
 bool condition() {
+    char sign[2];
     condition_member();
-    condition_sign();
+    condition_sign(sign);
     condition_member();
+    add_comand_to_table(COMPARISON, sign, "");
     return true;
 }
 
 bool condition_member() {
     if (curr_token == IDENTIFIER) {
+        // переменную в стек
+        add_comand_to_table(PUSH_VAR, yytext, "");
         eat(IDENTIFIER);
     }
     else if (curr_token == INTEGER) {
+        // константу в стек
+        add_comand_to_table(PUSH_CONST, yytext, "");
         eat(INTEGER);
     }
     else {
@@ -263,8 +283,9 @@ bool condition_member() {
     return true;
 }
 
-bool condition_sign() {
+bool condition_sign(char* sign) {
     if (curr_token == COMPARISON) {
+        strcpy(sign, yytext);
         eat(COMPARISON);
     }
     else {
@@ -282,11 +303,13 @@ NUM_TYPE expr1() {
     if (curr_token == ADD) {
         eat(ADD);
         term();
+        add_comand_to_table(ADD, "", "");
         expr1();
     }
     else if (curr_token == SUB) {
         eat(SUB);
         term();
+        add_comand_to_table(SUB, "", "");
         expr1();
     }
 }
@@ -300,11 +323,13 @@ NUM_TYPE term1() {
     if (curr_token == MUL) {
         eat(MUL);
         factor();
+        add_comand_to_table(MUL, "", "");
         term1();
     }
     else if (curr_token == DIV) {
         eat(DIV);
         factor();
+        add_comand_to_table(DIV, "", "");
         term1();
     }
     
@@ -312,9 +337,13 @@ NUM_TYPE term1() {
 
 NUM_TYPE factor() {
     if (curr_token == INTEGER) {
+        // В стек константу
+        add_comand_to_table(PUSH_CONST, yytext, "");
         eat(INTEGER);
     }
     else if (curr_token == IDENTIFIER) {
+        // в стек значение переменной
+        add_comand_to_table(PUSH_VAR, yytext, "");
         eat(IDENTIFIER);
     }
     else if (curr_token == LBRACKET) {

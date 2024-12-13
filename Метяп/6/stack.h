@@ -2,8 +2,9 @@
 #define STACK_H
 
 #include <malloc.h>
+#include <stdio.h>
 
-#define STACK_SIZE 15
+#define STACK_SIZE 30
 #define STACK_INIT_VALUE -1
 
 #define ERROR -1
@@ -44,7 +45,7 @@ int stack_top(stack *s) {
 }
 
 void stack_clear(stack *s) {
-    for (int i = 0; i < s->head_num; i++) {
+    for (int i = 0; i <= s->head_num; i++) {
         s->values[i] = -1;
     }
 
@@ -55,6 +56,12 @@ stack* stack_alloc() {
     stack* st = (stack*)malloc(sizeof(stack));
     stack_init(st);
     return st;
+}
+
+void print_stack(stack* s){
+    for (int i = 0; i <= s->head_num; i++) {
+        printf("%d ", s->values[i]);
+    }
 }
 
 

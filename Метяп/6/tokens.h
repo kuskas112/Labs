@@ -3,19 +3,43 @@
 
 #include <malloc.h>
 
+
+
+
+
     typedef enum tokens_type {
-        BEGIN_P = 1, END,
-        VAR, VARIABLE_TYPE,
-        IF, THEN, ELSE,
-        INTEGER, DECIMAL,
+        BEGIN_P = 1, 
+        END,
+        VAR, 
+        VARIABLE_TYPE,
+        IF,
+        THEN, 
+        ELSE,
+        INTEGER, 
+        DECIMAL,
         IDENTIFIER,
-        EQ, NQ, GT, LT, GE, TE, COMPARISON,
-        AND, OR,
+        EQ, 
+        NQ, 
+        GT, 
+        LT, 
+        GE, 
+        TE, 
+        COMPARISON,
+        AND, 
+        OR,
         ASSIGN,
-        OPERATOR, SUB, DIV, MUL, ADD,
-        LBRACKET, RBRACKET,
-        DELIMITER, COLON,
-        ROUND, READ, WRITE,
+        OPERATOR, 
+        SUB, 
+        DIV, 
+        MUL, 
+        ADD,
+        LBRACKET, 
+        RBRACKET,
+        DELIMITER, 
+        COLON,
+        ROUND, 
+        READ, 
+        WRITE,
         DOT
     } tokens_t;
 
