@@ -8,5 +8,5 @@ quicksort([],[]).
 partition([X|Xs],Y,[X|Ls],Bs) :-
   X =< Y, partition(Xs,Y,Ls,Bs).
 partition([X|Xs],Y,Ls,[X|Bs]) :-
-  X >  Y, partition(Xs,Y,Ls,Bs).
+  X > Y, partition(Xs,Y,Ls,Bs).
 partition([],_,[],[]).

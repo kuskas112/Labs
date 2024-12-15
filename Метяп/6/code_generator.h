@@ -55,11 +55,9 @@ void run_comands(){
             case COMPARISON:
                 bool res;
                 comand_comparison(param1, &res);
-                //skip go-to-else comand
                 if (res) i++;
                 break;
             case GOTO:
-                //param is number of cmd, but `i` is index
                 i = atoi(param1) - 1;
                 printf("GOTO %s\n", param1);
                 break;
@@ -90,7 +88,7 @@ void comand_comparison(char* sign, bool* res){
     else if(strcmp(sign, "=") == 0){
         val = p2==p1;
     }
-    printf("cmp %d %s %d = %d;\n", p2, sign, p1, val);
+    printf("comparison %d %s %d = %d;\n", p2, sign, p1, val);
     *res = val;
 }
 
