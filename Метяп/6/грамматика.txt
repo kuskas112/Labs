@@ -1,0 +1,32 @@
+.. Это вроде как LL грамматика получилась баля
+goal -> 'SELECT' attr_list 'FROM' string where_case
+
+attr_list -> string + attr_list'
+attr_list' -> comma + string + attr_list'
+attr_list' -> э
+
+where_case -> 'WHERE' condition_list
+where_case -> э
+
+condition_list -> string comparison num  condition_list'
+condition_list' -> comma condition_list
+condition_list -> э 
+
+==========================================================
+.. Это должна быть уже LR
+goal -> 'SELECT' attr_list 'FROM' string where_case
+
+oper -> num
+oper -> string
+
+attr_list -> string
+attr_list -> string comma attr_list
+
+where_case -> 'WHERE' condition_list
+where_case -> э 
+
+condition_list -> condition
+condition_list -> condition 'AND' condition_list
+condition_list -> condition 'OR' condition_list
+
+condition -> oper comparison oper

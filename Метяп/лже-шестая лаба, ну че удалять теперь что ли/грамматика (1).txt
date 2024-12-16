@@ -1,0 +1,39 @@
+// в кавычках - терминалы
+
+
+goal -> 'var' var_decl_list 'begin' comand_list 'end' + '.'
+
+var_decl_list -> var_decl ';' var_decl_list 
+var_decl_list -> э
+var_decl -> 'identifier' ':' 'type'
+
+comand_list -> comand comand_list // та же ситуация, ищем команды пока не натыкаемся на "ничо"
+comand_list -> э
+comand -> assignment | read | write | if_statement
+
+assignment -> 'identifier' ':=' expr ';'
+
+read -> 'read' '(' 'identifier' ')' ';'
+
+write -> 'write' '(' out_info ')' ';'
+out_info -> 'identifier'
+
+t_goal -> expr
+expr -> term expr1           // для описания выражения с идентификаторами
+expr1 -> '+' term expr1      // использую грамматику из лабы, там уже за нас все придумали
+epxr1 -> '-' term expr1 
+expr1 -> э
+term -> factor term1
+term1 -> '*' factor term1
+term1 -> '/' factor term1
+term1 -> э
+factor -> 'number'
+factor -> 'identifier'
+factor -> '(' expr ')'
+factor -> 'round' '(' expr ')'
+
+if_statement -> 'if' '(' condition ')' 'then' 'begin' comand_list 'end' end_of_statement
+end_of_statement -> 'else' 'begin' comand_list 'end' | э          // это я так показал опциональность блока else
+condition -> condition_member condition_sign condition_member
+condition_member -> 'identifier' | 'number'
+condition_sign -> '>' | '<' | '='

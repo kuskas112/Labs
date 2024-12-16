@@ -22,34 +22,21 @@ comp [<>]=|[<>]|=
 
 %%
 {ws}                                { /* Игнорируем пробелы */ }
-"integer"                           { return VARIABLE_TYPE; }
-{integer}                           { return INTEGER; }
-{decimal}                           { return DECIMAL; }
+{integer}                           { return NUM; }
+"SELECT"                            { return SELECT; }
+"FROM"                              { return FROM; }
+"WHERE"                             { return WHERE; }
+"OR"                                { return OR; }
+"AND"                               { return AND; }
 
-:=                                  { return ASSIGN; }
-;                                   { return DELIMITER;}
-:                                   { return COLON; }
 \(                                  { return LBRACKET; }
 \)                                  { return RBRACKET; }
+","                                 { return COMMA; }
 {comp}                              { return COMPARISON; }
-"begin"                             { return BEGIN_P; }
-"end"                               { return END; }
-"var"                               { return VAR; }
-"if"                                { return IF; }
-"then"                              { return THEN; }
-"else"                              { return ELSE; }
-"or"                                { return OR; }
-"and"                               { return AND; }
-"read"                              { return READ; }
-"write"                             { return WRITE; }
-"round"                             { return ROUND; }
-["+"]                               { return ADD; }
-["/"]                               { return DIV; }
-\-                                  { return SUB; }
-["*"]                               { return MUL; }
-"."                                 { return DOT; }
 
-[a-zA-Z][a-zA-Z0-9]*                { return IDENTIFIER; }
+
+
+[a-zA-Z]*                           { return _STRING; }
 
 <<EOF>>                             { return 0;}
 .                                   { printf("Ошибка: неожиданный символ: %d %s\n", (int)yytext[0], yytext); exit(1); }
