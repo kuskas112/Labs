@@ -1,0 +1,106 @@
+I0: {
+    accept -> • goal eof
+    goal -> • 'SELECT' attr_list 'FROM' string where_case
+    attr_list -> • string
+    attr_list -> • string comma attr_list
+    where_case -> • 'WHERE' condition_list
+    where_case -> • э
+    condition_list -> • condition
+    condition_list -> • condition 'AND' condition_list
+    condition_list -> • condition 'OR' condition_list
+    condition -> • string comparison num
+}
+
+I1: {
+    goal -> 'SELECT' • attr_list 'FROM' string where_case
+    attr_list -> • string
+    attr_list -> • string comma attr_list
+}
+
+I2: {
+    accept -> goal • eof
+}
+
+I3: {
+    attr_list -> string •
+    attr_list -> string • comma attr_list
+}
+
+I4: {
+    goal -> 'SELECT' attr_list • 'FROM' string where_case
+}
+
+I5: {
+    accept -> goal eof •
+}
+
+I6: {
+    attr_list -> string comma • attr_list
+
+    attr_list -> • string
+    attr_list -> • string comma attr_list
+}
+
+I7: {
+    goal -> 'SELECT' attr_list 'FROM' • string where_case
+}
+
+I8: {
+    attr_list -> string comma attr_list •
+}
+
+I9: {
+    'SELECT' attr_list 'FROM' string • where_case
+}
+
+I10: {
+    where_case -> 'WHERE' • condition_list
+
+    condition_list -> • condition
+    condition_list -> • condition 'AND' condition_list
+    condition_list -> • condition 'OR' condition_list
+    condition -> • string comparison num
+}
+
+I11: {
+    goal -> 'SELECT' attr_list 'FROM' string where_case •
+}
+
+I12: {
+    condition -> string • comparison num
+}
+
+I13: {
+    where_case -> 'WHERE' condition_list •
+}
+
+I14: {
+    condition_list -> condition •
+    condition_list -> condition • 'AND' condition_list
+    condition_list -> condition • 'OR' condition_list
+}
+
+I15: {
+    condition -> string comparison • num
+}
+
+I16: {
+    condition_list -> condition 'AND' • condition_list
+}
+
+I17: {
+    condition_list -> condition 'OR' • condition_list
+}
+
+I18: {
+    condition -> string comparison num •
+}
+
+I19: {
+    condition_list -> condition 'AND' condition_list •
+}
+
+I20: {
+    condition_list -> condition 'OR' condition_list •
+
+}

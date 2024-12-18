@@ -6,362 +6,170 @@
 #include <stdbool.h>
 
 #include "tokens.h"
-#include "code_generator.h"
+#include "stack.h"
+#include "tree.h"
+#include "parse_tables.h"
 
-#define NUM_TYPE int
-
-int debug = 1;
+#define DEBUG_MODE true
+#define _EOF 0
 
 extern int yylex();
 extern char* yytext;
 
+pair_stack *parse_stack;
+
+void reduce(); void shift();
+
+void drop_parse_error() {
+    printf("\033[31mParse error!!!!!!\033[0m\n");
+    exit(EXIT_FAILURE);
+}
+
+void show_pair_stack(pair_stack* s) {
+    if (!DEBUG_MODE) return;
+    printf("Stack content: ");
+    for (int i = 0; i <= s->head_num; i++) {
+        printf("\033[35m[St: %d, El: %d], \033[0m", s->pair[i].state, s->pair[i].token);
+    }
+    printf("\n");
+}
+
+
+bool is_terminal(int tok) { return tok < NON_TERMINAL_TYPE_BASE; }
+bool is_non_terminal(int tok) { return tok >= NON_TERMINAL_TYPE_BASE && tok < STATES_TYPE_BASE; }
+bool is_states_type(int tok) { return tok >= STATES_TYPE_BASE && tok < REDUCE_TYPE_BASE; }
+bool is_reduce_type(int tok) { return tok >= REDUCE_TYPE_BASE && tok < ACC; }
+bool is_accept(int tok) { return tok == ACC; }
+
+void init() {
+    parse_stack = pair_stack_alloc();
+}
+
+void update_curr_state() {
+
+}
+
+void get_string_token(int term, char* buffer){
+    switch(term){
+        case ATTR_LIST:
+            sprintf(buffer, "attr_list");
+            break;
+        case WHERE_CASE:
+            sprintf(buffer, "where_case");
+            break;
+        case CONDITION_LIST:
+            sprintf(buffer, "condition_list");
+            break;
+        case CONDITION:
+            sprintf(buffer, "condition");
+            break;
+        case GOAL:
+            sprintf(buffer, "goal");
+            break;
+        case SELECT:
+            sprintf(buffer, "SELECT");
+            break;
+        case _STRING:
+            sprintf(buffer, "STRING");
+            break;
+        case FROM:
+            sprintf(buffer, "FROM");
+            break;
+        case WHERE:
+            sprintf(buffer, "WHERE");
+            break;
+        case COMPARISON:
+            sprintf(buffer, "COMPARISON");
+            break;
+        case NUM:
+            sprintf(buffer, "NUM");
+            break;
+        case COMMA:
+            sprintf(buffer, "COMMA");
+            break;
+        case OR:
+            sprintf(buffer, "OR");
+            break;
+        case AND:
+            sprintf(buffer, "AND");
+            break;
+        case LBRACKET:
+            sprintf(buffer, "LBRACKET");
+            break;
+        case RBRACKET:
+            sprintf(buffer, "RBRACKET");
+            break;
+        default:
+            printf("unknown token %d!!\n", term);
+            break;
+    }
+}
+
 int curr_token;
 
-bool goat(); // main func
-
-int expr(); int expr1();
-int factor();
-int term(); int term1();
-
-
-bool number();
-
-bool comand_list();
-bool comand();
-bool assigment();
-bool read(); bool write(); bool round_p();
-bool out_info();
-bool if_statement(); bool else_statement();
-bool condition(); bool condition_member(); bool condition_sign();
-
-bool var_decl(); bool var_decl_list();
-
-
-
-
-void set_debug_mode(int deb) {
-    debug = deb;
-}
-
-void print_current_token() {
-    printf("Current token: %d | symbol: %s\n", curr_token, yytext);
-    return;
-}
-
-void drop_parse_error(int ttype) {
-    fprintf(stderr, "!!!Error: unexpected token!!!\nExpected: %d | Get: %d\n", curr_token, ttype);
-    exit(EXIT_FAILURE);
-    return;
-}
-
-bool eat(int ttype) {
-    if (curr_token == ttype) {
-        if (debug == 1) print_current_token();
-        curr_token = yylex();
-        return true;
-    }
-    else {
-        drop_parse_error(ttype);
-        return false;
-    }
-}
-
 void parse_start() {
+    init();
+    pair_stack_push_pair(parse_stack, S0, _EOF);
     curr_token = yylex();
-    //printf("%d\n", curr_token);
-    goat();
-    printf("Выражение принадлежит языку\n");
-}
+    char token_name[20];
+    int token_buffer[10];
+    Node* previous_nodes[30];
+    int total_prev_nodes = 0;
+    while (1) {
+        int curr_state = pair_stack_get_top_state(parse_stack);
 
-/*
-bool number() {
-    if (curr_token == INTEGER) {
-        yylex
-    }
-}
-*/
+        int action = action_table[curr_state - STATES_TYPE_BASE][curr_token];
 
-bool goat() {
-    if (curr_token == VAR) {
-        eat(VAR);
-        var_decl_list();
-    }
-    eat(BEGIN_P);
-    comand_list();
-    eat(END);
-    eat(DOT);
-    return true;
-}
-
-bool var_decl_list() {
-    if (curr_token == IDENTIFIER) {
-        var_decl(),
-        eat(DELIMITER);
-        var_decl_list();
-    }
-    else {
-        return false;
-    }
-    return true;
-}
-
-bool var_decl() {
-    add_var(yytext);
-    eat(IDENTIFIER);
-    eat(COLON);
-    eat(VARIABLE_TYPE);
-    return true;
-}
-
-bool comand_list() {
-    if (comand() == true) comand_list();
-    return false;
-}
-
-bool comand() {
-    bool is_action = false;
-    if (assigment()) {
-        is_action = true;
-    }
-    else if (read()) {
-        is_action = true;
-    }
-    else if (write()) {
-        is_action = true;
-    }
-    else if (if_statement()) {
-        is_action = true;
-    }
-    else if (round_p()) {
-        is_action = true;
-    }
-    return is_action;
-}
-
-bool assigment() {
-    if (curr_token == IDENTIFIER) {
-        char* varname = (char*)malloc(strlen(yytext));
-        strcpy(varname, yytext);
-
-        eat(IDENTIFIER);
-        eat(ASSIGN);
-        expr();
-
-        add_comand_to_table(ASSIGN, varname, "");
-
-        free(varname);
-        eat(DELIMITER);
-    }
-    else {
-        return false;
-    }
-    return true;
-}
-
-bool read() {
-    if (curr_token == READ) {
-        eat(READ);
-        eat(LBRACKET);
-        // id в таблицу команд
-        add_comand_to_table(READ, yytext, "");
-        eat(IDENTIFIER);
-        eat(RBRACKET);
-        eat(DELIMITER);
-    }
-    else {
-        return false;
-    }
-    return true;
-}
-
-bool write() {
-    if (curr_token == WRITE) {
-        eat(WRITE);
-        eat(LBRACKET);
-        out_info();
-        eat(RBRACKET);
-        eat(DELIMITER);
-    }
-    else {
-       return false;
-    }
-    return true;
-}
-
-bool round_p() {
-    if (curr_token == ROUND) {
-        eat(ROUND);
-        eat(LBRACKET);
-        eat(IDENTIFIER);
-        eat(RBRACKET);
-        eat(DELIMITER);
-    }
-    else {
-        return false;
-    }
-    return true;
-}
-
-bool out_info() {
-    if (curr_token == IDENTIFIER) {
-        add_comand_to_table(WRITE, yytext, "");
-        eat(IDENTIFIER);
-    }
-    else {
-        return false;
-    }
-    return true;
-}
-
-bool if_statement() {
-    if (curr_token == IF) {
-        eat(IF);
-        eat(LBRACKET);
-        condition();
-
-        char* toelse = (char*)malloc(20);
-        add_comand_goto(toelse);
-
-        eat(RBRACKET);
-        eat(THEN);
-        eat(BEGIN_P);
-        comand_list();
-        
-        char* afterelse = (char*)malloc(20);
-        add_comand_goto(afterelse);
-
-        eat(END);
-        //go to else if false
-        sprintf(toelse, "%d", get_current_table_size());
-
-        else_statement();
-        //jump over else if true
-        sprintf(afterelse, "%d", get_current_table_size());
-    }
-    else {
-        return false;
-    }
-    return true;
-}
-
-bool else_statement() {
-    if (curr_token == ELSE) {
-        eat(ELSE);
-        eat(BEGIN_P);
-        comand_list();
-        eat(END);
-    }
-    else {
-        return false;
-    }
-    return true;
-}
-
-bool condition() {
-    char sign[2];
-    condition_member();
-    condition_sign(sign);
-    condition_member();
-    add_comand_to_table(COMPARISON, sign, "");
-    return true;
-}
-
-bool condition_member() {
-    if (curr_token == IDENTIFIER) {
-        // переменную в стек
-        add_comand_to_table(PUSH_VAR, yytext, "");
-        eat(IDENTIFIER);
-    }
-    else if (curr_token == INTEGER) {
-        // константу в стек
-        add_comand_to_table(PUSH_CONST, yytext, "");
-        eat(INTEGER);
-    }
-    else {
-        return false;
-    }
-    return true;
-}
-
-bool condition_sign(char* sign) {
-    if (curr_token == COMPARISON) {
-        strcpy(sign, yytext);
-        eat(COMPARISON);
-    }
-    else {
-        return false;
-    }
-    return true;
-}
-
-NUM_TYPE expr() {
-    term();
-    expr1();
-}
-
-NUM_TYPE expr1() {
-    if (curr_token == ADD) {
-        eat(ADD);
-        term();
-        add_comand_to_table(ADD, "", "");
-        expr1();
-    }
-    else if (curr_token == SUB) {
-        eat(SUB);
-        term();
-        add_comand_to_table(SUB, "", "");
-        expr1();
+        if (is_accept(action)) {
+            printf("\033[32mВыражение принадлежит языку!!!!!!!!!!!!!!!!!!!!!!!\033[0m\n");
+            for(int i = 0; i < total_prev_nodes; i++){
+                Node* child_node = previous_nodes[i];
+                for(int j = i+1; j < total_prev_nodes; j++){
+                    int child_index = has_child_with_token(previous_nodes[j], child_node->token);
+                    if(child_index != -1){
+                        previous_nodes[j]->children[child_index] = child_node;
+                    }
+                }
+            }
+            print_tree(previous_nodes[total_prev_nodes-1], 0);
+            break;
+        }
+        else if (is_states_type(action)) {
+            pair_stack_push_pair(parse_stack, action, curr_token);
+            curr_token = yylex();
+        }
+        else if (is_reduce_type(action)) {
+            int rule = action - REDUCE_TYPE_BASE;
+            for (int i = 0; i < rules[rule][RULE_LEN]; i++) {
+                parse_pair popped_pair = pair_stack_pop_pair(parse_stack);
+                token_buffer[i] = popped_pair.token;
+            }
+            get_string_token(rules[rule][RULE_RES], token_name); // rule result token
+            Node* node = create_node(token_name, rules[rule][RULE_RES]);
+            for (int i = rules[rule][RULE_LEN] - 1; i >= 0; i--) {
+                get_string_token(token_buffer[i], token_name);
+                add_child(node, create_node(token_name, token_buffer[i]));
+            }
+            previous_nodes[total_prev_nodes++] = node;
+            int curr_state = pair_stack_get_top_state(parse_stack);
+            int new_state = goto_table[curr_state - STATES_TYPE_BASE][rules[rule][RULE_RES] - NON_TERMINAL_TYPE_BASE];
+            get_string_token(rules[rule][RULE_RES], token_name);            
+            pair_stack_push_pair(parse_stack, new_state, rules[rule][RULE_RES]);
+        }
+        else {
+            drop_parse_error();
+        }
     }
 }
 
-NUM_TYPE term() {
-    factor();
-    term1();
+void shift() {
+
+    curr_token = yylex();
 }
 
-NUM_TYPE term1() {
-    if (curr_token == MUL) {
-        eat(MUL);
-        factor();
-        add_comand_to_table(MUL, "", "");
-        term1();
-    }
-    else if (curr_token == DIV) {
-        eat(DIV);
-        factor();
-        add_comand_to_table(DIV, "", "");
-        term1();
-    }
-    
-}
+void reduce() {
 
-NUM_TYPE factor() {
-    if (curr_token == INTEGER) {
-        // В стек константу
-        add_comand_to_table(PUSH_CONST, yytext, "");
-        eat(INTEGER);
-    }
-    else if (curr_token == IDENTIFIER) {
-        // в стек значение переменной
-        add_comand_to_table(PUSH_VAR, yytext, "");
-        eat(IDENTIFIER);
-    }
-    else if (curr_token == LBRACKET) {
-        eat(LBRACKET);
-        expr();
-        eat(RBRACKET);
-    }
-    else if (curr_token == ROUND) {
-        eat(ROUND);
-        eat(LBRACKET);
-        expr();
-        eat(RBRACKET);
-    }
-    else {
-        exit(EXIT_FAILURE);
-    }
 }
-
 
 
 

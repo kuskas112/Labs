@@ -2,10 +2,12 @@
 #define STACK_H
 
 #include <malloc.h>
-#include <stdio.h>
 
-#define STACK_SIZE 30
+#define STACK_SIZE 15
 #define STACK_INIT_VALUE -1
+
+#define PAIR_STACK_SIZE 15
+#define PAIR_STACK_INIT_VALUE -1
 
 #define ERROR -1
 
@@ -38,18 +40,11 @@ int stack_pop(stack *s) {
     s->head_num--;
 
     return ans;
+
 }
 
 int stack_top(stack *s) {
     return s->values[s->head_num];
-}
-
-void stack_clear(stack *s) {
-    for (int i = 0; i <= s->head_num; i++) {
-        s->values[i] = -1;
-    }
-
-    s->head_num  = STACK_INIT_VALUE;
 }
 
 stack* stack_alloc() {
@@ -58,10 +53,48 @@ stack* stack_alloc() {
     return st;
 }
 
-void print_stack(stack* s){
-    for (int i = 0; i <= s->head_num; i++) {
-        printf("%d ", s->values[i]);
-    }
+//=========================================================
+// Стек для восходящего разбора с парами <Состояние, Токен>
+//=========================================================
+
+typedef struct
+{
+    int state;
+    int token;
+} parse_pair;
+
+typedef struct
+{
+    parse_pair pair[PAIR_STACK_SIZE];
+    int head_num;
+    
+} pair_stack;
+
+void pair_stack_init(pair_stack *s) {
+    s->head_num = PAIR_STACK_INIT_VALUE;
+}
+
+int pair_stack_get_top_state(pair_stack *s) {
+    return s->pair[s->head_num].state;
+}
+
+int pair_stack_get_top_token(pair_stack *s) {
+    return s->pair[s->head_num].token;
+}
+
+parse_pair pair_stack_pop_pair(pair_stack *s) {
+    return s->pair[s->head_num--];
+}
+
+void pair_stack_push_pair(pair_stack *s, int state, int token) {
+    s->pair[++s->head_num].state = state;
+    s->pair[s->head_num].token = token;
+}
+
+pair_stack* pair_stack_alloc() {
+    pair_stack *ps = (pair_stack*)malloc(sizeof(pair_stack));
+    pair_stack_init(ps);
+    return ps;
 }
 
 
