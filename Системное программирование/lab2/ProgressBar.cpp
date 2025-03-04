@@ -6,9 +6,11 @@ private:
 	int HEIGHT = 10;
 	int x = 0, y = 0;
     int speed = 5;
-    int currProgress = 0;
 public:
 	HWND hwnd;
+    int totalProgress = 0;
+    int currProgress = 0;
+
 
     void create(HWND parent, int x, int y) {
         hwnd = CreateWindowEx(
@@ -33,6 +35,7 @@ public:
         HBRUSH hBrush = CreateSolidBrush(RGB(0, 0, 255));
         SelectObject(hdc, hBrush);
         currProgress = (currProgress + speed) % WIDTH;
+        totalProgress += speed;
         Rectangle(hdc, 0, 0, currProgress, HEIGHT);
         DeleteObject(hBrush);
         EndPaint(hwnd, &ps);
