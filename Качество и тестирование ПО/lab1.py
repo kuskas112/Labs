@@ -31,6 +31,10 @@ def reconstruct_path(node):
     return path[::-1]
 
 def astar(graph, start_node, end_node):
+
+    if(isinstance(start_node, Node) == False or isinstance(end_node, Node) == False):
+        return None
+
     open_set = []  # Очередь с приоритетом (min-heap)
     closed_set = set()  # Множество посещенных узлов
 
@@ -67,18 +71,14 @@ def astar(graph, start_node, end_node):
 
 if __name__ == '__main__':
     graph = {
-        Node(0, 0): [Node(1, 0), Node(1, 1)],
-        Node(1, 0): [Node(0, 0), Node(2, 0)],
-        Node(2, 0): [Node(1, 0), Node(3, 0)],
-        Node(1, 1): [Node(0, 0), Node(1, 2)],
-        Node(3, 1): [Node(3, 0), Node(3, 2)],
-        Node(1, 2): [Node(1, 1), Node(2, 2)],
-        Node(2, 2): [Node(1, 2), Node(3, 2)],
-        Node(3, 2): [Node(3, 1), Node(2, 2)],
+        Node(1, 0): [Node(1, 1), Node(0, 1)],
+        Node(1, 1): [Node(1, 0), Node(0, 1)],
+        Node(0, 1): [Node(1, 0), Node(1, 1), Node(1, 2)],
+        Node(1, 2): [Node(0, 1)],
     }
 
-    start = Node(0, 0)
-    goal = Node(3, 2)
+    start = Node(1, 0)
+    goal = Node(1, 2)
 
-    path = astar(graph, start, None)
+    path = astar(graph, start, goal)
     print(path)
