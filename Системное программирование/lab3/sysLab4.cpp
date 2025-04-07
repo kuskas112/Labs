@@ -7,22 +7,35 @@
 #include <fstream>
 
 #define MAX_LOADSTRING 100
+#define DRAW_BMP 101
+#define WM_SET_BITMAP 102
+#define WM_UPDATE_PARAM 103
+#define ANIMATION_TIMER_ID 228
 
 // Глобальные переменные:
 HINSTANCE hInst;                                // текущий экземпляр
 HWND mainWindow;
 WCHAR szTitle[MAX_LOADSTRING];                  // Текст строки заголовка
 WCHAR szWindowClass[MAX_LOADSTRING];            // имя класса главного окна
+int wndHeight = 600, wndWidth = 900;
+HANDLE hThread[3];
+DWORD dwThreadId[3] = { -1, -1, -1 };
+const wchar_t* file1 = L"D:\\12.bmp";
+const wchar_t* file2 = L"D:\\16.bmp";
+const wchar_t* file3 = L"D:\\32.bmp";
 
 // Отправить объявления функций, включенных в этот модуль кода:
 ATOM                MyRegisterClass(HINSTANCE hInstance);
 BOOL                InitInstance(HINSTANCE, int);
 LRESULT CALLBACK    WndProc(HWND, UINT, WPARAM, LPARAM);
-INT_PTR CALLBACK    About(HWND, UINT, WPARAM, LPARAM);
+
+LRESULT CALLBACK bmpWndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam);
 
 void DrawBMP(HDC hdc, HBITMAP hBitmap, int x, int y);
 
 HBITMAP LoadBitmapFromFile(HDC hdc, const wchar_t* filename);
+
+DWORD __stdcall ThreadProc(LPVOID lpParam);
 
 int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
                      _In_opt_ HINSTANCE hPrevInstance,
@@ -87,7 +100,13 @@ ATOM MyRegisterClass(HINSTANCE hInstance)
     wcex.lpszClassName  = szWindowClass;
     wcex.hIconSm        = LoadIcon(wcex.hInstance, MAKEINTRESOURCE(IDI_SMALL));
 
-    return RegisterClassExW(&wcex);
+    bool res = RegisterClassExW(&wcex);
+
+    wcex.lpszClassName = L"bmpWindow";
+    wcex.lpfnWndProc = bmpWndProc;
+
+    res = res && RegisterClassExW(&wcex);
+    return res;
 }
 
 //
@@ -105,7 +124,7 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
    hInst = hInstance; // Сохранить маркер экземпляра в глобальной переменной
 
    mainWindow = CreateWindowW(szWindowClass, szTitle, WS_OVERLAPPEDWINDOW,
-      CW_USEDEFAULT, 0, CW_USEDEFAULT, 0, nullptr, nullptr, hInstance, nullptr);
+      CW_USEDEFAULT, 0, wndWidth, wndHeight, nullptr, nullptr, hInstance, nullptr);
 
    if (!mainWindow)
    {
@@ -118,15 +137,16 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
    return TRUE;
 }
 
-HBITMAP LoadSpecialBitmap(int resourceId, UINT bitsPerPixel) {
-    return (HBITMAP)LoadImage(
-        GetModuleHandle(NULL),
-        MAKEINTRESOURCE(resourceId),
-        IMAGE_BITMAP,
-        0, 0,
-        LR_CREATEDIBSECTION | (bitsPerPixel == 16 ? LR_VGACOLOR : 0)
-    );
-}
+struct LPPARAM {
+    HWND tab = nullptr;
+    const wchar_t* filepath;
+    int tabIndex = 0;
+};
+
+struct bmpData {
+    HBITMAP hBitmap = nullptr;
+    int y = 300;
+};
 
 LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 {
@@ -135,37 +155,80 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
     {
     case WM_CREATE:
         {
-            // Пример использования:
+            HWND tab1 = CreateWindow(
+                L"bmpWindow",
+                NULL,
+                WS_CHILD | WS_VISIBLE | SS_BLACKFRAME,
+                10, 10,  // Позиция
+                (wndWidth-10) / 3, wndHeight - 80, // Размер
+                hWnd,
+                (HMENU)1,
+                ((LPCREATESTRUCT)lParam)->hInstance,
+                NULL
+            );
+            LPPARAM* params1 = new LPPARAM;
+            params1->tab = tab1;
+            params1->filepath = L"D:\\12.bmp";
+            params1->tabIndex = 0;
+            hThread[0] = CreateThread(
+                NULL,
+                0,
+                ThreadProc,
+                (LPVOID)params1,
+                0,
+                &dwThreadId[0]);
+
+            HWND tab2 = CreateWindow(
+                L"bmpWindow",
+                NULL,
+                WS_CHILD | WS_VISIBLE | SS_BLACKFRAME,
+                10 + (wndWidth / 3), 10,  // Позиция
+                (wndWidth - 10) / 3, wndHeight - 80, // Размер
+                hWnd,
+                (HMENU)1,
+                ((LPCREATESTRUCT)lParam)->hInstance,
+                NULL
+            );
+
+            LPPARAM* params2 = new LPPARAM;
+            params2->tab = tab2;
+            params2->filepath = L"D:\\16.bmp";
+            params2->tabIndex = 1;
+            hThread[1] = CreateThread(
+                NULL,
+                0,
+                ThreadProc,
+                (LPVOID)params2,
+                0,
+                &dwThreadId[1]);
+
+            HWND tab3 = CreateWindow(
+                L"bmpWindow",
+                NULL,
+                WS_CHILD | WS_VISIBLE | SS_BLACKFRAME,
+                10 + (wndWidth / 3 * 2), 10,  // Позиция
+                (wndWidth - 10) / 3 - 30, wndHeight - 80, // Размер
+                hWnd,
+                (HMENU)1,
+                ((LPCREATESTRUCT)lParam)->hInstance,
+                NULL
+            );
+
+            LPPARAM* params3 = new LPPARAM;
+            params3->tab = tab3;
+            params3->filepath = L"D:\\32.bmp";
+            params3->tabIndex = 2;
+            hThread[2] = CreateThread(
+                NULL,
+                0,
+                ThreadProc,
+                (LPVOID)params3,
+                0,
+                &dwThreadId[2]);
+
             
+            break;
         }
-    case WM_COMMAND:
-        {
-            int wmId = LOWORD(wParam);
-            // Разобрать выбор в меню:
-            switch (wmId)
-            {
-            case IDM_ABOUT:
-                DialogBox(hInst, MAKEINTRESOURCE(IDD_ABOUTBOX), hWnd, About);
-                break;
-            case IDM_EXIT:
-                DestroyWindow(hWnd);
-                break;
-            default:
-                return DefWindowProc(hWnd, message, wParam, lParam);
-            }
-        }
-        break;
-    case WM_PAINT:
-        {
-            PAINTSTRUCT ps;
-            HDC hdc = BeginPaint(hWnd, &ps);
-
-            hBitmap = LoadBitmapFromFile(hdc, L"D:\\32.bmp"); // Рисуем BMP в (10, 10)
-            DrawBMP(hdc, hBitmap, 10, 10);
-
-            EndPaint(hWnd, &ps);
-        }
-        break;
     case WM_DESTROY:
         PostQuitMessage(0);
         break;
@@ -175,26 +238,86 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
     return 0;
 }
 
-// Обработчик сообщений для окна "О программе".
-INT_PTR CALLBACK About(HWND hDlg, UINT message, WPARAM wParam, LPARAM lParam)
+LRESULT CALLBACK bmpWndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 {
-    UNREFERENCED_PARAMETER(lParam);
     switch (message)
     {
-    case WM_INITDIALOG:
-        return (INT_PTR)TRUE;
+    case WM_CREATE:
+    {
+        bmpData* pData = new bmpData;
+        pData->hBitmap = nullptr;
+        SetWindowLongPtr(hWnd, GWLP_USERDATA, (LONG_PTR)pData);
 
-    case WM_COMMAND:
-        if (LOWORD(wParam) == IDOK || LOWORD(wParam) == IDCANCEL)
-        {
-            EndDialog(hDlg, LOWORD(wParam));
-            return (INT_PTR)TRUE;
+        SetTimer(hWnd,             // Дескриптор окна
+            ANIMATION_TIMER_ID, // Идентификатор таймера (уникальное число)
+            30,                // Интервал в миллисекундах
+            NULL);             // Функция обратного вызова (NULL для WM_TIMER)
+        break;
+    }
+
+    case WM_TIMER:
+        //if (wParam == ANIMATION_TIMER_ID) {  // Проверяем наш таймер
+        //    bmpData* pData = (bmpData*)GetWindowLongPtr(hWnd, GWLP_USERDATA);
+        //    if (pData) {
+        //        pData->y -= 1;  // Например, двигаем изображение вниз
+        //        if (pData->y < 0) pData->y = wndHeight - 100;  // Циклическая анимация
+        //        // Запрашиваем перерисовку
+        //        InvalidateRect(hWnd, NULL, TRUE);
+        //    }
+        //}
+        break;
+
+    case WM_SET_BITMAP: 
+    {
+        // wParam - новый HBITMAP
+        bmpData* pData = (bmpData*)GetWindowLongPtr(hWnd, GWLP_USERDATA);
+        if (pData->hBitmap) DeleteObject(pData->hBitmap); // Удаляем старый
+        pData->hBitmap = (HBITMAP)wParam; // Сохраняем новый
+        InvalidateRect(hWnd, NULL, TRUE); // Запрашиваем перерисовку
+        break;
+    }
+
+    case WM_UPDATE_PARAM: {
+        bmpData* pData = (bmpData*)GetWindowLongPtr(hWnd, GWLP_USERDATA);
+        if (pData) {
+            pData->y = (int)wParam;
+            InvalidateRect(hWnd, NULL, TRUE);
         }
         break;
     }
-    return (INT_PTR)FALSE;
-}
 
+    case WM_PAINT:
+    {
+        PAINTSTRUCT ps;
+        HDC hdc = BeginPaint(hWnd, &ps);
+
+        RECT rect;
+        GetClientRect(hWnd, &rect);
+        Rectangle(hdc, rect.left, rect.top, rect.right, rect.bottom);
+        
+        bmpData* pData = (bmpData*)GetWindowLongPtr(hWnd, GWLP_USERDATA);
+        if (pData && pData->hBitmap) {
+            DrawBMP(hdc, pData->hBitmap, 100, pData->y);
+        }
+
+        EndPaint(hWnd, &ps);
+        break;
+    }
+    case WM_DESTROY:
+    {
+        bmpData* pData = (bmpData*)GetWindowLongPtr(hWnd, GWLP_USERDATA);
+        if (pData) {
+            if (pData->hBitmap) DeleteObject(pData->hBitmap);
+            delete pData;
+        }
+        PostQuitMessage(0);
+        break;
+    }
+    default:
+        return DefWindowProc(hWnd, message, wParam, lParam);
+    }
+    return 0;
+}
 
 void DrawBMP(HDC hdc, HBITMAP hBitmap, int x, int y) {
     // Создаём совместимый контекст устройства
@@ -217,22 +340,10 @@ void DrawBMP(HDC hdc, HBITMAP hBitmap, int x, int y) {
     else {
         // Для DIB-секции используем StretchDIBits для точного вывода
         StretchBlt(
-            hdc, 10, 10, 500, 500,
+            hdc, x, y, 100, 100,
             hMemDC, 0, 0, bmp.bmWidth, bmp.bmHeight,
             SRCCOPY
         );
-
-        //StretchDIBits(
-        //    hdc,
-        //    x, y,
-        //    500, 500, // Размер вывода (можно заменить на bmp.bmWidth, bmp.bmHeight для 1:1)
-        //    0, 0,
-        //    ds.dsBmih.biWidth, abs(ds.dsBmih.biHeight), // abs для отрицательной высоты
-        //    ds.dsBm.bmBits,
-        //    (BITMAPINFO*)&ds.dsBmih,
-        //    DIB_RGB_COLORS,
-        //    SRCCOPY
-        //);
     }
 
     // Восстанавливаем и освобождаем ресурсы
@@ -288,5 +399,61 @@ HBITMAP LoadBitmapFromFile(HDC hdc, const wchar_t* filename) {
     file.read(static_cast<char*>(bits), totalBytes);
 
     return hBitmap;
+}
+
+DWORD WINAPI ThreadProc(LPVOID lpParam)
+{
+    LPPARAM* pParams = (LPPARAM*)lpParam;
+    HWND tab = pParams->tab;
+    const wchar_t* filepath = pParams->filepath;
+    HDC hdc = GetDC(tab);
+    HBITMAP hBitmap = LoadBitmapFromFile(hdc, filepath);
+    // Отправляем в UI-поток
+    PostMessage(tab, WM_SET_BITMAP, (WPARAM)hBitmap, 0);
+    Sleep(2000 + 1000 * pParams->tabIndex);
+    int y = 300;
+    int mul = 1;
+    while (true) {
+        Sleep(40);
+        PostMessage(tab, WM_UPDATE_PARAM, (WPARAM)y, 0);
+        y -= 5 * mul;
+        if (y <= 20 || y > wndHeight - 200) mul *= -1;
+    }
+    return 0;
+}
+
+void CreateThreads() {
+    if (dwThreadId[0] != -1 || dwThreadId[1] != -1 || dwThreadId[2] != -1) {
+        for (int i = 0; i < 3; i++)
+        {
+            TerminateThread(hThread[i], 0);
+            dwThreadId[i] = -1;
+        }
+        SendMessage(mainWindow, WM_PAINT, 0, 0);
+    }
+
+    hThread[0] = CreateThread(
+        NULL,
+        0,
+        ThreadProc,
+        (LPVOID)file1,
+        CREATE_SUSPENDED,
+        &dwThreadId[0]);
+
+    hThread[1] = CreateThread(
+        NULL,
+        0,
+        ThreadProc,
+        (LPVOID)file2,
+        CREATE_SUSPENDED,
+        &dwThreadId[1]);
+
+    hThread[2] = CreateThread(
+        NULL,
+        0,
+        ThreadProc,
+        (LPVOID)file3,
+        CREATE_SUSPENDED,
+        &dwThreadId[2]);
 }
 
