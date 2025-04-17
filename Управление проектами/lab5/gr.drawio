@@ -1,0 +1,79 @@
+<mxfile host="Electron" modified="2025-04-17T17:36:10.352Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/24.2.5 Chrome/120.0.6099.109 Electron/28.1.0 Safari/537.36" etag="RwGMFqlUIgGTBSLFkXAV" version="24.2.5" type="device">
+  <diagram name="Страница — 1" id="EGYeTX1xxZBaw1eTjPIs">
+    <mxGraphModel dx="474" dy="844" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="V83QtHt1-DmZ65z7Elcc-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="V83QtHt1-DmZ65z7Elcc-1" target="V83QtHt1-DmZ65z7Elcc-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="V83QtHt1-DmZ65z7Elcc-1" value="Определение целей и требований" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="150" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="V83QtHt1-DmZ65z7Elcc-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="V83QtHt1-DmZ65z7Elcc-2" target="V83QtHt1-DmZ65z7Elcc-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="V83QtHt1-DmZ65z7Elcc-2" value="Исследование предметной области" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="230" y="150" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="V83QtHt1-DmZ65z7Elcc-16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="V83QtHt1-DmZ65z7Elcc-3" target="V83QtHt1-DmZ65z7Elcc-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="V83QtHt1-DmZ65z7Elcc-3" value="&amp;nbsp;Анализ рынка и конкурентов" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="380" y="150" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="V83QtHt1-DmZ65z7Elcc-17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="V83QtHt1-DmZ65z7Elcc-4" target="V83QtHt1-DmZ65z7Elcc-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="V83QtHt1-DmZ65z7Elcc-4" value="Разработка плана проекта" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="380" y="230" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="V83QtHt1-DmZ65z7Elcc-21" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="V83QtHt1-DmZ65z7Elcc-5" target="V83QtHt1-DmZ65z7Elcc-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="V83QtHt1-DmZ65z7Elcc-5" value="Оценка трудозатрат" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="230" y="230" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="V83QtHt1-DmZ65z7Elcc-19" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="V83QtHt1-DmZ65z7Elcc-6" target="V83QtHt1-DmZ65z7Elcc-7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="V83QtHt1-DmZ65z7Elcc-6" value="Определение ресурсов и сроков" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="230" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="V83QtHt1-DmZ65z7Elcc-18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="V83QtHt1-DmZ65z7Elcc-7" target="V83QtHt1-DmZ65z7Elcc-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="V83QtHt1-DmZ65z7Elcc-7" value="Проектирование системы" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="310" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="V83QtHt1-DmZ65z7Elcc-22" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="V83QtHt1-DmZ65z7Elcc-8" target="V83QtHt1-DmZ65z7Elcc-9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="V83QtHt1-DmZ65z7Elcc-8" value="Реализация функционала" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="230" y="310" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="V83QtHt1-DmZ65z7Elcc-23" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="V83QtHt1-DmZ65z7Elcc-9" target="V83QtHt1-DmZ65z7Elcc-10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="V83QtHt1-DmZ65z7Elcc-9" value="Проверка функциональности" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="380" y="310" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="V83QtHt1-DmZ65z7Elcc-12" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="V83QtHt1-DmZ65z7Elcc-10" target="V83QtHt1-DmZ65z7Elcc-11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="V83QtHt1-DmZ65z7Elcc-10" value="Исправление ошибок" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="380" y="390" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="V83QtHt1-DmZ65z7Elcc-25" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="V83QtHt1-DmZ65z7Elcc-11" target="V83QtHt1-DmZ65z7Elcc-13">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="V83QtHt1-DmZ65z7Elcc-11" value="Публикация в магазинах" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="230" y="390" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="V83QtHt1-DmZ65z7Elcc-13" value="Поддержка пользователей" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="390" width="120" height="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
