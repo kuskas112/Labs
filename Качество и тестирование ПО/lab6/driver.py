@@ -1,5 +1,6 @@
 import importlib.util
 import json
+import os
 from pathlib import Path
 
 
@@ -51,9 +52,13 @@ class TestDriver:
         return results
 
     def generate_report(self, results):
+        if os.name == 'nt':  # Windows
+            os.system('color')  # Включаем поддержку ANSI цветов в Windows 10+
+    
         RED = '\033[31m'
         GREEN = '\033[32m'
         RESET = '\033[0m'
+
         for result in results:
             report = "\n"
             report += f"\nTest #{result['test_number']}: {f'{GREEN}Success{RESET}' if result['status'] == 'success' else f'{RED}Failed{RESET}'}" 
