@@ -1,0 +1,87 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\ivan\\Desktop\\trash\\SummerPractice\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{2E4E43DC-BF1C-4F61-BA58-06BDC5708FA6}|SummerPractice\\SummerPractice.csproj|c:\\users\\ivan\\desktop\\trash\\summerpractice\\summerpractice\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2E4E43DC-BF1C-4F61-BA58-06BDC5708FA6}|SummerPractice\\SummerPractice.csproj|solutionrelative:summerpractice\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2E4E43DC-BF1C-4F61-BA58-06BDC5708FA6}|SummerPractice\\SummerPractice.csproj|C:\\Users\\ivan\\Desktop\\trash\\SummerPractice\\SummerPractice\\Form1.Designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2E4E43DC-BF1C-4F61-BA58-06BDC5708FA6}|SummerPractice\\SummerPractice.csproj|solutionrelative:SummerPractice\\Form1.Designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2E4E43DC-BF1C-4F61-BA58-06BDC5708FA6}|SummerPractice\\SummerPractice.csproj|C:\\Users\\ivan\\Desktop\\trash\\SummerPractice\\SummerPractice\\StringToFormula.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2E4E43DC-BF1C-4F61-BA58-06BDC5708FA6}|SummerPractice\\SummerPractice.csproj|solutionrelative:SummerPractice\\StringToFormula.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2E4E43DC-BF1C-4F61-BA58-06BDC5708FA6}|SummerPractice\\SummerPractice.csproj|C:\\Users\\ivan\\Desktop\\trash\\SummerPractice\\summerpractice\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{2E4E43DC-BF1C-4F61-BA58-06BDC5708FA6}|SummerPractice\\SummerPractice.csproj|solutionrelative:summerpractice\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "StringToFormula.cs",
+              "DocumentMoniker": "C:\\Users\\ivan\\Desktop\\trash\\SummerPractice\\SummerPractice\\StringToFormula.cs",
+              "RelativeDocumentMoniker": "SummerPractice\\StringToFormula.cs",
+              "ToolTip": "C:\\Users\\ivan\\Desktop\\trash\\SummerPractice\\SummerPractice\\StringToFormula.cs",
+              "RelativeToolTip": "SummerPractice\\StringToFormula.cs",
+              "ViewState": "AgIAALwAAAAAAAAAAAAgwDkAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-27T10:39:19.902Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Form1.cs",
+              "DocumentMoniker": "C:\\Users\\ivan\\Desktop\\trash\\SummerPractice\\SummerPractice\\Form1.cs",
+              "RelativeDocumentMoniker": "SummerPractice\\Form1.cs",
+              "ToolTip": "C:\\Users\\ivan\\Desktop\\trash\\SummerPractice\\SummerPractice\\Form1.cs*",
+              "RelativeToolTip": "SummerPractice\\Form1.cs*",
+              "ViewState": "AgIAALEAAAAAAAAAAAAuwMIAAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2020-01-19T14:56:04.367Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Form1.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\ivan\\Desktop\\trash\\SummerPractice\\SummerPractice\\Form1.Designer.cs",
+              "RelativeDocumentMoniker": "SummerPractice\\Form1.Designer.cs",
+              "ToolTip": "C:\\Users\\ivan\\Desktop\\trash\\SummerPractice\\SummerPractice\\Form1.Designer.cs",
+              "RelativeToolTip": "SummerPractice\\Form1.Designer.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAAwBYAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2020-01-19T15:09:07.06Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Form1.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "DocumentMoniker": "C:\\Users\\ivan\\Desktop\\trash\\SummerPractice\\SummerPractice\\Form1.cs",
+              "RelativeDocumentMoniker": "SummerPractice\\Form1.cs",
+              "ToolTip": "C:\\Users\\ivan\\Desktop\\trash\\SummerPractice\\SummerPractice\\Form1.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]*",
+              "RelativeToolTip": "SummerPractice\\Form1.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]*",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2020-01-19T14:54:07.989Z",
+              "EditorCaption": " [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
