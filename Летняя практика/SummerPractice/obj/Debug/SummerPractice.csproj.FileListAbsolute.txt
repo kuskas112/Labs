@@ -18,3 +18,13 @@ C:\Users\ivan\Desktop\trash\SummerPractice\SummerPractice\obj\Debug\SummerPracti
 C:\Users\ivan\Desktop\trash\SummerPractice\SummerPractice\obj\Debug\SummerPractice.csproj.CoreCompileInputs.cache
 C:\Users\ivan\Desktop\trash\SummerPractice\SummerPractice\obj\Debug\SummerPractice.exe
 C:\Users\ivan\Desktop\trash\SummerPractice\SummerPractice\obj\Debug\SummerPractice.pdb
+C:\Users\ИВАН\Desktop\лабы\2 курс\Labs\Летняя практика\SummerPractice\bin\Debug\SummerPractice.exe.config
+C:\Users\ИВАН\Desktop\лабы\2 курс\Labs\Летняя практика\SummerPractice\bin\Debug\SummerPractice.exe
+C:\Users\ИВАН\Desktop\лабы\2 курс\Labs\Летняя практика\SummerPractice\bin\Debug\SummerPractice.pdb
+C:\Users\ИВАН\Desktop\лабы\2 курс\Labs\Летняя практика\SummerPractice\obj\Debug\SummerPractice.csproj.AssemblyReference.cache
+C:\Users\ИВАН\Desktop\лабы\2 курс\Labs\Летняя практика\SummerPractice\obj\Debug\SummerPractice.Form1.resources
+C:\Users\ИВАН\Desktop\лабы\2 курс\Labs\Летняя практика\SummerPractice\obj\Debug\SummerPractice.Properties.Resources.resources
+C:\Users\ИВАН\Desktop\лабы\2 курс\Labs\Летняя практика\SummerPractice\obj\Debug\SummerPractice.csproj.GenerateResource.cache
+C:\Users\ИВАН\Desktop\лабы\2 курс\Labs\Летняя практика\SummerPractice\obj\Debug\SummerPractice.csproj.CoreCompileInputs.cache
+C:\Users\ИВАН\Desktop\лабы\2 курс\Labs\Летняя практика\SummerPractice\obj\Debug\SummerPractice.exe
+C:\Users\ИВАН\Desktop\лабы\2 курс\Labs\Летняя практика\SummerPractice\obj\Debug\SummerPractice.pdb
