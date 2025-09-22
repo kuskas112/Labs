@@ -190,6 +190,13 @@ namespace SummerPractice
                 return;
             }
             y = calculatePoint(input.Text, x);
+            if (y == double.PositiveInfinity || y == double.NegativeInfinity || y is double.NaN)
+            {
+                double newX = x + 0.0000001;
+                y = calculatePoint(input.Text, newX);
+                //yFromTextBox.Text = "NaN";
+                //return;
+            }
             yFromTextBox.Text = y.ToString();
             Point foundPoint = new Point(center.X + (int)(x * scale), center.Y - (int)(y * scale));
             this.drawPoint(foundPoint, Brushes.Blue, 10);
