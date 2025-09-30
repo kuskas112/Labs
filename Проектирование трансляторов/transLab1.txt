@@ -1,0 +1,135 @@
+// 1
+(car 
+    (quote 
+        ((A B) (C D))
+    )
+)
+
+
+// 2
+(cons
+    (sub 3 7)
+    (cdr
+        (quote
+            (A B C)
+        )
+    )
+)
+
+// 3 
+(cond
+    (equal
+        (add 2 2)(mul 2 2)
+    )
+    (add(add 2 2)(mul 2 2))
+    (sub(mul 2 2)(add 2 2))
+)
+
+// 4
+(LET 
+    (cond
+        (le Y X)
+        (cond
+            (le Z X)
+            X
+            Z
+        ) 
+        (cond 
+            (le Y Z)
+            Z
+            Y
+        )
+    )
+    (X (QUOTE 3))
+    (Y (QUOTE 7))
+    (Z (QUOTE 4))
+)
+
+// 5
+(LET
+    (mul X Y)
+    (X (QUOTE 3))
+    (Y (QUOTE 5))
+)
+
+// 6
+(LET
+    (cond
+        (EQUAL Y (QUOTE 0))
+        (QUOTE 0)
+        (cons
+            (dive X Y)
+            (cons(rem X Y) (quote()))
+        )
+    )
+    (X (QUOTE 10))
+    (Y (QUOTE 3))
+)
+
+//7 
+(LET
+    (cond
+        (EQUAL N 0)
+        (QUOTE 0)
+        (cond
+            (equal (rem M N) 0)
+            (dive M N)
+            (add (dive M N) 1)
+        )
+    )
+    (M (QUOTE 10))
+    (N (QUOTE 3))
+)
+
+// 8
+(LETREC (SUM (QUOTE (3 4 5 6)))
+    (SUM (LAMBDA (X)
+            (COND (EQUAL X (QUOTE ())) (QUOTE 0)
+                (ADD (car X) (SUM (CDR X)))
+            )
+        )
+    )
+)
+
+// 9
+(LETREC (MMUL (QUOTE (3 4 5 6)))
+    (MMUL (LAMBDA (X)
+            (COND (EQUAL X (QUOTE ()))
+                X
+                (CONS (mul 3 (car X)) (MMUL (CDR X)))
+            )
+        )
+    )
+)
+
+// 10
+(LETREC (MMUL (QUOTE (3 4 5 6)))
+    (MMUL (LAMBDA (X)
+            (COND (EQUAL X (QUOTE ()))
+                X
+                (cond
+                    (EQUAL (QUOTE 1) (rem (car X) 2))
+                    (CONS 
+                        (car X)
+                        (MMUL (CDR X))
+                    )
+                    (MMUL (CDR X))
+                ) 
+            )
+        )
+    )
+)
+
+// 11
+(LETREC (STEP 2 10)
+    (STEP 
+        (LAMBDA (X Y)
+            (cond
+                (EQUAL 0 Y)
+                1
+                (mul X (STEP X (SUB Y 1)))
+            )
+        )
+    )
+)
+
