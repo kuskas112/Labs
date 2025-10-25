@@ -3,8 +3,11 @@
     #include <stdlib.h>
     #include <string.h>
 
-    #include "attr_checker.h"
+    #include "tree.h"
 
+    Node* root = NULL;
+    Node** atoms;
+    int currentAtom = 0;
 %}
 
 %union {
@@ -12,10 +15,9 @@
     int num;
 }
 
-%token LEFT_PARENTHESIS RIGHT_PARENTHESIS  QUOTE CAR CDR CONS ATOM_PREDICATE EQUAL ADD SUB MUL DIVE REM LE COND LAMBDA LET LETREC
+%token LP RP  QUOTE CAR CDR CONS ATOM_PREDICATE EQUAL ADD SUB MUL DIVE REM LE COND LAMBDA LET LETREC
 %token <str> S_ATOM
 %token <num> D_ATOM
-
 
 %%
 goal: S_EXPR
@@ -25,77 +27,80 @@ goal: S_EXPR
 ;
 
 S_EXPR: ATOM
-        | LEFT_PARENTHESIS QUOTE S_EXPR RIGHT_PARENTHESIS
+        {
+            atoms[currentAtom] = $1;
+            currentAtom++;
+        }
+        | LP QUOTE S_EXPR RP
         {
             printf("QUOTE + S_EXPR\n");
         }
-        | LEFT_PARENTHESIS CAR S_EXPR RIGHT_PARENTHESIS
+        | LP CAR S_EXPR RP
         {
             printf("CAR + S_EXPR\n");
         }
-        | LEFT_PARENTHESIS CDR S_EXPR RIGHT_PARENTHESIS
+        | LP CDR S_EXPR RP
         {
             printf("CDR + S_EXPR\n");
         }
-        | LEFT_PARENTHESIS CONS S_EXPR S_EXPR RIGHT_PARENTHESIS
+        | LP CONS S_EXPR S_EXPR RP
         {
             printf("CONS + S_EXPR\n");
         }
-        | LEFT_PARENTHESIS ATOM_PREDICATE S_EXPR RIGHT_PARENTHESIS
+        | LP ATOM_PREDICATE S_EXPR RP
         {
             printf("ATOM + S_EXPR\n");
         }
-        | LEFT_PARENTHESIS EQUAL S_EXPR S_EXPR RIGHT_PARENTHESIS
+        | LP EQUAL S_EXPR S_EXPR RP
         {
             printf("EQUAL + S_EXPR + S_EXPR\n");
         }
-        | LEFT_PARENTHESIS ADD S_EXPR S_EXPR RIGHT_PARENTHESIS 
+        | LP ADD S_EXPR S_EXPR RP 
         {
             printf("ADD + S_EXPR + S_EXPR\n");
         }
-        | LEFT_PARENTHESIS SUB S_EXPR S_EXPR RIGHT_PARENTHESIS
+        | LP SUB S_EXPR S_EXPR RP
         {
             printf("SUB + S_EXPR + S_EXPR\n");
         }
-        | LEFT_PARENTHESIS MUL S_EXPR S_EXPR RIGHT_PARENTHESIS 
+        | LP MUL S_EXPR S_EXPR RP 
         {
             printf("MUL + S_EXPR + S_EXPR\n");
         }
-        | LEFT_PARENTHESIS DIVE S_EXPR S_EXPR RIGHT_PARENTHESIS 
+        | LP DIVE S_EXPR S_EXPR RP 
         {
             printf("DIVE + S_EXPR + S_EXPR\n");
         }
-        | LEFT_PARENTHESIS REM S_EXPR S_EXPR RIGHT_PARENTHESIS 
+        | LP REM S_EXPR S_EXPR RP 
         {
             printf("REM + S_EXPR + S_EXPR\n");
         }
-        | LEFT_PARENTHESIS LE S_EXPR S_EXPR RIGHT_PARENTHESIS 
+        | LP LE S_EXPR S_EXPR RP 
         {
             printf("LE + S_EXPR + S_EXPR\n");
         }
-        | LEFT_PARENTHESIS COND S_EXPR S_EXPR S_EXPR RIGHT_PARENTHESIS 
+        | LP COND S_EXPR S_EXPR S_EXPR RP 
         {
             printf("COND + S_EXPR + S_EXPR + S_EXPR\n");
         }
-        | LEFT_PARENTHESIS LAMBDA LEFT_PARENTHESIS PARAM RIGHT_PARENTHESIS S_EXPR RIGHT_PARENTHESIS 
+        | LP LAMBDA LP PARAM RP S_EXPR RP 
         {
             printf("LAMBDA + PARAM + S_EXPR\n");
         }
-        | LEFT_PARENTHESIS LET S_EXPR PAIR_LIST  RIGHT_PARENTHESIS 
+        | LP LET S_EXPR PAIR_LIST  RP 
         {
             printf("LET + S_EXPR + PAIR_LIST\n");
         }
-        | LEFT_PARENTHESIS LETREC S_EXPR PAIR_LIST  RIGHT_PARENTHESIS 
+        | LP LETREC S_EXPR PAIR_LIST  RP 
         {
             printf("LETREC + S_EXPR + PAIR_LIST\n");
         }
-        | LEFT_PARENTHESIS LIST_S_EXPR RIGHT_PARENTHESIS
+        | LP LIST_S_EXPR RP
+        | LP RP
         ;
 
-
-
 PAIR:
-    LEFT_PARENTHESIS VAR S_EXPR RIGHT_PARENTHESIS
+    LP VAR S_EXPR RP
     ;
 
 PAIR_LIST:
@@ -119,12 +124,29 @@ VAR:
 ATOM: 
     S_ATOM 
     {
+        $$ = create_node($1, S_ATOM);  // текст и тип токена S_ATOM
         printf("S_ATOM %s\n", $1);
     }
     | D_ATOM
     {
         printf("D_ATOM %d\n", $1);
     }
+    | QUOTE 
+    | CAR 
+    | CDR 
+    | CONS 
+    | ATOM_PREDICATE 
+    | EQUAL 
+    | ADD 
+    | SUB 
+    | MUL 
+    | DIVE 
+    | REM 
+    | LE 
+    | COND 
+    | LAMBDA 
+    | LET 
+    | LETREC
     ;
 
 LIST_S_EXPR:
@@ -142,9 +164,18 @@ S_EXPR_LIST:
 
 int main (void) {
 
-    return yyparse();
+    root = create_node("root", 0);
+    atoms = malloc(MAX_CHILDREN * sizeof(Node*));
+
+    yyparse();
+
+    for(int i = 0; i <= currentAtom; i++) {
+        add_child(root, atoms[i]);
+    }
+    print_tree(root, 0);
+    return 0;
 }
 
 void yyerror(const char* s) {
-    fprintf(stderr, "Ошибка: %s\n", s);
+    fprintf(stderr, "\033[31mОшибка: %s\n\033[0m", s);
 }

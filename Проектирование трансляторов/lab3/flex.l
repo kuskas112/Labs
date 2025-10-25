@@ -45,8 +45,8 @@ d_atom  {integer}
                                         if (scmp("LETREC") == 1) return LETREC;
                                         yylval.str = strdup(yytext); return S_ATOM; }
 {d_atom}                            { yylval.num = atoi(yytext); return D_ATOM; }
-"("                                 { return LEFT_PARENTHESIS; }
-")"                                 { return RIGHT_PARENTHESIS; }
+"("                                 { return LP; }
+")"                                 { return RP; }
 <<EOF>>                             { return 0;}
 .                                   { printf("Ошибка: неожиданный символ: %d %s\n", (int)yytext[0], yytext); exit(1); }
 

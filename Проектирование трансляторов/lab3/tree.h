@@ -54,6 +54,12 @@ int has_child_with_token(Node* node, int child_token){
     return -1;
 }
 
+Node* get_child_with_token(Node* node, int child_token){
+    int childIndex = has_child_with_token(node, child_token);
+    if(childIndex == -1) return NULL;
+    return node->children[childIndex];
+}
+
 void add_child(Node *parent, Node *child) {
     if (parent->num_children < MAX_CHILDREN) {
         parent->children[parent->num_children++] = child;
