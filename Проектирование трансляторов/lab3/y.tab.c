@@ -73,10 +73,13 @@
     #include <stdlib.h>
     #include <string.h>
 
-    #include "attr_checker.h"
+    #include "tree.h"
 
+    Node* root = NULL;
+    Node** atoms;
+    int currentAtom = 0;
 
-#line 80 "y.tab.c"
+#line 83 "y.tab.c"
 
 # ifndef YY_CAST
 #  ifdef __cplusplus
@@ -173,12 +176,12 @@ extern int yydebug;
 #if ! defined YYSTYPE && ! defined YYSTYPE_IS_DECLARED
 union YYSTYPE
 {
-#line 10 "grammar.y"
+#line 13 "grammar.y"
 
     char* str;
     int num;
 
-#line 182 "y.tab.c"
+#line 185 "y.tab.c"
 
 };
 typedef union YYSTYPE YYSTYPE;
@@ -619,12 +622,12 @@ static const yytype_int8 yytranslate[] =
 /* YYRLINE[YYN] -- Source line where rule number YYN was defined.  */
 static const yytype_uint8 yyrline[] =
 {
-       0,    21,    21,    27,    28,    32,    36,    40,    44,    48,
-      52,    56,    60,    64,    68,    72,    76,    80,    84,    88,
-      92,    93,    97,   101,   102,   106,   110,   111,   115,   119,
-     123,   127,   128,   129,   130,   131,   132,   133,   134,   135,
-     136,   137,   138,   139,   140,   141,   142,   145,   147,   151,
-     152
+       0,    29,    29,    35,    40,    44,    48,    52,    56,    60,
+      64,    68,    72,    76,    80,    84,    88,    92,    96,   100,
+     104,   105,   109,   113,   114,   118,   122,   123,   127,   131,
+     136,   140,   141,   142,   143,   144,   145,   146,   147,   148,
+     149,   150,   151,   152,   153,   154,   155,   158,   160,   164,
+     165
 };
 #endif
 
@@ -1248,159 +1251,169 @@ yyreduce:
   switch (yyn)
     {
   case 2: /* goal: S_EXPR  */
-#line 22 "grammar.y"
+#line 30 "grammar.y"
     { 
         printf("\033[32mВыражение принадлежит языку\033[0m\n"); 
     }
-#line 1256 "y.tab.c"
+#line 1259 "y.tab.c"
+    break;
+
+  case 3: /* S_EXPR: ATOM  */
+#line 36 "grammar.y"
+        {
+            atoms[currentAtom] = (yyvsp[0].Node);
+            currentAtom++;
+        }
+#line 1268 "y.tab.c"
     break;
 
   case 4: /* S_EXPR: LP QUOTE S_EXPR RP  */
-#line 29 "grammar.y"
+#line 41 "grammar.y"
         {
             printf("QUOTE + S_EXPR\n");
         }
-#line 1264 "y.tab.c"
+#line 1276 "y.tab.c"
     break;
 
   case 5: /* S_EXPR: LP CAR S_EXPR RP  */
-#line 33 "grammar.y"
+#line 45 "grammar.y"
         {
             printf("CAR + S_EXPR\n");
         }
-#line 1272 "y.tab.c"
+#line 1284 "y.tab.c"
     break;
 
   case 6: /* S_EXPR: LP CDR S_EXPR RP  */
-#line 37 "grammar.y"
+#line 49 "grammar.y"
         {
             printf("CDR + S_EXPR\n");
         }
-#line 1280 "y.tab.c"
+#line 1292 "y.tab.c"
     break;
 
   case 7: /* S_EXPR: LP CONS S_EXPR S_EXPR RP  */
-#line 41 "grammar.y"
+#line 53 "grammar.y"
         {
             printf("CONS + S_EXPR\n");
         }
-#line 1288 "y.tab.c"
+#line 1300 "y.tab.c"
     break;
 
   case 8: /* S_EXPR: LP ATOM_PREDICATE S_EXPR RP  */
-#line 45 "grammar.y"
+#line 57 "grammar.y"
         {
             printf("ATOM + S_EXPR\n");
         }
-#line 1296 "y.tab.c"
+#line 1308 "y.tab.c"
     break;
 
   case 9: /* S_EXPR: LP EQUAL S_EXPR S_EXPR RP  */
-#line 49 "grammar.y"
+#line 61 "grammar.y"
         {
             printf("EQUAL + S_EXPR + S_EXPR\n");
         }
-#line 1304 "y.tab.c"
+#line 1316 "y.tab.c"
     break;
 
   case 10: /* S_EXPR: LP ADD S_EXPR S_EXPR RP  */
-#line 53 "grammar.y"
+#line 65 "grammar.y"
         {
             printf("ADD + S_EXPR + S_EXPR\n");
         }
-#line 1312 "y.tab.c"
+#line 1324 "y.tab.c"
     break;
 
   case 11: /* S_EXPR: LP SUB S_EXPR S_EXPR RP  */
-#line 57 "grammar.y"
+#line 69 "grammar.y"
         {
             printf("SUB + S_EXPR + S_EXPR\n");
         }
-#line 1320 "y.tab.c"
+#line 1332 "y.tab.c"
     break;
 
   case 12: /* S_EXPR: LP MUL S_EXPR S_EXPR RP  */
-#line 61 "grammar.y"
+#line 73 "grammar.y"
         {
             printf("MUL + S_EXPR + S_EXPR\n");
         }
-#line 1328 "y.tab.c"
+#line 1340 "y.tab.c"
     break;
 
   case 13: /* S_EXPR: LP DIVE S_EXPR S_EXPR RP  */
-#line 65 "grammar.y"
+#line 77 "grammar.y"
         {
             printf("DIVE + S_EXPR + S_EXPR\n");
         }
-#line 1336 "y.tab.c"
+#line 1348 "y.tab.c"
     break;
 
   case 14: /* S_EXPR: LP REM S_EXPR S_EXPR RP  */
-#line 69 "grammar.y"
+#line 81 "grammar.y"
         {
             printf("REM + S_EXPR + S_EXPR\n");
         }
-#line 1344 "y.tab.c"
+#line 1356 "y.tab.c"
     break;
 
   case 15: /* S_EXPR: LP LE S_EXPR S_EXPR RP  */
-#line 73 "grammar.y"
+#line 85 "grammar.y"
         {
             printf("LE + S_EXPR + S_EXPR\n");
         }
-#line 1352 "y.tab.c"
+#line 1364 "y.tab.c"
     break;
 
   case 16: /* S_EXPR: LP COND S_EXPR S_EXPR S_EXPR RP  */
-#line 77 "grammar.y"
+#line 89 "grammar.y"
         {
             printf("COND + S_EXPR + S_EXPR + S_EXPR\n");
         }
-#line 1360 "y.tab.c"
+#line 1372 "y.tab.c"
     break;
 
   case 17: /* S_EXPR: LP LAMBDA LP PARAM RP S_EXPR RP  */
-#line 81 "grammar.y"
+#line 93 "grammar.y"
         {
             printf("LAMBDA + PARAM + S_EXPR\n");
         }
-#line 1368 "y.tab.c"
+#line 1380 "y.tab.c"
     break;
 
   case 18: /* S_EXPR: LP LET S_EXPR PAIR_LIST RP  */
-#line 85 "grammar.y"
+#line 97 "grammar.y"
         {
             printf("LET + S_EXPR + PAIR_LIST\n");
         }
-#line 1376 "y.tab.c"
+#line 1388 "y.tab.c"
     break;
 
   case 19: /* S_EXPR: LP LETREC S_EXPR PAIR_LIST RP  */
-#line 89 "grammar.y"
+#line 101 "grammar.y"
         {
             printf("LETREC + S_EXPR + PAIR_LIST\n");
         }
-#line 1384 "y.tab.c"
+#line 1396 "y.tab.c"
     break;
 
   case 29: /* ATOM: S_ATOM  */
-#line 120 "grammar.y"
+#line 132 "grammar.y"
     {
+        (yyval.Node) = create_node((yyvsp[0].str), S_ATOM);  // текст и тип токена S_ATOM
         printf("S_ATOM %s\n", (yyvsp[0].str));
     }
-#line 1392 "y.tab.c"
+#line 1405 "y.tab.c"
     break;
 
   case 30: /* ATOM: D_ATOM  */
-#line 124 "grammar.y"
+#line 137 "grammar.y"
     {
         printf("D_ATOM %d\n", (yyvsp[0].num));
     }
-#line 1400 "y.tab.c"
+#line 1413 "y.tab.c"
     break;
 
 
-#line 1404 "y.tab.c"
+#line 1417 "y.tab.c"
 
       default: break;
     }
@@ -1593,13 +1606,22 @@ yyreturnlab:
   return yyresult;
 }
 
-#line 155 "grammar.y"
+#line 168 "grammar.y"
 
 
 
 int main (void) {
 
-    return yyparse();
+    root = create_node("root", 0);
+    atoms = malloc(MAX_CHILDREN * sizeof(Node*));
+
+    yyparse();
+
+    for(int i = 0; i <= currentAtom; i++) {
+        add_child(root, atoms[i]);
+    }
+    print_tree(root, 0);
+    return 0;
 }
 
 void yyerror(const char* s) {

@@ -5,7 +5,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-#define MAX_CHILDREN 10
+#define MAX_CHILDREN 30
 
 typedef struct Node {
     char *label;
