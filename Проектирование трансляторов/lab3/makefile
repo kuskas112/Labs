@@ -1,7 +1,7 @@
 
 all: y.tab.c lex.yy.c
 	gcc -w tree.c lex.yy.c y.tab.c -o main -lfl
-	./main < input.txt
+	./main < input.txt > out.txt
 
 y.tab.c: grammar.y
 	yacc -d -v grammar.y 
