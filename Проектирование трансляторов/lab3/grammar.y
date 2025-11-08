@@ -328,8 +328,8 @@ int main (void) {
     yyparse();
 
     
-    //print_tree(root, 0);
-    print_tree_string(root);
+    print_tree(root, 0);
+    //print_tree_string(root);
 
     return 0;
 }

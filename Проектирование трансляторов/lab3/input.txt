@@ -1,1 +1,9 @@
-(quote quote)
+(COND 
+    (ATOM X) 
+    (CONS X 
+        (QUOTE 
+            (A (B C) (D))
+        )
+    )
+    (CAR (CDR X)) 
+)

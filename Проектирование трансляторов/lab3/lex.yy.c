@@ -451,7 +451,10 @@ char *yytext;
 #include <stdio.h>
 #include <stdlib.h>
 
+#include "tree.h"
 #include "y.tab.h"
+
+enum yytokentype token_type;
 
 void yyerror(const char *s);
 
@@ -459,8 +462,8 @@ int scmp(char* str) {
     if (strcasecmp(yytext, str) == 0) return 1;
     return 0;
 }
-#line 463 "lex.yy.c"
-#line 464 "lex.yy.c"
+#line 466 "lex.yy.c"
+#line 467 "lex.yy.c"
 
 #define INITIAL 0
 
@@ -677,9 +680,9 @@ YY_DECL
 		}
 
 	{
-#line 27 "flex.l"
+#line 30 "flex.l"
 
-#line 683 "lex.yy.c"
+#line 686 "lex.yy.c"
 
 	while ( /*CONSTCOND*/1 )		/* loops until end-of-file is reached */
 		{
@@ -739,60 +742,65 @@ do_action:	/* This label is used only to access EOF actions. */
 case 1:
 /* rule 1 can match eol */
 YY_RULE_SETUP
-#line 28 "flex.l"
+#line 31 "flex.l"
 { /* Игнорируем пробелы */ }
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 30 "flex.l"
-{   if (scmp("QUOTE") == 1) return QUOTE;
-                                        if (scmp("CAR") == 1) return CAR;
-                                        if (scmp("CDR") == 1) return CDR;
-                                        if (scmp("CONS") == 1) return CONS;
-                                        if (scmp("ATOM") == 1) return ATOM_PREDICATE;
-                                        if (scmp("EQUAL") == 1) return EQUAL;
-                                        if (scmp("ADD") == 1) return ADD;
-                                        if (scmp("SUB") == 1) return SUB;
-                                        if (scmp("MUL") == 1) return MUL;
-                                        if (scmp("DIVE") == 1) return DIVE;
-                                        if (scmp("REM") == 1) return REM;
-                                        if (scmp("LE") == 1) return LE;
-                                        if (scmp("COND") == 1) return COND;
-                                        if (scmp("LAMBDA") == 1) return LAMBDA;
-                                        if (scmp("LET") == 1) return LET;
-                                        if (scmp("LETREC") == 1) return LETREC;
-                                        yylval.str = strdup(yytext); return S_ATOM; }
+#line 33 "flex.l"
+{   if (scmp("QUOTE") == 1) {token_type = QUOTE;}
+                                        else if (scmp("CAR") == 1) {token_type = CAR;}
+                                        else if (scmp("CDR") == 1) {token_type = CDR;}
+                                        else if (scmp("CONS") == 1) {token_type = CONS;}
+                                        else if (scmp("ATOM") == 1) {token_type = ATOM_PREDICATE;}
+                                        else if (scmp("EQUAL") == 1) {token_type = EQUAL;}
+                                        else if (scmp("ADD") == 1) {token_type = ADD;}
+                                        else if (scmp("SUB") == 1) {token_type = SUB;}
+                                        else if (scmp("MUL") == 1) {token_type = MUL;}
+                                        else if (scmp("DIVE") == 1) {token_type = DIVE;}
+                                        else if (scmp("REM") == 1) {token_type = REM;}
+                                        else if (scmp("LE") == 1) {token_type = LE;}
+                                        else if (scmp("COND") == 1) {token_type = COND;}
+                                        else if (scmp("LAMBDA") == 1) {token_type = LAMBDA;}
+                                        else if (scmp("LET") == 1) {token_type = LET;}
+                                        else if (scmp("LETREC") == 1) {token_type = LETREC;}
+                                        else {  token_type = S_ATOM; }
+
+                                        yylval.str = strdup(yytext);
+                                        return token_type;
+                                       
+                                    }
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 47 "flex.l"
+#line 55 "flex.l"
 { yylval.num = atoi(yytext); return D_ATOM; }
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
-#line 48 "flex.l"
+#line 56 "flex.l"
 { return LP; }
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
-#line 49 "flex.l"
+#line 57 "flex.l"
 { return RP; }
 	YY_BREAK
 case YY_STATE_EOF(INITIAL):
-#line 50 "flex.l"
+#line 58 "flex.l"
 { return 0;}
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
-#line 51 "flex.l"
+#line 59 "flex.l"
 { printf("Ошибка: неожиданный символ: %d %s\n", (int)yytext[0], yytext); exit(1); }
 	YY_BREAK
 case 7:
 YY_RULE_SETUP
-#line 53 "flex.l"
+#line 61 "flex.l"
 ECHO;
 	YY_BREAK
-#line 796 "lex.yy.c"
+#line 804 "lex.yy.c"
 
 	case YY_END_OF_BUFFER:
 		{
@@ -1795,7 +1803,7 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 53 "flex.l"
+#line 61 "flex.l"
 
 
 
