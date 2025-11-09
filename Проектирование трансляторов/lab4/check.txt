@@ -1,0 +1,109 @@
+
+//==================================
+(car(car(quote((a b) (c d)))))
+
+(CAR(CAR(QUOTE((a b)(c d )))))
+//==================================
+(cons (sub 3 7) (cdr(quote(A B C))))
+
+(CONS (SUB 3 7 )(CDR (QUOTE (A B C ))))
+//==================================
+(cond (equal (add 2 2) (mul 2 2))
+    (add 
+        (add 2 2)
+        (mul 2 2)
+    )
+    (sub
+        (mul 2 2)
+        (add 2 2)
+    )
+)
+
+(COND (EQUAL (ADD 2 2 )(MUL 2 2 ))(ADD (ADD 2 2 )(MUL 2 2 ))(SUB (MUL 2 2 )(ADD 2 2 )))
+//==================================
+(let
+    (cond
+    (le a b)
+    (cond 
+        (le c b)
+        b
+        c)
+    (cond 
+        (le c a)
+        a
+        c)
+    )
+    (a (quote 2))
+    (b (quote 5))
+    (c (quote 7))
+)
+
+(LET 
+    (COND 
+    (LE a b )
+    (COND 
+        (LE c b )
+        b 
+        c)(COND (LE c a )a c ))(a (QUOTE 2 ))(b (QUOTE 5 ))(c (QUOTE 7 )))
+//==================================
+(let
+    (mul x y)
+    (x (quote 3))
+    (y (quote 7))
+)
+
+(LET (MUL x y )(x (QUOTE 3 ))(y (QUOTE 7 )))
+//==================================
+(let
+    (cond
+        (equal 0 y)
+        (quote zeroDiv)
+        (cons
+            (dive x y)
+            (cons (rem x y) (quote()))
+        )
+    )
+    (x (quote 7))
+    (y (quote 0))
+)
+
+(LET (COND (EQUAL 0 y )(QUOTE zeroDiv )(CONS (DIVE x y )(CONS (REM x y )(QUOTE NIL ))))(x (QUOTE 7 ))(y (QUOTE 2 )))
+//==================================
+
+
+(LET (COND (EQUAL 0 n )(QUOTE zeroDiv )(COND (EQUAL (REM m n )0 )(DIVE m n )(ADD (DIVE m n )1 )))(m (QUOTE 10 ))(n (QUOTE 4 )))
+
+//==================================
+
+(LETREC (SUMLIST (QUOTE (1 2 3 4 5)))
+  (SUMLIST (LAMBDA (LST)
+    (COND (EQUAL LST (QUOTE ()))
+          (QUOTE 0)
+          (ADD (CAR LST) (SUMLIST (CDR LST))))))
+)
+
+(LETREC (SUMLIST (QUOTE (1 2 3 4 5 )))(SUMLIST (LAMBDA (LST )(COND (EQUAL LST (QUOTE NIL ))(QUOTE 0 )(ADD (CAR LST )(SUMLIST (CDR LST )))))))
+
+//==================================
+
+(LETREC (MMUL (QUOTE (3 4 5 6)))
+    (MMUL (LAMBDA (X)
+            (COND (EQUAL X (QUOTE ()))
+                X
+                (cond
+                    (EQUAL (QUOTE 1) (rem (car X) 2))
+                    (CONS 
+                        (car X)
+                        (MMUL (CDR X))
+                    )
+                    (MMUL (CDR X))
+                ) 
+            )
+        )
+    )
+)
+
+(LETREC (MMUL (QUOTE (3 4 5 6 )))(MMUL (LAMBDA (X )(COND (EQUAL X (QUOTE NIL ))X (COND (EQUAL (QUOTE 1 )(REM (CAR X )2 ))(CONS (CAR X )(MMUL (CDR X )))(MMUL (CDR X )))))))
+
+
+(LETREC (EXP (QUOTE (1 2 3 4 5 )))(EXP (LAMBDA (x y n )(COND (EQUAL LST (QUOTE NIL ))(QUOTE 0 )(ADD (CAR LST )(SUMLIST (CDR LST )))))))
