@@ -1,3 +1,16 @@
-(add 
-    (add 2 3)
-    (mul 3 3))
+(LETREC (MMUL (QUOTE (3 4 5 6)))
+    (MMUL (LAMBDA (X)
+            (COND (EQUAL X (QUOTE ()))
+                X
+                (cond
+                    (EQUAL (QUOTE 1) (rem (car X) 2))
+                    (CONS 
+                        (car X)
+                        (MMUL (CDR X))
+                    )
+                    (MMUL (CDR X))
+                ) 
+            )
+        )
+    )
+)

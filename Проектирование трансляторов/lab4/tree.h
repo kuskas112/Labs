@@ -11,7 +11,13 @@
 
 typedef enum {
     NO_PRINT = 300,
-    NO_PRINT_WITH_PAREN
+    NO_PRINT_WITH_PAREN,
+
+    LIST,
+    PAIR,
+
+    PAIR_LIST,
+    PARAM_LIST
 } NODE_TEMP_TYPE;
 
 union string_digit_union
@@ -22,7 +28,11 @@ union string_digit_union
 
 typedef enum {
     NODE_NUM,
-    NODE_STR
+    NODE_STR,
+    NODE_LIST,
+    NODE_BOOL,
+
+    NODE_LAMBDA
 } NODE_TYPE;
 
 
@@ -44,8 +54,7 @@ Node* get_child_with_token(Node* node, int child_token);
 void add_child(Node *parent, Node *child);
 
 bool if_command_node(Node* node);
-
-// === ANALYZER ===
+bool is_no_print(Node* node);
 
 
 
