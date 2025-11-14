@@ -28,9 +28,25 @@ bool if_command_node(Node* node) {
     case LAMBDA:
     case LET:
     case LETREC:
-    case NO_PRINT_WITH_PAREN:
+
+    case LIST:
+    case PAIR:
         return true;
         break;
+    default:
+        return false;
+        break;
+    }
+}
+
+bool is_no_print(Node* node) 
+{
+    switch (node->token)
+    {
+    case PAIR_LIST:
+    case PARAM_LIST:
+        return true;
+    
     default:
         return false;
         break;
@@ -51,10 +67,16 @@ void print_tree(Node *root, int depth) {
     else if (root->node_type == NODE_STR) {
         printf("%s\n", root->label.str);
     }
+    ///*
+    else if (root->node_type == NODE_LIST) {
+        printf("%s\n", root->label.str);
+    }
+    //*/
     
     for (int i = 0; i < root->num_children; ++i) {
         print_tree(root->children[i], depth + 1);
     }
+
 }
 
 void print_tree_string(Node* root) {
@@ -68,7 +90,7 @@ void print_tree_string(Node* root) {
     }
 
 
-    if (root->token != NO_PRINT && root->token != NO_PRINT_WITH_PAREN) {
+    if (!is_no_print(root)) {
         if (root->node_type == NODE_NUM)
             printf("%d ", root->label.num);
         else if (root->node_type == NODE_STR) {
@@ -90,13 +112,13 @@ Node *create_node(union string_digit_union label, int token, NODE_TYPE node_type
     if (!node) return NULL;
 
     node->token = token;
-
-    if (node_type == NODE_STR) {
+    if (node_type == NODE_NUM) {
+        node->label.num = label.num;
+    }
+    else 
+    {
         node->label.str = (char*)malloc(strlen(label.str) + 1);
         strcpy(node->label.str, label.str);
-    } 
-    else if (node_type == NODE_NUM) {
-        node->label.num = label.num;
     }
     node->node_type = node_type;
 
