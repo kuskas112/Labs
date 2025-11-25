@@ -1,0 +1,6 @@
+(LETREC (SUMLIST (QUOTE (1 2 3 4 5)))
+  (SUMLIST (LAMBDA (LST)
+    (COND (EQUAL LST (QUOTE ()))
+          (QUOTE 0)
+          (ADD (CAR LST) (SUMLIST (CDR LST))))))
+)
