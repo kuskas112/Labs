@@ -1,1 +1,16 @@
-(add 2 3)
+(let
+    (cond
+    (le a b)
+    (cond 
+        (le c b)
+        b
+        c)
+    (cond 
+        (le c a)
+        a
+        c)
+    )
+    (a (quote 2))
+    (b (quote 5))
+    (c (quote 7))
+)(add 2 3)
