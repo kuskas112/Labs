@@ -1,0 +1,432 @@
+<mxfile host="Electron" modified="2025-12-24T14:46:27.144Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/24.2.5 Chrome/120.0.6099.109 Electron/28.1.0 Safari/537.36" etag="5etylDb1SD4O2ZaK9Uip" version="24.2.5" type="device" pages="8">
+  <diagram name="Анализ" id="zs_qWqwcw1lIPgZTlxDj">
+    <mxGraphModel dx="1768" dy="828" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="Cp5URhswG1FKaNstPvM2-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="Cp5URhswG1FKaNstPvM2-1" target="Cp5URhswG1FKaNstPvM2-2" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Cp5URhswG1FKaNstPvM2-6" value="Осмысление в соответствии &lt;br&gt;с моделью мира субъекта" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="Cp5URhswG1FKaNstPvM2-4" vertex="1" connectable="0">
+          <mxGeometry x="-0.15" relative="1" as="geometry">
+            <mxPoint x="5" y="-20" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Cp5URhswG1FKaNstPvM2-1" value="Первое восприятие явления в соответствии с моделью мира субъекта" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="-200" y="340" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="Cp5URhswG1FKaNstPvM2-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="Cp5URhswG1FKaNstPvM2-2" target="Cp5URhswG1FKaNstPvM2-3" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Cp5URhswG1FKaNstPvM2-7" value="Осмысление в соответствии&lt;br&gt;с моделью мира субъекта" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="Cp5URhswG1FKaNstPvM2-5" vertex="1" connectable="0">
+          <mxGeometry x="-0.08" y="4" relative="1" as="geometry">
+            <mxPoint y="-16" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Cp5URhswG1FKaNstPvM2-2" value="Второе восприятие явления в соответствии с моделью мира субъекта" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="120" y="340" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="Cp5URhswG1FKaNstPvM2-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="Cp5URhswG1FKaNstPvM2-3" target="Cp5URhswG1FKaNstPvM2-10" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="610" y="360" as="targetPoint" />
+            <mxPoint x="600" y="380" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Cp5URhswG1FKaNstPvM2-3" value="Третье восприятие явления в соответствии с моделью мира субъекта" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="440" y="340" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="Cp5URhswG1FKaNstPvM2-8" value="Формирование понимания явления в соответствии с моделью мира субъекта, корректировка модели мира" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="780" y="330" width="180" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="Cp5URhswG1FKaNstPvM2-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="Cp5URhswG1FKaNstPvM2-10" target="Cp5URhswG1FKaNstPvM2-8" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Cp5URhswG1FKaNstPvM2-10" value="&lt;font style=&quot;font-size: 39px;&quot;&gt;...&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="630" y="350" width="60" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Cp5URhswG1FKaNstPvM2-12" value="" style="shape=curlyBracket;whiteSpace=wrap;html=1;rounded=1;labelPosition=left;verticalLabelPosition=middle;align=right;verticalAlign=middle;rotation=-90;" parent="1" vertex="1">
+          <mxGeometry x="330" y="-130" width="20" height="1250" as="geometry" />
+        </mxCell>
+        <mxCell id="Cp5URhswG1FKaNstPvM2-13" value="Анализ" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="302.5" y="510" width="75" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="W9lyB6Y6TURpjsAri1BA-3" value="" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" target="Cp5URhswG1FKaNstPvM2-1" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="-50" y="380" as="sourcePoint" />
+            <mxPoint x="-240" y="380" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="-50" y="440" />
+              <mxPoint x="-140" y="440" />
+              <mxPoint x="-240" y="440" />
+              <mxPoint x="-240" y="380" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="W9lyB6Y6TURpjsAri1BA-4" value="" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="270" y="380" as="sourcePoint" />
+            <mxPoint x="120" y="380" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="270" y="440" />
+              <mxPoint x="180" y="440" />
+              <mxPoint x="80" y="440" />
+              <mxPoint x="80" y="380" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="W9lyB6Y6TURpjsAri1BA-5" value="" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="570" y="380" as="sourcePoint" />
+            <mxPoint x="440" y="380" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="570" y="440" />
+              <mxPoint x="500" y="440" />
+              <mxPoint x="400" y="440" />
+              <mxPoint x="400" y="380" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="W9lyB6Y6TURpjsAri1BA-7" value="" style="endArrow=classic;html=1;rounded=0;entryX=-0.008;entryY=0.388;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" target="Cp5URhswG1FKaNstPvM2-1" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="280" y="380" as="sourcePoint" />
+            <mxPoint x="-200" y="380" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="280" y="450" />
+              <mxPoint x="-260" y="450" />
+              <mxPoint x="-260" y="371" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="W9lyB6Y6TURpjsAri1BA-8" value="" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0.25;entryDx=0;entryDy=0;" parent="1" target="Cp5URhswG1FKaNstPvM2-1" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="580" y="380" as="sourcePoint" />
+            <mxPoint x="-191" y="381" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="580" y="460" />
+              <mxPoint x="-270" y="460" />
+              <mxPoint x="-270" y="360" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="W9lyB6Y6TURpjsAri1BA-9" value="" style="endArrow=classic;html=1;rounded=0;entryX=-0.008;entryY=0.113;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" target="Cp5URhswG1FKaNstPvM2-1" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="710" y="380" as="sourcePoint" />
+            <mxPoint x="-190" y="370" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="710" y="470" />
+              <mxPoint x="-280" y="470" />
+              <mxPoint x="-280" y="350" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="W9lyB6Y6TURpjsAri1BA-10" value="" style="endArrow=classic;html=1;rounded=0;" parent="1" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="590" y="380" as="sourcePoint" />
+            <mxPoint x="90" y="380" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="590" y="330" />
+              <mxPoint x="90" y="330" />
+              <mxPoint x="90" y="360" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="W9lyB6Y6TURpjsAri1BA-11" value="" style="endArrow=classic;html=1;rounded=0;" parent="1" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="720" y="380" as="sourcePoint" />
+            <mxPoint x="100" y="380" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="720" y="320" />
+              <mxPoint x="100" y="320" />
+              <mxPoint x="100" y="350" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="W9lyB6Y6TURpjsAri1BA-12" value="" style="endArrow=classic;html=1;rounded=0;" parent="1" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="730" y="380" as="sourcePoint" />
+            <mxPoint x="420" y="380" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="730" y="310" />
+              <mxPoint x="420" y="310" />
+              <mxPoint x="420" y="360" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="CE9x7eWhOpi95zwZErmg" name="Классическая схема исследования">
+    <mxGraphModel dx="941" dy="828" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="KUCN-wefv4IzlSxnka83-5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="KUCN-wefv4IzlSxnka83-1" target="KUCN-wefv4IzlSxnka83-2" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="KUCN-wefv4IzlSxnka83-1" value="Разбиение объекта на части" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="130" y="130" width="170" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="KUCN-wefv4IzlSxnka83-6" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="KUCN-wefv4IzlSxnka83-2" target="KUCN-wefv4IzlSxnka83-3" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="KUCN-wefv4IzlSxnka83-2" value="Формулировка цели исследования для каждой части" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="130" y="220" width="170" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="KUCN-wefv4IzlSxnka83-7" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="KUCN-wefv4IzlSxnka83-3" target="KUCN-wefv4IzlSxnka83-4" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="KUCN-wefv4IzlSxnka83-3" value="Научное исследование каждой части в соответстии с целью исследования каждой части" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="130" y="310" width="170" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="KUCN-wefv4IzlSxnka83-4" value="Формирование описания функционирования объекта исследования" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="130" y="410" width="170" height="70" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="RdKQep2DGSUkdpjHW1nE" name="Исследование">
+    <mxGraphModel dx="941" dy="828" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="hmrOcHQCAlsO7Ghumn6t-6" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="hmrOcHQCAlsO7Ghumn6t-1" target="hmrOcHQCAlsO7Ghumn6t-2" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="hmrOcHQCAlsO7Ghumn6t-8" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;endArrow=classic;" parent="1" source="hmrOcHQCAlsO7Ghumn6t-1" target="hmrOcHQCAlsO7Ghumn6t-3" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="hmrOcHQCAlsO7Ghumn6t-1" value="Исследование - это когда решают 2 группы вопросов" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="240" y="160" width="260" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="hmrOcHQCAlsO7Ghumn6t-2" value="Как получают знания?" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="170" y="240" width="150" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="hmrOcHQCAlsO7Ghumn6t-3" value="Как следует использовать полученные знания?" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="420" y="240" width="150" height="40" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="4Ufr14L4WJRV0qlpRhAz" name="переход к науч исс">
+    <mxGraphModel dx="941" dy="828" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="18A9YdTfD_HF2YlHTybs-1" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=1;exitDx=0;exitDy=0;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;endArrow=classic;" parent="1" source="mY3yo3W8DCPM_PwmanLG-1" target="7J9Uk6gbmvJtkEuCk0w2-1" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="18A9YdTfD_HF2YlHTybs-3" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=1;exitDx=0;exitDy=0;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;endArrow=classic;" parent="1" source="mY3yo3W8DCPM_PwmanLG-1" target="18A9YdTfD_HF2YlHTybs-2" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="mY3yo3W8DCPM_PwmanLG-1" value="Явление" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;" parent="1" vertex="1">
+          <mxGeometry x="360" y="250" width="90" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="7J9Uk6gbmvJtkEuCk0w2-1" value="Понимание явления в соответствии с моделью мира субъекта 1" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;" parent="1" vertex="1">
+          <mxGeometry x="230" y="350" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="18A9YdTfD_HF2YlHTybs-2" value="Понимание явления в соответствии с моделью мира субъекта 2" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;" parent="1" vertex="1">
+          <mxGeometry x="430" y="350" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="18A9YdTfD_HF2YlHTybs-4" value="&lt;span style=&quot;font-weight: bolder; color: rgb(10, 10, 10); font-family: &amp;quot;Google Sans&amp;quot;, Roboto, Arial, sans-serif; text-align: start;&quot; data-processed=&quot;true&quot; class=&quot;Yjhzub&quot;&gt;&lt;font style=&quot;font-size: 55px;&quot;&gt;≠&lt;/font&gt;&lt;/span&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;" parent="1" vertex="1">
+          <mxGeometry x="360" y="365" width="60" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="WBP-p3wJENbRyeLKllKV" name="опасений">
+    <mxGraphModel dx="941" dy="828" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="8BrpM4YnlwcGV5WkLOJ4-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="8BrpM4YnlwcGV5WkLOJ4-3" target="8BrpM4YnlwcGV5WkLOJ4-6" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="8BrpM4YnlwcGV5WkLOJ4-3" value="Знания получены в результате исследования. Соответствуют модели мира субъекта" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="120" y="310" width="120" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="UhsrUTaG8m9QuSHPWhD--2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="8BrpM4YnlwcGV5WkLOJ4-6" target="UhsrUTaG8m9QuSHPWhD--1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="8BrpM4YnlwcGV5WkLOJ4-6" value="Знания применены на практике" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="270" y="310" width="120" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="8BrpM4YnlwcGV5WkLOJ4-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="8BrpM4YnlwcGV5WkLOJ4-8" target="8BrpM4YnlwcGV5WkLOJ4-10" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="8BrpM4YnlwcGV5WkLOJ4-8" value="Возникновение опасений в использовании результатов исследования" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="414" y="452.5" width="120" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="8BrpM4YnlwcGV5WkLOJ4-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="8BrpM4YnlwcGV5WkLOJ4-10" target="8BrpM4YnlwcGV5WkLOJ4-12" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="8BrpM4YnlwcGV5WkLOJ4-10" value="Возникновение потребности в создании новой схемы исследования с возможностью проверки знаний, полученных при исследовании" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="564" y="450" width="190" height="105" as="geometry" />
+        </mxCell>
+        <mxCell id="8BrpM4YnlwcGV5WkLOJ4-12" value="Новая схема исследования" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="784" y="450" width="90" height="105" as="geometry" />
+        </mxCell>
+        <mxCell id="UhsrUTaG8m9QuSHPWhD--3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="UhsrUTaG8m9QuSHPWhD--1" target="8BrpM4YnlwcGV5WkLOJ4-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="UhsrUTaG8m9QuSHPWhD--4" value="Нет" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="UhsrUTaG8m9QuSHPWhD--3">
+          <mxGeometry x="-0.3143" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="UhsrUTaG8m9QuSHPWhD--7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="UhsrUTaG8m9QuSHPWhD--1" target="UhsrUTaG8m9QuSHPWhD--5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="UhsrUTaG8m9QuSHPWhD--1" value="Внедрение удачно" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="434" y="320" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="UhsrUTaG8m9QuSHPWhD--5" value="Окончание исследования" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="570" y="307.5" width="90" height="105" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="lCYGz9O6ASz24XEynD1_" name="Научное исследование">
+    <mxGraphModel dx="1434" dy="844" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="gLRDA6p37xuDHNR_GImM-1" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="gLRDA6p37xuDHNR_GImM-3" target="gLRDA6p37xuDHNR_GImM-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="gLRDA6p37xuDHNR_GImM-2" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;endArrow=classic;" edge="1" parent="1" source="gLRDA6p37xuDHNR_GImM-3" target="gLRDA6p37xuDHNR_GImM-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="gLRDA6p37xuDHNR_GImM-3" value="Научное исследование - это когда вопрос &quot;как получают знания?&quot; понимается как решение двух типов вопросов" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="240" y="150" width="260" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="gLRDA6p37xuDHNR_GImM-4" value="Как систематизировать известные знания об объекте исследования?" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="170" y="240" width="150" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="gLRDA6p37xuDHNR_GImM-5" value="Как разработать метод получения знаний об объекте исследования?" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="420" y="240" width="150" height="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="1ilaBx47st5h9PytxMEi" name="анализ?? класс">
+    <mxGraphModel dx="1434" dy="844" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="-14izfNggqp5bybjTjRx-4" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="-14izfNggqp5bybjTjRx-1" target="-14izfNggqp5bybjTjRx-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="-14izfNggqp5bybjTjRx-6" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;endArrow=classic;" edge="1" parent="1" source="-14izfNggqp5bybjTjRx-1" target="-14izfNggqp5bybjTjRx-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="-14izfNggqp5bybjTjRx-1" value="Научное исследование" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="260" y="190" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="-14izfNggqp5bybjTjRx-11" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;endArrow=classic;" edge="1" parent="1" source="-14izfNggqp5bybjTjRx-2" target="-14izfNggqp5bybjTjRx-7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="-14izfNggqp5bybjTjRx-16" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;endArrow=classic;" edge="1" parent="1" source="-14izfNggqp5bybjTjRx-2" target="-14izfNggqp5bybjTjRx-13">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="-14izfNggqp5bybjTjRx-22" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;endArrow=classic;" edge="1" parent="1" source="-14izfNggqp5bybjTjRx-2" target="-14izfNggqp5bybjTjRx-19">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="-14izfNggqp5bybjTjRx-2" value="Как получают знания?" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="160" y="310" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="-14izfNggqp5bybjTjRx-12" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;endArrow=classic;" edge="1" parent="1" source="-14izfNggqp5bybjTjRx-3" target="-14izfNggqp5bybjTjRx-7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="-14izfNggqp5bybjTjRx-17" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;endArrow=classic;" edge="1" parent="1" source="-14izfNggqp5bybjTjRx-3" target="-14izfNggqp5bybjTjRx-13">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="-14izfNggqp5bybjTjRx-23" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;endArrow=classic;" edge="1" parent="1" source="-14izfNggqp5bybjTjRx-3" target="-14izfNggqp5bybjTjRx-19">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="-14izfNggqp5bybjTjRx-3" value="Как следует использовать полученные знания?" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="354" y="310" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="-14izfNggqp5bybjTjRx-7" value="Содержание исследования 1" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="45" y="540" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="-14izfNggqp5bybjTjRx-9" value="" style="shape=curlyBracket;whiteSpace=wrap;html=1;rounded=1;labelPosition=left;verticalLabelPosition=middle;align=right;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;rotation=-90;" vertex="1" parent="1">
+          <mxGeometry x="95" y="570" width="20" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="-14izfNggqp5bybjTjRx-10" value="Эмпирический анализ 1" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;" vertex="1" parent="1">
+          <mxGeometry x="30" y="638" width="150" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="-14izfNggqp5bybjTjRx-13" value="Содержание исследования 2" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="205" y="540" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="-14izfNggqp5bybjTjRx-14" value="" style="shape=curlyBracket;whiteSpace=wrap;html=1;rounded=1;labelPosition=left;verticalLabelPosition=middle;align=right;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;rotation=-90;" vertex="1" parent="1">
+          <mxGeometry x="255" y="570" width="20" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="-14izfNggqp5bybjTjRx-15" value="Эмпирический анализ 2" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;" vertex="1" parent="1">
+          <mxGeometry x="190" y="638" width="150" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="-14izfNggqp5bybjTjRx-18" value="&lt;font style=&quot;font-size: 40px;&quot;&gt;...&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;" vertex="1" parent="1">
+          <mxGeometry x="340" y="540" width="60" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="-14izfNggqp5bybjTjRx-19" value="Содержание исследования N" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="415" y="540" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="-14izfNggqp5bybjTjRx-20" value="" style="shape=curlyBracket;whiteSpace=wrap;html=1;rounded=1;labelPosition=left;verticalLabelPosition=middle;align=right;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;rotation=-90;" vertex="1" parent="1">
+          <mxGeometry x="465" y="570" width="20" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="-14izfNggqp5bybjTjRx-21" value="Эмпирический анализ N" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;" vertex="1" parent="1">
+          <mxGeometry x="400" y="638" width="150" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="mkNweMHIYc0tDS6n3G3A" name="класс эмп а">
+    <mxGraphModel dx="1434" dy="844" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="QDTSUhdcclcyMVmanu6--8" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;endArrow=classic;" edge="1" parent="1" source="RuOpuBJLERhvQE1FnRXa-1" target="RuOpuBJLERhvQE1FnRXa-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="QDTSUhdcclcyMVmanu6--9" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;endArrow=classic;" edge="1" parent="1" source="RuOpuBJLERhvQE1FnRXa-1" target="RuOpuBJLERhvQE1FnRXa-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="QDTSUhdcclcyMVmanu6--10" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;endArrow=classic;" edge="1" parent="1" source="RuOpuBJLERhvQE1FnRXa-1" target="RuOpuBJLERhvQE1FnRXa-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="RuOpuBJLERhvQE1FnRXa-1" value="Классификация эмпирического анализа" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;" vertex="1" parent="1">
+          <mxGeometry x="260" y="120" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="RuOpuBJLERhvQE1FnRXa-2" value="По языку" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;" vertex="1" parent="1">
+          <mxGeometry x="30" y="270" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="RuOpuBJLERhvQE1FnRXa-3" value="По используемым материалам" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;" vertex="1" parent="1">
+          <mxGeometry x="180" y="270" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="QDTSUhdcclcyMVmanu6--5" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;endArrow=classic;" edge="1" parent="1" source="RuOpuBJLERhvQE1FnRXa-4" target="QDTSUhdcclcyMVmanu6--2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="QDTSUhdcclcyMVmanu6--6" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;endArrow=classic;" edge="1" parent="1" source="RuOpuBJLERhvQE1FnRXa-4" target="QDTSUhdcclcyMVmanu6--3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="QDTSUhdcclcyMVmanu6--7" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;endArrow=classic;" edge="1" parent="1" source="RuOpuBJLERhvQE1FnRXa-4" target="QDTSUhdcclcyMVmanu6--4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="RuOpuBJLERhvQE1FnRXa-4" value="По применению" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;" vertex="1" parent="1">
+          <mxGeometry x="380" y="270" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="QDTSUhdcclcyMVmanu6--1" value="&lt;font style=&quot;font-size: 40px;&quot;&gt;...&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;" vertex="1" parent="1">
+          <mxGeometry x="310" y="270" width="60" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="QDTSUhdcclcyMVmanu6--2" value="Классический анализ" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;" vertex="1" parent="1">
+          <mxGeometry x="260" y="390" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="QDTSUhdcclcyMVmanu6--3" value="Традиционный подход к организации исследования" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;" vertex="1" parent="1">
+          <mxGeometry x="400" y="390" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="QDTSUhdcclcyMVmanu6--4" value="Системный подход к организации функционирования объекта (системы). Кратко - &quot;системный анализ&quot;" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=11;fontColor=default;labelBackgroundColor=default;" vertex="1" parent="1">
+          <mxGeometry x="550" y="375" width="160" height="90" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
