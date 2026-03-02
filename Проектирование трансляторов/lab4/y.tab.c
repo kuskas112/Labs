@@ -74,16 +74,21 @@
 
     #include "tree.h"
 
-    #define TEMP_NODE_TOKEN 300
+    #define NO_TOKEN -3
 
-    typedef struct Node Node;
+    #define GRAMMAR_DEBUG_MODE 0
 
     pnode root = NULL;
     
 
     union string_digit_union label;
 
-#line 87 "y.tab.c"
+    pnode get_AST_root() {
+        yyparse();
+        return root;
+    }
+
+#line 92 "y.tab.c"
 
 # ifndef YY_CAST
 #  ifdef __cplusplus
@@ -179,13 +184,13 @@ extern int yydebug;
 #if ! defined YYSTYPE && ! defined YYSTYPE_IS_DECLARED
 union YYSTYPE
 {
-#line 18 "grammar.y"
+#line 23 "grammar.y"
 
     char* str;
     int num;
     pnode node;
 
-#line 189 "y.tab.c"
+#line 194 "y.tab.c"
 
 };
 typedef union YYSTYPE YYSTYPE;
@@ -511,7 +516,7 @@ union yyalloc
 /* YYNNTS -- Number of nonterminals.  */
 #define YYNNTS  12
 /* YYNRULES -- Number of rules.  */
-#define YYNRULES  53
+#define YYNRULES  55
 /* YYNSTATES -- Number of states.  */
 #define YYNSTATES  105
 
@@ -562,12 +567,12 @@ static const yytype_int8 yytranslate[] =
   /* YYRLINE[YYN] -- Source line where rule number YYN was defined.  */
 static const yytype_int16 yyrline[] =
 {
-       0,    38,    38,    43,    50,    54,    61,    68,    75,    82,
-      89,    96,   103,   110,   117,   124,   131,   138,   145,   152,
-     161,   168,   186,   195,   205,   207,   213,   220,   229,   231,
-     238,   247,   257,   264,   272,   283,   284,   285,   286,   287,
-     288,   289,   290,   291,   292,   293,   294,   295,   296,   297,
-     298,   303,   309,   317
+       0,    43,    43,    48,    55,    59,    66,    73,    80,    87,
+      94,   101,   108,   115,   122,   129,   136,   143,   150,   157,
+     164,   171,   184,   193,   203,   205,   211,   218,   227,   229,
+     235,   244,   254,   261,   269,   280,   281,   282,   283,   284,
+     285,   286,   287,   288,   289,   290,   291,   292,   293,   294,
+     295,   300,   302,   310,   318,   326
 };
 #endif
 
@@ -600,7 +605,7 @@ static const yytype_int16 yytoknum[] =
 #define yypact_value_is_default(Yyn) \
   ((Yyn) == YYPACT_NINF)
 
-#define YYTABLE_NINF (-1)
+#define YYTABLE_NINF (-54)
 
 #define yytable_value_is_error(Yyn) \
   0
@@ -613,13 +618,13 @@ static const yytype_int16 yypact[] =
      -12,   -12,   -12,   -12,   -12,   -12,   -12,   -12,   -12,   -12,
      -12,     2,   -12,   -12,   -12,   -12,    65,    65,    65,    65,
       65,    40,   132,   132,   132,   132,   132,    40,    42,     1,
-      42,    42,   -12,    33,   112,   -12,    37,    44,    63,   112,
-      69,   112,   112,   112,   112,   112,   112,   112,   112,    23,
-      43,    43,   -12,   -12,   -12,   -12,   -12,    84,   -12,    85,
-      86,    88,    89,   133,   134,   135,   112,   -12,   -12,    19,
+      42,    42,    33,    37,   112,   -12,    44,    63,    69,   112,
+      84,   112,   112,   112,   112,   112,   112,   112,   112,    23,
+      43,    43,   -12,    85,   -12,   -12,   -12,    86,   -12,    88,
+      89,   133,   134,   135,   136,   137,   112,   -12,   -12,    19,
       95,   -12,    62,    66,   -12,   -12,   -12,   -12,   -12,   -12,
-     -12,   -12,   136,   112,   -12,   -12,   112,   -12,   -12,   -12,
-     -12,   137,   139,   -12,   -12
+     -12,   -12,   139,   112,   -12,   -12,   112,   -12,   -12,   -12,
+     -12,   140,   141,   -12,   -12
 };
 
   /* YYDEFACT[STATE-NUM] -- Default reduction number in state STATE-NUM.
@@ -631,9 +636,9 @@ static const yytype_int8 yydefact[] =
       42,    43,    44,    45,    46,    47,    48,    49,    50,    32,
       33,     0,     2,     4,    34,    22,    35,    36,    37,    38,
       39,    40,    41,    42,    43,    44,    45,    46,    47,    48,
-      49,    50,    52,     0,    51,     1,     0,     0,     0,     0,
+      49,    50,    54,     0,     0,     1,     0,     0,     0,     0,
        0,     0,     0,     0,     0,     0,     0,     0,     0,    28,
-      24,    24,    21,    53,     7,     8,     9,     0,    11,     0,
+      24,    24,    21,    55,     7,     8,     9,     0,    11,     0,
        0,     0,     0,     0,     0,     0,     0,    27,    29,     0,
        0,    25,     0,     0,    10,    12,     5,     6,    13,    14,
       15,    16,     0,     0,    30,    31,     0,    19,    26,    20,
@@ -662,18 +667,18 @@ static const yytype_int8 yytable[] =
       42,     1,    45,     2,    59,     3,     4,     5,     6,     7,
        8,     9,    10,    11,    12,    13,    14,    15,    16,    17,
       18,    19,    20,    93,    46,    47,    48,    49,    50,    51,
-      52,    53,    54,    55,    56,    57,    58,    62,    60,    61,
-      77,    64,    63,     2,    77,     2,    80,    67,    65,    69,
+      52,    53,    54,    55,    56,    57,    58,   -52,    60,    61,
+      77,    62,    63,     2,    77,     2,    80,    67,    64,    69,
       70,    71,    72,    73,    74,    75,    76,    15,    16,    17,
-      18,    19,    20,    19,    20,    80,    97,    66,     2,    80,
-      99,    98,    98,    68,    92,     8,     9,    10,    11,    12,
-      13,    14,    15,    16,    17,    18,    19,    20,    84,    85,
-      86,   101,    87,    88,   102,     2,    25,    26,    27,    28,
+      18,    19,    20,    19,    20,    80,    97,    65,     2,    80,
+      99,    98,    98,    66,    92,     8,     9,    10,    11,    12,
+      13,    14,    15,    16,    17,    18,    19,    20,    68,   -53,
+      84,   101,    85,    86,   102,     2,    25,    26,    27,    28,
       29,    30,    31,    32,    33,    34,    35,    36,    37,    38,
       39,    40,    41,    19,    20,     2,    95,     3,     4,     5,
        6,     7,     8,     9,    10,    11,    12,    13,    14,    15,
-      16,    17,    18,    19,    20,     2,    83,    89,    90,    91,
-     100,   103,     8,   104,     0,     0,    94,     0,    14,    15,
+      16,    17,    18,    19,    20,     2,    83,    87,    88,    89,
+      90,    91,     8,   100,   103,   104,    94,     0,    14,    15,
       16,    17,    18,    19,    20
 };
 
@@ -693,7 +698,7 @@ static const yytype_int8 yycheck[] =
       18,    19,    20,    21,    22,     3,    21,     5,     6,     7,
        8,     9,    10,    11,    12,    13,    14,    15,    16,    17,
       18,    19,    20,    21,    22,     3,    61,     4,     4,     4,
-       4,     4,    10,     4,    -1,    -1,    79,    -1,    16,    17,
+       4,     4,    10,     4,     4,     4,    79,    -1,    16,    17,
       18,    19,    20,    21,    22
 };
 
@@ -722,7 +727,7 @@ static const yytype_int8 yyr1[] =
       25,    25,    25,    26,    27,    27,    27,    28,    29,    29,
       29,    30,    31,    31,    31,    32,    32,    32,    32,    32,
       32,    32,    32,    32,    32,    32,    32,    32,    32,    32,
-      32,    33,    34,    34
+      32,    33,    33,    33,    34,    34
 };
 
   /* YYR2[YYN] -- Number of symbols on the right hand side of rule YYN.  */
@@ -733,7 +738,7 @@ static const yytype_int8 yyr2[] =
        5,     3,     2,     4,     0,     1,     2,     1,     0,     1,
        2,     1,     1,     1,     1,     1,     1,     1,     1,     1,
        1,     1,     1,     1,     1,     1,     1,     1,     1,     1,
-       1,     1,     1,     2
+       1,     0,     1,     2,     1,     2
 };
 
 
@@ -1429,377 +1434,382 @@ yyreduce:
   switch (yyn)
     {
   case 2:
-#line 39 "grammar.y"
+#line 44 "grammar.y"
     {
         root = (yyvsp[0].node);
         printf("\033[32mВыражение принадлежит языку\033[0m\n"); 
     }
-#line 1438 "y.tab.c"
+#line 1443 "y.tab.c"
     break;
 
   case 3:
-#line 44 "grammar.y"
+#line 49 "grammar.y"
     {
         printf("\033[31mОшибка при выполнении\033[0m\n");
         YYABORT;
     }
-#line 1447 "y.tab.c"
+#line 1452 "y.tab.c"
     break;
 
   case 4:
-#line 51 "grammar.y"
+#line 56 "grammar.y"
         {
             (yyval.node) = (yyvsp[0].node);
         }
-#line 1455 "y.tab.c"
+#line 1460 "y.tab.c"
     break;
 
   case 5:
-#line 55 "grammar.y"
+#line 60 "grammar.y"
         {
-            printf("ADD + S_EXPR + S_EXPR\n");
+            if (GRAMMAR_DEBUG_MODE) printf("ADD + S_EXPR + S_EXPR\n");
 
             label.str = "ADD";
             (yyval.node) = create_node(label, ADD, NODE_STR); add_child((yyval.node), (yyvsp[-2].node)); add_child((yyval.node), (yyvsp[-1].node));
         }
-#line 1466 "y.tab.c"
+#line 1471 "y.tab.c"
     break;
 
   case 6:
-#line 62 "grammar.y"
+#line 67 "grammar.y"
         {
-            printf("SUB + S_EXPR + S_EXPR\n");
+            if (GRAMMAR_DEBUG_MODE) printf("SUB + S_EXPR + S_EXPR\n");
             
             label.str = "SUB";
             (yyval.node) = create_node(label, SUB, NODE_STR); add_child((yyval.node), (yyvsp[-2].node)); add_child((yyval.node), (yyvsp[-1].node));
         }
-#line 1477 "y.tab.c"
+#line 1482 "y.tab.c"
     break;
 
   case 7:
-#line 69 "grammar.y"
+#line 74 "grammar.y"
         {
-            printf("QUOTE + S_EXPR\n");
+            if (GRAMMAR_DEBUG_MODE) printf("QUOTE + S_EXPR\n");
             
             label.str = "QUOTE";
             (yyval.node) = create_node(label, QUOTE, NODE_STR); add_child((yyval.node), (yyvsp[-1].node));
         }
-#line 1488 "y.tab.c"
+#line 1493 "y.tab.c"
     break;
 
   case 8:
-#line 76 "grammar.y"
+#line 81 "grammar.y"
         {
-            printf("CAR + S_EXPR\n");
+            if (GRAMMAR_DEBUG_MODE) printf("CAR + S_EXPR\n");
 
             label.str = "CAR";
             (yyval.node) = create_node(label, CAR, NODE_STR); add_child((yyval.node), (yyvsp[-1].node));
         }
-#line 1499 "y.tab.c"
+#line 1504 "y.tab.c"
     break;
 
   case 9:
-#line 83 "grammar.y"
+#line 88 "grammar.y"
         {
-            printf("CDR + S_EXPR\n");
+            if (GRAMMAR_DEBUG_MODE)printf("CDR + S_EXPR\n");
 
             label.str = "CDR";
             (yyval.node) = create_node(label, CDR, NODE_STR); add_child((yyval.node), (yyvsp[-1].node));
         }
-#line 1510 "y.tab.c"
+#line 1515 "y.tab.c"
     break;
 
   case 10:
-#line 90 "grammar.y"
+#line 95 "grammar.y"
         {
-            printf("CONS + S_EXPR\n");
+            if (GRAMMAR_DEBUG_MODE)printf("CONS + S_EXPR\n");
 
             label.str = "CONS";
             (yyval.node) = create_node(label, CONS, NODE_STR); add_child((yyval.node), (yyvsp[-2].node)); add_child((yyval.node), (yyvsp[-1].node));
         }
-#line 1521 "y.tab.c"
+#line 1526 "y.tab.c"
     break;
 
   case 11:
-#line 97 "grammar.y"
+#line 102 "grammar.y"
         {
-            printf("ATOM + S_EXPR\n");
+            if (GRAMMAR_DEBUG_MODE)printf("ATOM + S_EXPR\n");
 
             label.str = "ATOM_PREDICATE";
             (yyval.node) = create_node(label, ATOM_PREDICATE, NODE_STR); add_child((yyval.node), (yyvsp[-1].node));
         }
-#line 1532 "y.tab.c"
+#line 1537 "y.tab.c"
     break;
 
   case 12:
-#line 104 "grammar.y"
+#line 109 "grammar.y"
         {
-            printf("EQUAL + S_EXPR + S_EXPR\n");
+            if (GRAMMAR_DEBUG_MODE)printf("EQUAL + S_EXPR + S_EXPR\n");
 
             label.str = "EQUAL";
             (yyval.node) = create_node(label, EQUAL, NODE_STR); add_child((yyval.node), (yyvsp[-2].node)); add_child((yyval.node), (yyvsp[-1].node));
         }
-#line 1543 "y.tab.c"
+#line 1548 "y.tab.c"
     break;
 
   case 13:
-#line 111 "grammar.y"
+#line 116 "grammar.y"
         {
-            printf("MUL + S_EXPR + S_EXPR\n");
+            if (GRAMMAR_DEBUG_MODE) printf("MUL + S_EXPR + S_EXPR\n");
 
             label.str = "MUL";
             (yyval.node) = create_node(label, MUL, NODE_STR); add_child((yyval.node), (yyvsp[-2].node)); add_child((yyval.node), (yyvsp[-1].node));
         }
-#line 1554 "y.tab.c"
+#line 1559 "y.tab.c"
     break;
 
   case 14:
-#line 118 "grammar.y"
+#line 123 "grammar.y"
         {
-            printf("DIVE + S_EXPR + S_EXPR\n");
+            if (GRAMMAR_DEBUG_MODE) printf("DIVE + S_EXPR + S_EXPR\n");
 
             label.str = "DIVE";
             (yyval.node) = create_node(label, DIVE, NODE_STR); add_child((yyval.node), (yyvsp[-2].node)); add_child((yyval.node), (yyvsp[-1].node));
         }
-#line 1565 "y.tab.c"
+#line 1570 "y.tab.c"
     break;
 
   case 15:
-#line 125 "grammar.y"
+#line 130 "grammar.y"
         {
-            printf("REM + S_EXPR + S_EXPR\n");
+            if (GRAMMAR_DEBUG_MODE) printf("REM + S_EXPR + S_EXPR\n");
 
             label.str = "REM";
             (yyval.node) = create_node(label, REM, NODE_STR); add_child((yyval.node), (yyvsp[-2].node)); add_child((yyval.node), (yyvsp[-1].node));
         }
-#line 1576 "y.tab.c"
+#line 1581 "y.tab.c"
     break;
 
   case 16:
-#line 132 "grammar.y"
+#line 137 "grammar.y"
         {
-            printf("LE + S_EXPR + S_EXPR\n");
+            if (GRAMMAR_DEBUG_MODE) printf("LE + S_EXPR + S_EXPR\n");
 
             label.str = "LE";
             (yyval.node) = create_node(label, LE, NODE_STR); add_child((yyval.node), (yyvsp[-2].node)); add_child((yyval.node), (yyvsp[-1].node));
         }
-#line 1587 "y.tab.c"
+#line 1592 "y.tab.c"
     break;
 
   case 17:
-#line 139 "grammar.y"
+#line 144 "grammar.y"
         {
-            printf("COND + S_EXPR + S_EXPR + S_EXPR\n");
+            if (GRAMMAR_DEBUG_MODE) printf("COND + S_EXPR + S_EXPR + S_EXPR\n");
 
             label.str = "COND";
             (yyval.node) = create_node(label, COND, NODE_STR); add_child((yyval.node), (yyvsp[-3].node)); add_child((yyval.node), (yyvsp[-2].node)); add_child((yyval.node), (yyvsp[-1].node));
         }
-#line 1598 "y.tab.c"
+#line 1603 "y.tab.c"
     break;
 
   case 18:
-#line 146 "grammar.y"
+#line 151 "grammar.y"
         {
-            printf("LAMBDA + PARAM + S_EXPR\n");
+            if (GRAMMAR_DEBUG_MODE) printf("LAMBDA + PARAM + S_EXPR\n");
 
             label.str = "LAMBDA";
             (yyval.node) = create_node(label, LAMBDA, NODE_STR); add_child((yyval.node), (yyvsp[-3].node)); add_child((yyval.node), (yyvsp[-1].node));
         }
-#line 1609 "y.tab.c"
+#line 1614 "y.tab.c"
     break;
 
   case 19:
-#line 153 "grammar.y"
+#line 158 "grammar.y"
         {
-            printf("LET + S_EXPR + PAIR_LIST\n");
+            if (GRAMMAR_DEBUG_MODE)printf("LET + S_EXPR + PAIR_LIST\n");
 
             label.str = "LET";
             (yyval.node) = create_node(label, LET, NODE_STR); add_child((yyval.node), (yyvsp[-2].node)); add_child((yyval.node), (yyvsp[-1].node));
-
-
         }
-#line 1622 "y.tab.c"
+#line 1625 "y.tab.c"
     break;
 
   case 20:
-#line 162 "grammar.y"
+#line 165 "grammar.y"
         {
-            printf("LETREC + S_EXPR + PAIR_LIST\n");
+            if (GRAMMAR_DEBUG_MODE) printf("LETREC + S_EXPR + PAIR_LIST\n");
 
             label.str = "LETREC";
             (yyval.node) = create_node(label, LETREC, NODE_STR); add_child((yyval.node), (yyvsp[-2].node)); add_child((yyval.node), (yyvsp[-1].node));
         }
-#line 1633 "y.tab.c"
+#line 1636 "y.tab.c"
     break;
 
   case 21:
-#line 169 "grammar.y"
+#line 172 "grammar.y"
         {
-            printf("LIST_S_EXPR\n");
+            if (GRAMMAR_DEBUG_MODE) printf("LIST_S_EXPR\n");
             
             label.str = "LIST";
-            (yyval.node) = create_node(label, TEMP_NODE_TOKEN, NODE_STR);
-
+            (yyval.node) = create_node(label, LIST, NODE_LIST);
+        
             if ((yyvsp[-1].node) != NULL) { 
-                printf("NE nol blya\n");
                 for (int i = 0; i < (yyvsp[-1].node)->num_children; i++) {
                     add_child((yyval.node), (yyvsp[-1].node)->children[i]);
                 }
             }
-            else {
-                printf("nol blya\n");
-            }
-            
         }
-#line 1655 "y.tab.c"
+#line 1653 "y.tab.c"
     break;
 
   case 22:
-#line 187 "grammar.y"
+#line 185 "grammar.y"
         {
 
             label.str = "NIL";
-            (yyval.node) = create_node(label, 0, NODE_STR);
+            (yyval.node) = create_node(label, LIST, NODE_LIST);
         }
-#line 1665 "y.tab.c"
+#line 1663 "y.tab.c"
     break;
 
   case 23:
-#line 196 "grammar.y"
+#line 194 "grammar.y"
     {
-        printf("PAIR: VAR + S_EXPR\n");
+        if (GRAMMAR_DEBUG_MODE) printf("PAIR: VAR + S_EXPR\n");
 
         label.str = "PAIR";
-        (yyval.node) = create_node(label, TEMP_NODE_TOKEN, NODE_STR); add_child((yyval.node), (yyvsp[-2].node)); add_child((yyval.node), (yyvsp[-1].node));
+        (yyval.node) = create_node(label, PAIR, NODE_STR); add_child((yyval.node), (yyvsp[-2].node)); add_child((yyval.node), (yyvsp[-1].node));
     }
-#line 1676 "y.tab.c"
+#line 1674 "y.tab.c"
     break;
 
   case 25:
-#line 208 "grammar.y"
+#line 206 "grammar.y"
     {
         label.str = "PAIR_LIST";
-        (yyval.node) = create_node(label, TEMP_NODE_TOKEN, NODE_STR);
+        (yyval.node) = create_node(label, PAIR_LIST, NODE_STR);
         add_child((yyval.node), (yyvsp[0].node));
     }
-#line 1686 "y.tab.c"
+#line 1684 "y.tab.c"
     break;
 
   case 26:
-#line 214 "grammar.y"
+#line 212 "grammar.y"
     {
         add_child((yyvsp[-1].node), (yyvsp[0].node));
         (yyval.node) = (yyvsp[-1].node);
     }
-#line 1695 "y.tab.c"
+#line 1693 "y.tab.c"
     break;
 
   case 27:
-#line 221 "grammar.y"
+#line 219 "grammar.y"
     {
-        printf("S_ATOM %s | from PARAM\n", (yyvsp[0].str));
+        if (GRAMMAR_DEBUG_MODE) printf("S_ATOM %s | from PARAM\n", (yyvsp[0].str));
 
         label.str = (yyvsp[0].str);
         (yyval.node) = create_node(label, S_ATOM, NODE_STR);
     }
-#line 1706 "y.tab.c"
+#line 1704 "y.tab.c"
     break;
 
   case 29:
-#line 232 "grammar.y"
+#line 230 "grammar.y"
     {
         label.str = "PARAM_LIST";
-        (yyval.node) = create_node(label, TEMP_NODE_TOKEN, NODE_STR);
+        (yyval.node) = create_node(label, PARAM_LIST, NODE_STR);
         add_child((yyval.node), (yyvsp[0].node));
-        
     }
-#line 1717 "y.tab.c"
+#line 1714 "y.tab.c"
     break;
 
   case 30:
-#line 239 "grammar.y"
+#line 236 "grammar.y"
     {
         add_child((yyvsp[-1].node), (yyvsp[0].node));
         (yyval.node) = (yyvsp[-1].node);
     }
-#line 1726 "y.tab.c"
+#line 1723 "y.tab.c"
     break;
 
   case 31:
-#line 248 "grammar.y"
+#line 245 "grammar.y"
     {
-        printf("S_ATOM %s | from VAR\n", (yyvsp[0].str));
-
-        label.str = (yyvsp[0].str);
-        (yyval.node) = create_node(label, 0, NODE_STR);
-    }
-#line 1737 "y.tab.c"
-    break;
-
-  case 32:
-#line 258 "grammar.y"
-    {
-        printf("S_ATOM %s | from ATOM\n", (yyvsp[0].str));
+        if (GRAMMAR_DEBUG_MODE) printf("S_ATOM %s | from VAR\n", (yyvsp[0].str));
 
         label.str = (yyvsp[0].str);
         (yyval.node) = create_node(label, S_ATOM, NODE_STR);
     }
-#line 1748 "y.tab.c"
+#line 1734 "y.tab.c"
+    break;
+
+  case 32:
+#line 255 "grammar.y"
+    {
+        if (GRAMMAR_DEBUG_MODE) printf("S_ATOM %s | from ATOM\n", (yyvsp[0].str));
+
+        label.str = (yyvsp[0].str);
+        (yyval.node) = create_node(label, S_ATOM, NODE_STR);
+    }
+#line 1745 "y.tab.c"
     break;
 
   case 33:
-#line 265 "grammar.y"
+#line 262 "grammar.y"
     {
-        printf("D_ATOM %d\n", (yyvsp[0].num));
+        if (GRAMMAR_DEBUG_MODE) printf("D_ATOM %d\n", (yyvsp[0].num));
 
         label.num = (yyvsp[0].num);
         (yyval.node) = create_node(label, D_ATOM, NODE_NUM);
     }
-#line 1759 "y.tab.c"
+#line 1756 "y.tab.c"
     break;
 
   case 34:
-#line 273 "grammar.y"
+#line 270 "grammar.y"
     {
-        printf("COMMAND as S_EXPR\n");
+        if (GRAMMAR_DEBUG_MODE) printf("COMMAND as S_EXPR\n");
 
         label.str = (yyvsp[0].node);
         (yyval.node) = create_node(label, S_ATOM, NODE_STR);
     }
-#line 1770 "y.tab.c"
-    break;
-
-  case 51:
-#line 303 "grammar.y"
-                {
-        (yyval.node) = (yyvsp[0].node);
-    }
-#line 1778 "y.tab.c"
+#line 1767 "y.tab.c"
     break;
 
   case 52:
-#line 310 "grammar.y"
+#line 303 "grammar.y"
     {
-        printf("S_ATOM %s | from S_EXPR_LIST\n", (yyvsp[0].node));
+        if (GRAMMAR_DEBUG_MODE) printf("S_EXPR %s | from S_EXPR_LIST\n", (yyvsp[0].node));
 
         label.str = "S_EXPR_LIST";
-        (yyval.node) = create_node(label, 0, NODE_STR);
+        (yyval.node) = create_node(label, NO_TOKEN, NODE_STR);
         add_child((yyval.node), (yyvsp[0].node));
     }
-#line 1790 "y.tab.c"
+#line 1779 "y.tab.c"
     break;
 
   case 53:
-#line 318 "grammar.y"
+#line 311 "grammar.y"
     {
         add_child((yyvsp[-1].node), (yyvsp[0].node));
         (yyval.node) = (yyvsp[-1].node);
     }
-#line 1799 "y.tab.c"
+#line 1788 "y.tab.c"
+    break;
+
+  case 54:
+#line 319 "grammar.y"
+    {
+        if (GRAMMAR_DEBUG_MODE) printf("S_EXPR %s | from S_EXPR_LIST\n", (yyvsp[0].node));
+
+        label.str = "S_EXPR_LIST";
+        (yyval.node) = create_node(label, NO_TOKEN, NODE_STR);
+        add_child((yyval.node), (yyvsp[0].node));
+    }
+#line 1800 "y.tab.c"
+    break;
+
+  case 55:
+#line 327 "grammar.y"
+    {
+        add_child((yyvsp[-1].node), (yyvsp[0].node));
+        (yyval.node) = (yyvsp[-1].node);
+    }
+#line 1809 "y.tab.c"
     break;
 
 
-#line 1803 "y.tab.c"
+#line 1813 "y.tab.c"
 
       default: break;
     }
@@ -2031,19 +2041,20 @@ yyreturn:
 #endif
   return yyresult;
 }
-#line 324 "grammar.y"
+#line 334 "grammar.y"
 
 
-
+/*
 int main (void) {
     yyparse();
 
     
-    print_tree(root, 0);
-    //print_tree_string(root);
+    //print_tree(root, 0);
+    print_tree_string(root);
 
     return 0;
 }
+*/
 
 void yyerror(const char* s) {
     fprintf(stderr, "\033[31mОшибка: %s\n\033[0m", s);

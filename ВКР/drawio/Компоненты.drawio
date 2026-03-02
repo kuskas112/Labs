@@ -1,0 +1,69 @@
+<mxfile host="Electron" modified="2026-02-25T18:17:25.204Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/24.2.5 Chrome/120.0.6099.109 Electron/28.1.0 Safari/537.36" etag="xznuYKUsHqE4aybuiUWo" version="24.2.5" type="device">
+  <diagram name="Страница — 1" id="IzAyQE_mKNEKTj4VjduO">
+    <mxGraphModel dx="1434" dy="844" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="Etfb8VeocZ-1P5S0JnsL-4" value="Модуль формирования списка объектов" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="210" y="150" width="250" height="160" as="geometry">
+            <mxRectangle x="210" y="150" width="270" height="30" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Etfb8VeocZ-1P5S0JnsL-2" value="Получение данных посредством запроса" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="Etfb8VeocZ-1P5S0JnsL-4">
+          <mxGeometry x="65" y="60" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Etfb8VeocZ-1P5S0JnsL-1" value="База данных" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" vertex="1" parent="1">
+          <mxGeometry x="70" y="200" width="60" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="Etfb8VeocZ-1P5S0JnsL-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="Etfb8VeocZ-1P5S0JnsL-2" target="Etfb8VeocZ-1P5S0JnsL-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Etfb8VeocZ-1P5S0JnsL-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="Etfb8VeocZ-1P5S0JnsL-7" target="Etfb8VeocZ-1P5S0JnsL-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Etfb8VeocZ-1P5S0JnsL-6" value="Модуль форматирования данных" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="210" y="380" width="250" height="290" as="geometry">
+            <mxRectangle x="210" y="150" width="270" height="30" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Etfb8VeocZ-1P5S0JnsL-7" value="Получение данных" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="Etfb8VeocZ-1P5S0JnsL-6">
+          <mxGeometry x="65" y="40" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Etfb8VeocZ-1P5S0JnsL-9" value="Конвертирование данных в необходимую кодировку" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="Etfb8VeocZ-1P5S0JnsL-6">
+          <mxGeometry x="65" y="120" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Etfb8VeocZ-1P5S0JnsL-10" value="Упаковка данных в необходимую структуру" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="Etfb8VeocZ-1P5S0JnsL-6">
+          <mxGeometry x="65" y="204.5" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Etfb8VeocZ-1P5S0JnsL-11" value="Модуль формирования таблиц" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="510" y="455" width="250" height="200" as="geometry">
+            <mxRectangle x="210" y="150" width="270" height="30" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Etfb8VeocZ-1P5S0JnsL-12" value="Получение данных" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="Etfb8VeocZ-1P5S0JnsL-11">
+          <mxGeometry x="65" y="40" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Etfb8VeocZ-1P5S0JnsL-13" value="Формирование таблицы" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="Etfb8VeocZ-1P5S0JnsL-11">
+          <mxGeometry x="65" y="120" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Etfb8VeocZ-1P5S0JnsL-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="Etfb8VeocZ-1P5S0JnsL-12" target="Etfb8VeocZ-1P5S0JnsL-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Etfb8VeocZ-1P5S0JnsL-16" value="Модуль отображения таблиц" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="510" y="710" width="250" height="200" as="geometry">
+            <mxRectangle x="210" y="150" width="270" height="30" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Etfb8VeocZ-1P5S0JnsL-17" value="Получение таблицы" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="Etfb8VeocZ-1P5S0JnsL-16">
+          <mxGeometry x="65" y="40" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Etfb8VeocZ-1P5S0JnsL-18" value="Отображение таблицы пользователю" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="Etfb8VeocZ-1P5S0JnsL-16">
+          <mxGeometry x="65" y="120" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Etfb8VeocZ-1P5S0JnsL-21" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1" source="Etfb8VeocZ-1P5S0JnsL-17" target="Etfb8VeocZ-1P5S0JnsL-11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
