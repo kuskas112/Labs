@@ -1,0 +1,30 @@
+(14:29:46) ERR_RTM:hasp driver login = 7
+(14:29:46) INF_LOAD:Starting... QS_Lesson_1_0
+(14:29:46) INF_RTM:Detected RTM NT(6.2)
+(14:29:46) INF_RTM:Base TRACE MODE 6 Profiler T-Factory + ver. 6.10.2 ver. 6.10.1 
+(14:29:46) INF_LOAD:max channel = 65535
+(14:29:46) INF_LOAD:Load Channels 4(1 - 4) 
+(14:29:46) INF_LOAD:Templates=1 (math=0 sql=0 scr=1 doc=0 pnl=0) 
+(14:29:46) INF_LOAD:Objects = 0
+(14:29:46) INF_RTM:Timer=0.055s CalcLoop=550ms 
+(14:29:46) INF_LOAD:LoadTime=0.016s CalcPeriod=550ms 
+(14:29:46) INF_RTM:available(MB): pm=7834 vm=2047; free(MB): pm=4100 vm=1908 em=0 after load
+(14:29:46) INF_RTM:total use(MB): pm=3734 vm=139 after load
+(14:29:46) INF_RTM:use(MB): pm=22(22) vm=44(44) pf=2 after load
+(14:29:46) INF_RTM:gh:11 uh:9 hh:183 after load
+(14:29:52) INF_IP:hostname is DESKTOP-KP65LSQ 
+(14:29:52) INF_IP:card0 addr=0.0.0.0 
+(14:29:52) INF_IP:card1 addr=127.0.0.1 
+(14:29:52) INF_RTM:start time is 0.016 s 
+(14:29:52) INF_RTM:total use(MB): pm=3824 vm=368 after start
+(14:29:52) INF_RTM:use(MB): pm=97(97) vm=61(61) pf=26602 after start
+(14:29:52) INF_RTM:gh:527 uh:265 hh:440 after start
+(14:29:52) INF_FLT:ModeSwitch at start e15=0000 e18=0000 e20=0000 
+(14:29:52) INF_RTM:mode=2(Work) e15=00 e18=00 e20=00 [src4] 
+(14:29:52) INF_GRAPH:scr:1:popup=0 scrref=0 trend=1,0 update=1 
+(14:30:19) INF_RTM:stoping... = 30
+(14:30:19) INF_RTM:main clc stop 
+(14:30:19) INF_RTM:mode=5(Stop) e15=00 e18=00 e20=00 [src0] 
+(14:30:20) INF_RTM:stop time is 0.811 s 
+(14:30:20) INF_RTM:number of calculation = 45
+(14:30:20) INF_RTM:END OF WORK 
