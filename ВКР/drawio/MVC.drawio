@@ -1,4 +1,4 @@
-<mxfile host="Electron" modified="2026-02-25T18:20:03.215Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/24.2.5 Chrome/120.0.6099.109 Electron/28.1.0 Safari/537.36" etag="1KtEOSgF6NO6ARc2JooX" version="24.2.5" type="device" pages="2">
+<mxfile host="Electron" modified="2026-03-07T13:47:05.712Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/24.2.5 Chrome/120.0.6099.109 Electron/28.1.0 Safari/537.36" etag="WOkUf9GhbxGyJS0F6FgL" version="24.2.5" type="device" pages="2">
   <diagram name="Страница — 1" id="I11wYKvqHKj0wWy-X2Hk">
     <mxGraphModel dx="1434" dy="844" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -68,7 +68,7 @@
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
         <mxCell id="1rkJH2CUD_EkTC8qUMI9-1" value="Модуль доступа к данным" style="swimlane;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="40" y="310" width="200" height="440" as="geometry" />
+          <mxGeometry x="40" y="310" width="200" height="510" as="geometry" />
         </mxCell>
         <mxCell id="1rkJH2CUD_EkTC8qUMI9-2" value="Формирование списка дисциплин" style="rounded=0;whiteSpace=wrap;html=1;" parent="1rkJH2CUD_EkTC8qUMI9-1" vertex="1">
           <mxGeometry x="40" y="40" width="120" height="60" as="geometry" />
@@ -84,6 +84,9 @@
         </mxCell>
         <mxCell id="1rkJH2CUD_EkTC8qUMI9-7" value="Формирование списка типов занятий" style="rounded=0;whiteSpace=wrap;html=1;" parent="1rkJH2CUD_EkTC8qUMI9-1" vertex="1">
           <mxGeometry x="40" y="360" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ZfMj_EmQl_MWCt2Am9Us-1" value="Изменение данных в базе данных" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1rkJH2CUD_EkTC8qUMI9-1">
+          <mxGeometry x="40" y="440" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="1rkJH2CUD_EkTC8qUMI9-23" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="1rkJH2CUD_EkTC8qUMI9-8" edge="1">
           <mxGeometry relative="1" as="geometry">
@@ -115,46 +118,28 @@
         <mxCell id="1rkJH2CUD_EkTC8qUMI9-16" value="Отображение опций для выбора" style="rounded=0;whiteSpace=wrap;html=1;" parent="1rkJH2CUD_EkTC8qUMI9-14" vertex="1">
           <mxGeometry x="40" y="120" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="1rkJH2CUD_EkTC8qUMI9-26" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" edge="1">
+        <mxCell id="ZfMj_EmQl_MWCt2Am9Us-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" target="1rkJH2CUD_EkTC8qUMI9-14">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="490" y="642" as="targetPoint" />
-            <mxPoint x="550" y="642" as="sourcePoint" />
-            <Array as="points">
-              <mxPoint x="521" y="642" />
-              <mxPoint x="521" y="643" />
-            </Array>
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="0ruPKYOl_ghWseiT7hqN-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.75;exitDx=0;exitDy=0;" edge="1" parent="1" source="1rkJH2CUD_EkTC8qUMI9-17" target="0ruPKYOl_ghWseiT7hqN-2">
-          <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="550" y="840" />
-            </Array>
+            <mxPoint x="540" y="648" as="sourcePoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="1rkJH2CUD_EkTC8qUMI9-17" value="Модуль взаимодействия с пользователем" style="swimlane;whiteSpace=wrap;html=1;startSize=30;" parent="1" vertex="1">
-          <mxGeometry x="550" y="460" width="200" height="440" as="geometry" />
+          <mxGeometry x="540" y="310" width="200" height="510" as="geometry" />
         </mxCell>
         <mxCell id="1rkJH2CUD_EkTC8qUMI9-18" value="Выбор опций для среза данных" style="rounded=0;whiteSpace=wrap;html=1;" parent="1rkJH2CUD_EkTC8qUMI9-17" vertex="1">
-          <mxGeometry x="40" y="40" width="120" height="60" as="geometry" />
+          <mxGeometry x="40" y="50" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="1rkJH2CUD_EkTC8qUMI9-19" value="Сохранение и изменение отметок посещаемости" style="rounded=0;whiteSpace=wrap;html=1;" parent="1rkJH2CUD_EkTC8qUMI9-17" vertex="1">
-          <mxGeometry x="40" y="120" width="120" height="60" as="geometry" />
+          <mxGeometry x="40" y="150" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="1rkJH2CUD_EkTC8qUMI9-20" value="Сохранение и изменение оценок за работы" style="rounded=0;whiteSpace=wrap;html=1;" parent="1rkJH2CUD_EkTC8qUMI9-17" vertex="1">
-          <mxGeometry x="40" y="200" width="120" height="60" as="geometry" />
+          <mxGeometry x="40" y="245" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="1rkJH2CUD_EkTC8qUMI9-21" value="Сохранение и изменение комментариев к занятиям" style="rounded=0;whiteSpace=wrap;html=1;" parent="1rkJH2CUD_EkTC8qUMI9-17" vertex="1">
-          <mxGeometry x="40" y="280" width="120" height="60" as="geometry" />
+          <mxGeometry x="40" y="340" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="1rkJH2CUD_EkTC8qUMI9-22" value="Сохранение и изменение состава подгрупп" style="rounded=0;whiteSpace=wrap;html=1;" parent="1rkJH2CUD_EkTC8qUMI9-17" vertex="1">
-          <mxGeometry x="40" y="360" width="120" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="0ruPKYOl_ghWseiT7hqN-2" value="Модуль изменения данных" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="40" y="780" width="200" height="120" as="geometry" />
-        </mxCell>
-        <mxCell id="0ruPKYOl_ghWseiT7hqN-3" value="Изменение данных в базе данных" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="0ruPKYOl_ghWseiT7hqN-2">
-          <mxGeometry x="40" y="40" width="120" height="60" as="geometry" />
+          <mxGeometry x="40" y="440" width="120" height="60" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
