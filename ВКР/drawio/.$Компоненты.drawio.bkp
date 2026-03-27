@@ -1,0 +1,88 @@
+<mxfile host="Electron" modified="2026-03-21T16:36:05.579Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/24.2.5 Chrome/120.0.6099.109 Electron/28.1.0 Safari/537.36" etag="DFuMCQgxdZia0HSDgKZP" version="24.2.5" type="device">
+  <diagram name="Page-1" id="b5b7bab2-c9e2-2cf4-8b2a-24fd1a2a6d21">
+    <mxGraphModel dx="1434" dy="844" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" background="none" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="6e0c8c40b5770093-72" value="" style="shape=folder;fontStyle=1;spacingTop=10;tabWidth=194;tabHeight=22;tabPosition=left;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fillColor=none;fontFamily=Verdana;fontSize=10;align=center;" parent="1" vertex="1">
+          <mxGeometry x="328.5" y="1000" width="283.5" height="185.5" as="geometry" />
+        </mxCell>
+        <mxCell id="6e0c8c40b5770093-73" value="&amp;lt;&amp;lt;Controllers&amp;gt;&amp;gt;" style="text;html=1;align=left;verticalAlign=top;spacingTop=-4;fontSize=10;fontFamily=Verdana" parent="1" vertex="1">
+          <mxGeometry x="329.5" y="1000" width="130" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="V3kHOR4Jt3pOooau1egu-19" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Verdana;fontSize=10;fontColor=default;labelBackgroundColor=none;startFill=0;endArrow=open;endFill=0;endSize=10;" edge="1" parent="1" source="V3kHOR4Jt3pOooau1egu-1" target="V3kHOR4Jt3pOooau1egu-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="V3kHOR4Jt3pOooau1egu-1" value="«Component»&lt;br&gt;&lt;span style=&quot;font-weight: 700; text-wrap: nowrap;&quot;&gt;AttendanceController.php&lt;/span&gt;" style="html=1;dropTarget=0;whiteSpace=wrap;fontFamily=Verdana;fontSize=10;fontColor=default;labelBackgroundColor=none;" vertex="1" parent="1">
+          <mxGeometry x="372" y="1065.5" width="180" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="V3kHOR4Jt3pOooau1egu-2" value="" style="shape=module;jettyWidth=8;jettyHeight=4;fontFamily=Verdana;fontSize=10;fontColor=default;labelBackgroundColor=none;" vertex="1" parent="V3kHOR4Jt3pOooau1egu-1">
+          <mxGeometry x="1" width="20" height="20" relative="1" as="geometry">
+            <mxPoint x="-27" y="7" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="V3kHOR4Jt3pOooau1egu-3" value="" style="shape=folder;fontStyle=1;spacingTop=10;tabWidth=194;tabHeight=22;tabPosition=left;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fillColor=none;fontFamily=Verdana;fontSize=10;align=center;" vertex="1" parent="1">
+          <mxGeometry x="329.5" y="1265.5" width="283.5" height="185.5" as="geometry" />
+        </mxCell>
+        <mxCell id="V3kHOR4Jt3pOooau1egu-4" value="&amp;lt;&amp;lt;Models&amp;gt;&amp;gt;" style="text;html=1;align=left;verticalAlign=top;spacingTop=-4;fontSize=10;fontFamily=Verdana" vertex="1" parent="1">
+          <mxGeometry x="330.5" y="1265.5" width="130" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="V3kHOR4Jt3pOooau1egu-5" value="«Component»&lt;br&gt;&lt;span style=&quot;font-weight: 700; text-wrap: nowrap;&quot;&gt;LiteAttendance.php&lt;/span&gt;" style="html=1;dropTarget=0;whiteSpace=wrap;fontFamily=Verdana;fontSize=10;fontColor=default;labelBackgroundColor=none;" vertex="1" parent="1">
+          <mxGeometry x="373" y="1331" width="180" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="V3kHOR4Jt3pOooau1egu-6" value="" style="shape=module;jettyWidth=8;jettyHeight=4;fontFamily=Verdana;fontSize=10;fontColor=default;labelBackgroundColor=none;" vertex="1" parent="V3kHOR4Jt3pOooau1egu-5">
+          <mxGeometry x="1" width="20" height="20" relative="1" as="geometry">
+            <mxPoint x="-27" y="7" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="V3kHOR4Jt3pOooau1egu-7" value="" style="shape=folder;fontStyle=1;spacingTop=10;tabWidth=194;tabHeight=22;tabPosition=left;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fillColor=none;fontFamily=Verdana;fontSize=10;align=center;" vertex="1" parent="1">
+          <mxGeometry x="328.5" y="620" width="491.5" height="320" as="geometry" />
+        </mxCell>
+        <mxCell id="V3kHOR4Jt3pOooau1egu-20" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;dashed=1;strokeColor=default;align=center;verticalAlign=middle;fontFamily=Verdana;fontSize=10;fontColor=default;labelBackgroundColor=none;startFill=0;endArrow=open;endFill=0;endSize=10;" edge="1" parent="1" source="V3kHOR4Jt3pOooau1egu-8" target="V3kHOR4Jt3pOooau1egu-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="V3kHOR4Jt3pOooau1egu-8" value="" style="shape=folder;fontStyle=1;spacingTop=10;tabWidth=66;tabHeight=20;tabPosition=left;html=1;whiteSpace=wrap;fontFamily=Verdana;fontSize=10;fontColor=default;labelBackgroundColor=none;" vertex="1" parent="1">
+          <mxGeometry x="363.75" y="680" width="436.25" height="230" as="geometry" />
+        </mxCell>
+        <mxCell id="V3kHOR4Jt3pOooau1egu-9" value="«Component»&lt;br&gt;&lt;span style=&quot;font-weight: 700; text-wrap: nowrap;&quot;&gt;groupdivision.phtml&lt;/span&gt;" style="html=1;dropTarget=0;whiteSpace=wrap;fontFamily=Verdana;fontSize=10;fontColor=default;labelBackgroundColor=none;" vertex="1" parent="1">
+          <mxGeometry x="400" y="720" width="180" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="V3kHOR4Jt3pOooau1egu-10" value="" style="shape=module;jettyWidth=8;jettyHeight=4;fontFamily=Verdana;fontSize=10;fontColor=default;labelBackgroundColor=none;" vertex="1" parent="V3kHOR4Jt3pOooau1egu-9">
+          <mxGeometry x="1" width="20" height="20" relative="1" as="geometry">
+            <mxPoint x="-27" y="7" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="V3kHOR4Jt3pOooau1egu-11" value="«Component»&lt;br&gt;&lt;span style=&quot;font-weight: 700; text-wrap: nowrap;&quot;&gt;index&lt;/span&gt;&lt;span style=&quot;background-color: initial; font-weight: 700; text-wrap: nowrap;&quot;&gt;.phtml&lt;/span&gt;" style="html=1;dropTarget=0;whiteSpace=wrap;fontFamily=Verdana;fontSize=10;fontColor=default;labelBackgroundColor=none;" vertex="1" parent="1">
+          <mxGeometry x="400" y="810" width="180" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="V3kHOR4Jt3pOooau1egu-12" value="" style="shape=module;jettyWidth=8;jettyHeight=4;fontFamily=Verdana;fontSize=10;fontColor=default;labelBackgroundColor=none;" vertex="1" parent="V3kHOR4Jt3pOooau1egu-11">
+          <mxGeometry x="1" width="20" height="20" relative="1" as="geometry">
+            <mxPoint x="-27" y="7" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="V3kHOR4Jt3pOooau1egu-13" value="«Component»&lt;br&gt;&lt;span style=&quot;font-weight: 700; text-wrap: nowrap;&quot;&gt;journal&lt;/span&gt;&lt;span style=&quot;background-color: initial; font-weight: 700; text-wrap: nowrap;&quot;&gt;.phtml&lt;/span&gt;" style="html=1;dropTarget=0;whiteSpace=wrap;fontFamily=Verdana;fontSize=10;fontColor=default;labelBackgroundColor=none;" vertex="1" parent="1">
+          <mxGeometry x="590" y="720" width="180" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="V3kHOR4Jt3pOooau1egu-14" value="" style="shape=module;jettyWidth=8;jettyHeight=4;fontFamily=Verdana;fontSize=10;fontColor=default;labelBackgroundColor=none;" vertex="1" parent="V3kHOR4Jt3pOooau1egu-13">
+          <mxGeometry x="1" width="20" height="20" relative="1" as="geometry">
+            <mxPoint x="-27" y="7" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="V3kHOR4Jt3pOooau1egu-15" value="«Component»&lt;br&gt;&lt;span style=&quot;background-color: initial; font-weight: 700; text-wrap: nowrap;&quot;&gt;logstat.phtml&lt;/span&gt;" style="html=1;dropTarget=0;whiteSpace=wrap;fontFamily=Verdana;fontSize=10;fontColor=default;labelBackgroundColor=none;" vertex="1" parent="1">
+          <mxGeometry x="590" y="810" width="180" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="V3kHOR4Jt3pOooau1egu-16" value="" style="shape=module;jettyWidth=8;jettyHeight=4;fontFamily=Verdana;fontSize=10;fontColor=default;labelBackgroundColor=none;" vertex="1" parent="V3kHOR4Jt3pOooau1egu-15">
+          <mxGeometry x="1" width="20" height="20" relative="1" as="geometry">
+            <mxPoint x="-27" y="7" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="V3kHOR4Jt3pOooau1egu-17" value="Scripts" style="text;align=center;fontStyle=1;verticalAlign=middle;spacingLeft=3;spacingRight=3;strokeColor=none;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;html=1;fontFamily=Verdana;fontSize=10;fontColor=default;labelBackgroundColor=none;" vertex="1" parent="1">
+          <mxGeometry x="353.5" y="676" width="80" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="V3kHOR4Jt3pOooau1egu-18" value="&amp;lt;&amp;lt;Views&amp;gt;&amp;gt;" style="text;html=1;align=left;verticalAlign=top;spacingTop=-4;fontSize=10;fontFamily=Verdana" vertex="1" parent="1">
+          <mxGeometry x="328.5" y="620" width="130" height="20" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
